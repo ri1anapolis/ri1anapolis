@@ -1,16 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Article, Section, Aside } from "../components/section"
+import { Article, Section } from "../components/section"
 
 const ContatoSectionContent = () => {
-  // const image = useStaticQuery(graphql`
-  //   query {
-  //     file(name: { regex: "/about/" }) {
-  //       publicURL
-  //     }
-  //   }
-  // `)
-
   return (
     <Article id="contato" background="true">
       <Section>

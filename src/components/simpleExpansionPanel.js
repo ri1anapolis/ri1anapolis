@@ -7,12 +7,28 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelActions,
 } from "@material-ui/core"
+import DescriptionIcon from "@material-ui/icons/Description"
 import { ExpandMore } from "@material-ui/icons"
-import { makeStyles } from "@material-ui/styles"
+import { makeStyles, withStyles } from "@material-ui/styles"
+
+const DownloadButton = withStyles(theme => ({
+  root: {
+    color: "rgb(75,125,175)",
+    textTransform: "none",
+    "&:hover": {
+      backgroundColor: "rgba(75,125,175,0.05)",
+    },
+  },
+}))(Button)
 
 const useStyles = makeStyles(theme => ({
   title: {
     fontWeight: 400,
+  },
+  actionsPanel: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }))
 
@@ -22,9 +38,13 @@ const SimplePanelComponent = props => {
   const linksList = props.links || []
   const downloadLinks = linksList.map(link => {
     return (
-      <Button component="a" href={link.href}>
+      <DownloadButton
+        href={link.href}
+        target="_blank"
+        startIcon={<DescriptionIcon />}
+      >
         {link.text}
-      </Button>
+      </DownloadButton>
     )
   })
 
@@ -42,7 +62,9 @@ const SimplePanelComponent = props => {
       <ExpansionPanelDetails>
         <Typography variant="caption">{props.children}</Typography>
       </ExpansionPanelDetails>
-      <ExpansionPanelActions>{downloadLinks}</ExpansionPanelActions>
+      <ExpansionPanelActions className={classes.actionsPanel}>
+        {downloadLinks}
+      </ExpansionPanelActions>
     </ExpansionPanel>
   )
 }

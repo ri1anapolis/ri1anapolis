@@ -22,11 +22,11 @@
     "gatsby-plugin-typography": "^2.5.1",
     "gatsby-source-filesystem": "^2.3.0",
     "gatsby-transformer-sharp": "^2.5.0",
-    "netlify-cms": "^2.10.48",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-hookstore": "^1.4.4",
     "react-typography": "^0.16.19",
     "typeface-open-sans": "^0.0.75"
   },
