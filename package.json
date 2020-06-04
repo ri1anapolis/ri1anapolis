@@ -36,6 +36,7 @@
     "typeface-open-sans": "^0.0.75"
   },
   "devDependencies": {
+    "eslint-plugin-graphql": "^4.0.0",
     "prettier": "2.0.5"
   },
   "keywords": [

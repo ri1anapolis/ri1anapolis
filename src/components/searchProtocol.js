@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useLazyQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 import MaskedInput from "react-text-mask"
@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   searchbox: {
     "& input": {
-      width: "260px",
+      width: "280px",
       [theme.breakpoints.down("xs")]: {
         width: "calc(75vw - 70px)",
       },
@@ -44,8 +44,8 @@ TextMaskCustom.prototype = {
 }
 
 const gqlQuery = gql`
-  query {
-    protocolo(query: { protocolo: "RE-125438" }) {
+  query($protocolo: String!) {
+    protocolo(query: { protocolo: $protocolo }) {
       etapa
       natureza
       protocolo
@@ -56,14 +56,36 @@ const gqlQuery = gql`
 
 const StyledTextField = props => {
   const [protocolo, setProtocolo] = useState(null)
+  const [searchable, setSearchable] = useState(false)
   const classes = useStyles(props)
-  const [runSearch, { called, loading, error, data }] = useLazyQuery(gqlQuery)
+  const [runSearch, { loading, error, data }] = useLazyQuery(gqlQuery)
+
+  const handleButtonClick = () => {
+    if (searchable) {
+      runSearch({ variables: { protocolo } })
+    }
+    return
+  }
+
+  const handleKeyDown = event => {
+    if (event.key === "Enter") handleButtonClick()
+    return
+  }
+
+  useEffect(() => {
+    if (!!protocolo && protocolo.trim().length >= 8) {
+      setSearchable(true)
+      return
+    }
+    setSearchable(false)
+  }, [protocolo])
 
   return (
     <>
       <Grid container className={classes.root} justify="space-between">
         <TextField
           onChange={event => setProtocolo(event.target.value)}
+          onKeyDown={event => handleKeyDown(event)}
           className={classes.searchbox}
           id={props.id}
           label={props.label}
@@ -75,23 +97,37 @@ const StyledTextField = props => {
           }}
         />
         <Button
+          disabled={!searchable}
           variant="contained"
           color="primary"
           size="small"
-          onClick={() => runSearch()}
+          onClick={() => handleButtonClick()}
         >
           {props.buttonText}
         </Button>
       </Grid>
-      {<p>{protocolo}</p>}
       {loading && <p>Buscando...</p>}
-      {error && <p>Error: ${error.message}</p>}
-      {data && (
+      {error && Object.keys(error.networkError).length > 0 && (
         <p>
-          O protocolo {data.protocolo.protocolo} está com status "
-          {data.protocolo.status}".
+          Uma falha na conexão de rede impediu que sua consulta fosse realizada.
         </p>
       )}
+      {error && Object.keys(error.graphQLErrors).length > 0 && (
+        <p>Uma falha de sistema ocorreu. Tente novamente mais tarde.</p>
+      )}
+      {data && data.protocolo && (
+        <>
+          <p>
+            Protocolo "{data.protocolo.protocolo}" ({data.protocolo.natureza})
+          </p>
+          <p>
+            Tramita na etapa "{data.protocolo.etapa}": O protocolo está sendo
+            analisado...
+          </p>
+        </>
+      )}
+      {data && !data.protocolo && <p>O protocolo não foi encontrado.</p>}
+      {data && <p>{JSON.stringify(data)}</p>}
     </>
   )
 }
