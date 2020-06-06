@@ -5,6 +5,7 @@ import MaskedInput from "react-text-mask"
 import PropTypes from "prop-types"
 import { Grid, TextField, Button } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
+import StyledAlertComponent from "./styledAlertComponent"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -105,29 +106,42 @@ const StyledTextField = props => {
         >
           {props.buttonText}
         </Button>
+        {loading && <small>Buscando...</small>}
       </Grid>
-      {loading && <p>Buscando...</p>}
+
       {error && Object.keys(error.networkError).length > 0 && (
-        <p>
+        <StyledAlertComponent severity="error" title="Erro de conexão">
           Uma falha na conexão de rede impediu que sua consulta fosse realizada.
-        </p>
+        </StyledAlertComponent>
       )}
       {error && Object.keys(error.graphQLErrors).length > 0 && (
-        <p>Uma falha de sistema ocorreu. Tente novamente mais tarde.</p>
+        <StyledAlertComponent severity="error" title="Erro de sistema">
+          Uma falha de sistema ocorreu. Tente novamente mais tarde.
+        </StyledAlertComponent>
       )}
+
       {data && data.protocolo && (
-        <>
-          <p>
-            Protocolo "{data.protocolo.protocolo}" ({data.protocolo.natureza})
-          </p>
-          <p>
-            Tramita na etapa "{data.protocolo.etapa}": O protocolo está sendo
-            analisado...
-          </p>
-        </>
+        <StyledAlertComponent
+          severity="success"
+          title={
+            <>
+              Protocolo {data.protocolo.protocolo}{" "}
+              <small>({data.protocolo.natureza})</small>
+            </>
+          }
+        >
+          Tramita na etapa "{data.protocolo.etapa}": Etiam interdum faucibus
+          pulvinar. Sed justo urna, semper scelerisque arcu eu, rutrum semper
+          massa. Vestibulum cursus auctor dolor a mattis. Pellentesque nec
+          porttitor metus, id egestas lacus.
+        </StyledAlertComponent>
       )}
-      {data && !data.protocolo && <p>O protocolo não foi encontrado.</p>}
-      {data && <p>{JSON.stringify(data)}</p>}
+
+      {data && !data.protocolo && (
+        <StyledAlertComponent severity="info">
+          O protocolo informado não foi encontrado.
+        </StyledAlertComponent>
+      )}
     </>
   )
 }
