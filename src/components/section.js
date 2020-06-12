@@ -10,12 +10,6 @@ const useStyles = makeStyles(theme => ({
     width: "100vw",
     color: "#555555",
     textAlign: "justify",
-    "& img": {
-      maxWidth: "100%",
-      maxHeight: "100%",
-      width: "auto",
-      height: "auto",
-    },
   },
   articleWrapper: {
     maxWidth: "1260px",
@@ -46,9 +40,9 @@ const Section = props => {
     <Grid
       component="section"
       item
-      xs={12}
-      sm={10}
-      md={7}
+      xs={props.xs || 12}
+      sm={props.sm || 10}
+      md={props.md || 7}
       {...props}
       className={classes.section}
     >
@@ -65,9 +59,9 @@ const Aside = props => {
       item
       {...props}
       className={classes.aside}
-      xs={12}
-      sm={10}
-      md={5}
+      xs={props.xs || 12}
+      sm={props.sm || 10}
+      md={props.md || 5}
     >
       {props.children}
     </Grid>
