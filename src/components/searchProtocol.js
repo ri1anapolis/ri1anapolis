@@ -74,22 +74,20 @@ const StyledTextField = props => {
     return
   }
 
-  const handleInputProtocoloChange = event => {
-    const protocolo = event.target.value
-
+  useEffect(() => {
     if (!!protocolo && protocolo.trim().length >= 8) {
       setProtocolo(protocolo.toUpperCase())
       setSearchable(true)
       return
     }
     setSearchable(false)
-  }
+  }, [protocolo])
 
   return (
     <>
       <Grid container className={classes.root} justify="space-between">
         <TextField
-          onChange={event => handleInputProtocoloChange(event)}
+          onChange={event => setProtocolo(event.target.value)}
           onKeyDown={event => handleEnterKey(event)}
           className={classes.searchbox}
           id={props.id}
