@@ -1,17 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import { Alert, AlertTitle } from "@material-ui/lab"
 import { Fade } from "@material-ui/core"
 
 const StyledAlertComponent = props => {
-  const [visibility, setVisibility] = useState(true)
   return (
-    <Fade in={visibility}>
-      <Alert
-        severity={props.severity}
-        onClose={() => {
-          setVisibility(false)
-        }}
-      >
+    <Fade in={true}>
+      <Alert severity={props.severity}>
         <AlertTitle>{props.title}</AlertTitle>
         {props.children}
       </Alert>

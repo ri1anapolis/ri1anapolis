@@ -153,7 +153,17 @@ const ContatoSectionContent = () => {
                   <ListItemIcon className={classes.listItemIcon}>
                     <WhatsAppIcon />
                   </ListItemIcon>
-                  <ListItemText primary="(62) 3937-4650" />
+                  <ListItemText
+                    primary={
+                      <Link
+                        className={classes.contactLink}
+                        target="_blank"
+                        href="https://wa.me/556239374650"
+                      >
+                        (62) 3937-4650
+                      </Link>
+                    }
+                  />
                 </ListItem>
                 <ListItem className={classes.listItem}>
                   <ListItemIcon className={classes.listItemIcon}>
