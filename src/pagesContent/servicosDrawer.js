@@ -1,6 +1,7 @@
 import React from "react"
 import { createStore, useStore } from "react-hookstore"
-import { Typography, Button } from "@material-ui/core"
+import { Typography, Button, IconButton } from "@material-ui/core"
+import CloseIcon from "@material-ui/icons/Close"
 
 import Drawer from "../components/drawer"
 import Panel from "../components/simpleExpansionPanel"
@@ -28,6 +29,14 @@ const ServicosDrawer = props => {
       open={drawer}
       onClose={() => setDrawer(false)}
     >
+      <IconButton
+        size="small"
+        style={{ float: "right" }}
+        onClick={() => setDrawer(false)}
+      >
+        <CloseIcon fontSize="small" />
+      </IconButton>
+
       <Typography component="h3" variant="h5">
         Serviços
       </Typography>
