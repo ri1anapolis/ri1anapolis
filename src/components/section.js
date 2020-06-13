@@ -26,6 +26,12 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     alignItems: "center",
     justifyContent: "center",
+    "& > img": {
+      width: "auto",
+      height: "auto",
+      maxWidth: "100%",
+      maxHeight: "100%",
+    },
   },
   backgroundDefault: props => ({
     background: `#333 url("${props.backgroundImage}") no-repeat`,
