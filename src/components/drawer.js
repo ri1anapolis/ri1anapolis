@@ -7,6 +7,18 @@ const useStyles = makeStyles(theme => ({
     "& > div": {
       overflowX: "hidden",
       scrollbarWidth: "thin",
+      "&::-webkit-scrollbar": {
+        width: "6px",
+        height: "6px",
+        backgroundColor: "#F5F5F5",
+        overflowX: "auto",
+      },
+      "&::-webkit-scrollbar-thumb": {
+        borderRadius: "10px",
+        "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,.3)",
+        backgroundColor: "#f0f0f0",
+        overflowX: "auto",
+      },
     },
   },
   content: {

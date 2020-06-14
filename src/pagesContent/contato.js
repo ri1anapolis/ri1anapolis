@@ -64,13 +64,14 @@ const ContatoSectionContent = () => {
           <Typography component="h1" variant="h4">
             Endereço e Contato
           </Typography>
-          <br />
-          <Typography variant="body2">
-            Agende um horário, tire dúvias, faça uma visita. <br />O atendimento
+
+          <Typography>
+            Agende um horário, tire dúvias, faça uma visita. O atendimento
             presencial e pelos canais de comunicação se dá de segunda a
             sexta-feira das 08:00h as 17:00h
           </Typography>
           <br />
+
           <Grid container xs={12} justify="space-around">
             <Grid
               container

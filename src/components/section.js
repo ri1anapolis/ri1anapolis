@@ -10,6 +10,21 @@ const useStyles = makeStyles(theme => ({
     width: "100vw",
     color: "#555555",
     textAlign: "justify",
+    "& div, aside, section": {
+      scrollbarWidth: "thin",
+      "&::-webkit-scrollbar": {
+        width: "4px",
+        height: "4px",
+        backgroundColor: "#F5F5F5",
+        overflowX: "auto",
+      },
+      "&::-webkit-scrollbar-thumb": {
+        borderRadius: "10px",
+        "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,.3)",
+        backgroundColor: "#f0f0f0",
+        overflowX: "auto",
+      },
+    },
   },
   articleWrapper: {
     maxWidth: "1260px",
@@ -26,6 +41,8 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     alignItems: "center",
     justifyContent: "center",
+    overflowX: "hidden",
+
     "& > img": {
       width: "auto",
       height: "auto",

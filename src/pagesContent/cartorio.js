@@ -18,21 +18,23 @@ const CartorioSectionContent = () => {
         <Typography component="h1" variant="h4">
           O Cartório
         </Typography>
-        <br />
+
         <Typography component="h3" variant="h6">
           Missão
         </Typography>
-        <p>
+        <Typography>
           Garantir segurança jurídica e publicidade das transações imobiliárias
           com agilidade, eficiência e qualidade.
-        </p>
+        </Typography>
+        <br />
         <Typography component="h3" variant="h6">
           Visão
         </Typography>
-        <p>
+        <Typography>
           Ser reconhecido como o melhor cartório pela qualidade e rapidez no
           serviço, ambiente interno e retorno à sociedade.
-        </p>
+        </Typography>
+        <br />
         <Typography component="h3" variant="h6">
           Valores
         </Typography>
@@ -62,13 +64,14 @@ const CartorioSectionContent = () => {
             usuário;
           </li>
         </ul>
+        <br />
         <Typography component="h3" variant="h6">
           Política da qualidade
         </Typography>
-        <p>
+        <Typography>
           Buscar a melhoria contínua e a satisfação dos seus clientes, conforme
           disposto em sua missão, visão e valores.
-        </p>
+        </Typography>
       </Section>
       <Aside>
         <img src={image.file.publicURL} alt="teste" />
