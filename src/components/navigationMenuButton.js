@@ -1,5 +1,6 @@
 import React from "react"
 import { Grid, Button, makeStyles } from "@material-ui/core"
+import smoothScroll from "../utils/smoothScroll"
 
 const useStyles = makeStyles(theme => ({
   menuButton: {
@@ -32,6 +33,7 @@ const MenuButton = props => {
           size="large"
           className={classes.menuButton}
           href={props.href}
+          onClick={event => smoothScroll(event)}
         >
           {props.text}
         </Button>
