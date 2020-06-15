@@ -31,7 +31,7 @@ const ProtocolosSectionContent = () => {
         <br />
       </Section>
       <Aside>
-        <Container style={{ maxHeight: "400px" }}>
+        <Container style={{ maxHeight: "400px", margin: "0", padding: "0" }}>
           <StyledTimelineComponent
             items={[
               { title: "Protocolo", description: "Prenotação do serviço." },

@@ -10,6 +10,12 @@ import {
   TimelineContent,
 } from "@material-ui/lab"
 
+const StyledTimeline = withStyles(themes => ({
+  root: {
+    padding: 0,
+  },
+}))(Timeline)
+
 const StyledTimelineItem = withStyles(theme => ({
   missingOppositeContent: {
     "&::before": {
@@ -53,7 +59,7 @@ function styledTimelineItems(items) {
 const StyledTimelineComponent = props => {
   const timelineItems = styledTimelineItems(props.items)
 
-  return <Timeline>{timelineItems}</Timeline>
+  return <StyledTimeline>{timelineItems}</StyledTimeline>
 }
 
 export default StyledTimelineComponent
