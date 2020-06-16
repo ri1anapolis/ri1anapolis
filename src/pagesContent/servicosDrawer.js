@@ -9,7 +9,7 @@ import Panel from "../components/simpleExpansionPanel"
 const toogleDrawer = createStore("drawerStore", false)
 
 const OpenDrawerButton = props => {
-  const [drawer, setDrawer] = useStore(toogleDrawer)
+  const setDrawer = useStore(toogleDrawer)[1]
   return (
     <Button {...props} onClick={() => setDrawer(true)}>
       {props.children}

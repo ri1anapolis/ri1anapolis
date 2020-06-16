@@ -9,6 +9,7 @@ import {
   TimelineConnector,
   TimelineContent,
 } from "@material-ui/lab"
+import DefaultIcon from "@material-ui/icons/BlurOn"
 
 const StyledTimeline = withStyles(themes => ({
   root: {
@@ -32,15 +33,17 @@ const StyledPaper = withStyles(theme => ({
   },
 }))(Paper)
 
-function styledTimelineItems(items) {
+function StyledTimelineItems(items) {
   const itemsSize = items.length
 
-  const timelineItens = items.map((item, index) => {
+  const timelineItems = items.map((item, index) => {
     const lastItem = index + 1 === itemsSize ? false : true
     return (
       <StyledTimelineItem key={index}>
         <TimelineSeparator>
-          <TimelineDot />
+          <TimelineDot variant="outlined">
+            {(!!item.icon && item.icon) || <DefaultIcon color="grey" />}
+          </TimelineDot>
           {lastItem && <TimelineConnector />}
         </TimelineSeparator>
         <TimelineContent>
@@ -53,11 +56,11 @@ function styledTimelineItems(items) {
     )
   })
 
-  return timelineItens
+  return timelineItems
 }
 
 const StyledTimelineComponent = props => {
-  const timelineItems = styledTimelineItems(props.items)
+  const timelineItems = StyledTimelineItems(props.items)
 
   return <StyledTimeline>{timelineItems}</StyledTimeline>
 }

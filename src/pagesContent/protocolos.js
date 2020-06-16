@@ -1,10 +1,50 @@
-import React from "react"
+import React, { useState } from "react"
+import PropTypes from "prop-types"
 import { Container, Typography } from "@material-ui/core"
+import { Tabs, Tab } from "@material-ui/core"
 import { Article, Section, Aside } from "../components/section"
 import StyledSearchField from "../components/searchProtocol"
 import StyledTimelineComponent from "../components/styledTimelineComponent"
+import ProtocolosRegistrosTimeline from "./protocolosRegistrosTimeline"
+
+const tabBaseId = "timelineTabPanel-"
+
+function TabPanel(props) {
+  const { children, value, index, ...other } = props
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`${tabBaseId}${index}`}
+      aria-labelledby={`${tabBaseId}-${index}`}
+      {...other}
+    >
+      {value === index && <>{children}</>}
+    </div>
+  )
+}
+
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
+}
+
+function tabProps(index) {
+  return {
+    id: `${tabBaseId}${index}`,
+    "aria-controls": `${tabBaseId}${index}`,
+  }
+}
 
 const ProtocolosSectionContent = () => {
+  const [value, setValue] = useState(0)
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue)
+  }
+
   return (
     <Article id="protocolos">
       <Section>
@@ -30,95 +70,17 @@ const ProtocolosSectionContent = () => {
         </Typography>
         <br />
       </Section>
-      <Aside>
-        <Container style={{ maxHeight: "400px", margin: "0", padding: "0" }}>
-          <StyledTimelineComponent
-            items={[
-              { title: "Protocolo", description: "Prenotação do serviço." },
-              {
-                title: "Pré-Registro",
-                description: "Emissão das certidões necessárias ao processo.",
-              },
-              {
-                title: "Aguardando Reingresso",
-                description:
-                  "Aguardando a parte cumprir as exigências necessárias para registro.",
-              },
-              {
-                title: "Tratamento Inicial",
-                description:
-                  "Tratamento e digitalização da documentação apresentada.",
-              },
-              {
-                title: "Prot. Viculados",
-                description:
-                  "O protocolo em questão fica aguardando o cumprimento das exigências de outro protocolo vinculado.",
-              },
-              {
-                title: "Distribuição",
-                description:
-                  "Sorteio e distribuição dos processos entre os escreventes.",
-              },
-              {
-                title: "Análise",
-                description:
-                  "Análise do processo e documentação pelo escrevente.",
-              },
-              {
-                title: "Redistribuição",
-                description:
-                  "O protocolo deverá ser redistribuido para outro escrevente para conferência da análise.",
-              },
-              {
-                title: "Notificação",
-                description:
-                  "Notificação extrajudicial às partes interessadas.",
-              },
-              {
-                title: "Edital",
-                description: "Desenvolvimento e publicação de edital.",
-              },
-              {
-                title: "Conferência de Nota",
-                description:
-                  "Conferência das notas de exigência por parte do oficial registrador.",
-              },
-              {
-                title: "Conferência de Processo",
-                description:
-                  "Análise do processo por outro escrevente em casos complexos.",
-              },
-              { title: "Selagem", description: "Selagem dos documentos." },
-              {
-                title: "Impressão",
-                description: "Impressão da documentação gerada pelo cartório.",
-              },
-              {
-                title: "Assinatura",
-                description: "Assinatura dos atos nas matrículas.",
-              },
-              {
-                title: "Certidão",
-                description: "Emissão de certidões pós atos.",
-              },
-              {
-                title: "Pendencia Caixa",
-                description:
-                  "Há pendências de caixa que necessitam ser sanadas antes da finalização do processo.",
-              },
-              {
-                title: "Balcão/Arquivo",
-                description:
-                  "Processo finalizado, aguardando retirada pelo cliente.",
-              },
-              {
-                title: "Entregue",
-                description: "Processo finalizado e entregue à parte.",
-              },
-              { title: "Cancelados", description: "Protocolo cancelado." },
-            ]}
-          />
-        </Container>
+      <Aside style={{ display: "block" }}>
+        <Tabs value={value} onChange={handleChange}>
+          <Tab label="Registros" {...tabProps(0)} />
+          <Tab label="Certidões" {...tabProps(1)} />
+        </Tabs>
+        <TabPanel value={value} index={0}>
+          <StyledTimelineComponent items={ProtocolosRegistrosTimeline} />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          Certidões
+        </TabPanel>
       </Aside>
     </Article>
   )

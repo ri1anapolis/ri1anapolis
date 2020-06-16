@@ -23,7 +23,6 @@ const Footer = props => {
       className={classes.root}
       alignItems="center"
       justify="space-around"
-      xs="12"
     >
       <Grid item>
         <Typography className={classes.smallText}>

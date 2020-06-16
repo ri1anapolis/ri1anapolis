@@ -43,9 +43,7 @@ const ServicosSectionContent = () => (
           Averbação de Existência de Ação Averbação de Logradouro/Inscrição
         </li>
       </ul>
-      <OpenDrawerButton variant="outlined" color="white">
-        Saiba mais
-      </OpenDrawerButton>
+      <OpenDrawerButton variant="outlined">Saiba mais</OpenDrawerButton>
     </Section>
   </Article>
 )

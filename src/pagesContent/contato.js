@@ -72,7 +72,7 @@ const ContatoSectionContent = () => {
           </Typography>
           <br />
 
-          <Grid container xs={12} justify="space-around">
+          <Grid container justify="space-around">
             <Grid
               container
               item
@@ -81,7 +81,7 @@ const ContatoSectionContent = () => {
               justify="space-around"
               alignItems="center"
             >
-              <List dense="dense" className={classes.list}>
+              <List dense={true} className={classes.list}>
                 <ListItem>
                   <ListItemText
                     className={classes.alignTextRight}
@@ -112,7 +112,7 @@ const ContatoSectionContent = () => {
               justify="space-around"
               alignItems="center"
             >
-              <List dense="dense" className={classes.list}>
+              <List dense={true} className={classes.list}>
                 <ListItem className={classes.listItem}>
                   <ListItemIcon className={classes.listItemIcon}>
                     <MailOutlineIcon />
@@ -192,7 +192,7 @@ const ContatoSectionContent = () => {
         title="cri1_map"
         width="100%"
         height="200"
-        frameborder="0"
+        frameBorder="0"
         style={{ border: 0 }}
         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL4ZOwnikXpMR2Wydv1gsibk&key=AIzaSyBZGM23zN53u0yVFX3rhUA6Yyg7b1lwzY0"
         allowFullScreen
