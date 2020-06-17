@@ -7,6 +7,7 @@ import { ThemeProvider } from "@material-ui/core/styles"
 import { theme, useStyles } from "../config/materialUiTheme"
 import Header from "./header"
 import Footer from "./footer"
+import BackToTopButton from "./backToTopButton"
 
 const Layout = props => {
   const classes = useStyles(props)
@@ -57,6 +58,7 @@ const Layout = props => {
         {props.children}
       </Grid>
       <Footer />
+      <BackToTopButton />
     </ThemeProvider>
   )
 }
