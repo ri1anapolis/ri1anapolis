@@ -30,9 +30,6 @@ let theme = createMuiTheme({
     primary: {
       main: "rgb(75,125,175)",
     },
-    secondary: {
-      main: "#4caf50",
-    },
   },
 
   typography: {
