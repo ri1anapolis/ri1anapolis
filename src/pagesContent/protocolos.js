@@ -84,7 +84,7 @@ const ProtocolosSectionContent = () => {
       </Section>
 
       <Aside style={{ display: "block" }}>
-        <Tabs value={value} onChange={handleChange}>
+        <Tabs value={value} onChange={handleChange} indicatorColor="primary">
           <Tab label="Registros" {...tabProps(0)} />
           <Tab label="Certidões" {...tabProps(1)} />
         </Tabs>

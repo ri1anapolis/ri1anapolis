@@ -11,6 +11,8 @@ import BackToTopButton from "./backToTopButton"
 
 const Layout = props => {
   const classes = useStyles(props)
+  const topElementId = "home"
+
   const {
     file: { publicURL: logo },
   } = useStaticQuery(graphql`
@@ -25,6 +27,7 @@ const Layout = props => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header
+        id={topElementId}
         logo={logo}
         title={
           <>
@@ -58,7 +61,7 @@ const Layout = props => {
         {props.children}
       </Grid>
       <Footer />
-      <BackToTopButton />
+      <BackToTopButton href={topElementId} />
     </ThemeProvider>
   )
 }

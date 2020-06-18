@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const HeaderComponent = props => {
-  const { links, title, description, logo } = props
+  const { links, title, description, logo, id } = props
   const classes = useStyles(props)
   const linksList = links.map((link, index) => {
     return <MenuButton key={index} href={link.href} text={link.text} />
@@ -39,7 +39,7 @@ const HeaderComponent = props => {
 
   return (
     <>
-      <Box component="header" className={classes.headerContainer}>
+      <Box component="header" id={id} className={classes.headerContainer}>
         <Grid
           container
           direction="column"
