@@ -33,12 +33,14 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SimplePanelComponent = props => {
+  const { title, children, ...other } = props
   const classes = useStyles({ ...props })
 
   const linksList = props.links || []
-  const downloadLinks = linksList.map(link => {
+  const downloadLinks = linksList.map((link, index) => {
     return (
       <DownloadButton
+        key={index}
         href={link.href}
         target="_blank"
         startIcon={<DescriptionIcon />}
@@ -49,18 +51,18 @@ const SimplePanelComponent = props => {
   })
 
   return (
-    <ExpansionPanel>
+    <ExpansionPanel {...other}>
       <ExpansionPanelSummary expandIcon={<ExpandMore />}>
         <Typography
           component="h3"
           variant="subtitle2"
           className={classes.title}
         >
-          {props.title}
+          {title}
         </Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        <Typography variant="caption">{props.children}</Typography>
+        <Typography variant="caption">{children}</Typography>
       </ExpansionPanelDetails>
       <ExpansionPanelActions className={classes.actionsPanel}>
         {downloadLinks}

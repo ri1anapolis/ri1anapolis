@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { createStore, useStore } from "react-hookstore"
 import { Typography, Button, IconButton } from "@material-ui/core"
 import CloseIcon from "@material-ui/icons/Close"
@@ -21,6 +21,18 @@ const ServicosDrawer = props => {
   const [drawer, setDrawer] = useStore(toogleDrawer)
   const anchor = props.anchor || "left"
   const variant = props.variant || "temporary"
+
+  useEffect(() => {
+    function handleBrowserBackButton(event) {
+      setDrawer(false)
+    }
+
+    if (drawer) {
+      window.history.pushState(null, document.title, document.location.href)
+      window.addEventListener("popstate", handleBrowserBackButton)
+    }
+    return () => window.removeEventListener("popstate", handleBrowserBackButton)
+  }, [drawer, setDrawer])
 
   return (
     <Drawer
@@ -62,7 +74,8 @@ const ServicosDrawer = props => {
       <Panel
         title="Distrato"
         links={[
-          { href: "https://duckduckgo.com", text: "Documentos necessários" },
+          { href: "https://duckduckgo.com", text: "Requerimento" },
+          { href: "https://duckduckgo.com", text: "Modelos" },
         ]}
       >
         Vivamus in euismod eros, vel dignissim felis. Ut sagittis turpis nec
