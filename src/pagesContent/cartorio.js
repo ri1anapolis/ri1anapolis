@@ -6,7 +6,7 @@ import { Typography } from "@material-ui/core"
 const CartorioSectionContent = () => {
   const image = useStaticQuery(graphql`
     query {
-      file(name: { regex: "/about/" }) {
+      file(name: { regex: "/cherry-lips/" }) {
         publicURL
       }
     }
@@ -74,7 +74,11 @@ const CartorioSectionContent = () => {
         </Typography>
       </Section>
       <Aside>
-        <img src={image.file.publicURL} alt="teste" />
+        <img
+          src={image.file.publicURL}
+          alt="teste"
+          style={{ maxHeight: "600px" }}
+        />
       </Aside>
     </Article>
   )
