@@ -1,6 +1,7 @@
 import React from "react"
 import { Typography } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import { Article, Section, Aside } from "../components/section"
 import { ServicosDrawer, OpenDrawerButton } from "./servicosDrawer"
@@ -8,8 +9,12 @@ import { ServicosDrawer, OpenDrawerButton } from "./servicosDrawer"
 const ServicosSectionContent = () => {
   const image = useStaticQuery(graphql`
     query {
-      file(name: { regex: "/documentos/" }) {
-        publicURL
+      file(relativePath: { eq: "servicos.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 600, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
     }
   `)
@@ -19,7 +24,11 @@ const ServicosSectionContent = () => {
       <ServicosDrawer />
 
       <Aside>
-        <img src={image.file.publicURL} alt="teste" />
+        <Img
+          fluid={image.file.childImageSharp.fluid}
+          alt="Serviços"
+          style={{ width: "100%" }}
+        />
       </Aside>
       <Section>
         <Typography component="h1" variant="h4">

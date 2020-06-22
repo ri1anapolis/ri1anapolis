@@ -21,7 +21,7 @@ const ContatoSectionContent = () => {
     file: { publicURL: place },
   } = useStaticQuery(graphql`
     query {
-      file(name: { eq: "local-world" }, ext: { eq: ".svg" }) {
+      file(relativePath: { eq: "localizacao.svg" }) {
         publicURL
       }
     }

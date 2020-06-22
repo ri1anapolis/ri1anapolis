@@ -42,13 +42,6 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     justifyContent: "center",
     overflowX: "hidden",
-
-    "& > img": {
-      width: "auto",
-      height: "auto",
-      maxWidth: "100%",
-      maxHeight: "100%",
-    },
   },
   backgroundDefault: props => ({
     background: `#333 url("${props.backgroundImage}") no-repeat`,
@@ -107,11 +100,19 @@ const ArticleWrapper = props => {
 
 const Article = props => {
   const {
-    file: { publicURL: backgroundImage },
+    file: {
+      childImageSharp: {
+        fluid: { src: backgroundImage },
+      },
+    },
   } = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "section_bg.jpg" }) {
-        publicURL
+        childImageSharp {
+          fluid {
+            src
+          }
+        }
       }
     }
   `)

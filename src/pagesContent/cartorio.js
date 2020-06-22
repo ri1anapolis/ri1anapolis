@@ -1,4 +1,5 @@
 import React from "react"
+import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { Article, Section, Aside } from "../components/section"
 import { Typography } from "@material-ui/core"
@@ -6,8 +7,12 @@ import { Typography } from "@material-ui/core"
 const CartorioSectionContent = () => {
   const image = useStaticQuery(graphql`
     query {
-      file(name: { regex: "/cherry-lips/" }) {
-        publicURL
+      file(relativePath: { eq: "cartorio.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 600, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
       }
     }
   `)
@@ -74,10 +79,10 @@ const CartorioSectionContent = () => {
         </Typography>
       </Section>
       <Aside>
-        <img
-          src={image.file.publicURL}
-          alt="teste"
-          style={{ maxHeight: "600px" }}
+        <Img
+          fluid={image.file.childImageSharp.fluid}
+          alt="Imagem da equipe do cartório"
+          style={{ width: "100%" }}
         />
       </Aside>
     </Article>
