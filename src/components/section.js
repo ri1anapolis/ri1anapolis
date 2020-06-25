@@ -1,5 +1,4 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { Grid, makeStyles } from "@material-ui/core"
 import clsx from "clsx"
 
@@ -43,11 +42,12 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     overflowX: "hidden",
   },
-  backgroundDefault: props => ({
-    background: `#333 url("${props.backgroundImage}") no-repeat`,
+  backgroundDefault: {
+    background:
+      "linear-gradient(45deg, rgba(55,66,62,1) 0%, rgba(86,88,74,1) 50%, rgba(55,66,62,1) 100%)",
     backgroundSize: "cover",
     color: "#fff",
-  }),
+  },
 }))
 
 const Section = props => {
@@ -99,25 +99,7 @@ const ArticleWrapper = props => {
 }
 
 const Article = props => {
-  const {
-    file: {
-      childImageSharp: {
-        fluid: { src: backgroundImage },
-      },
-    },
-  } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "section_bg.jpg" }) {
-        childImageSharp {
-          fluid {
-            src
-          }
-        }
-      }
-    }
-  `)
-
-  const classes = useStyles({ backgroundImage, ...props })
+  const classes = useStyles()
 
   return (
     <Grid

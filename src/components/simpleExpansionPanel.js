@@ -43,6 +43,7 @@ const SimplePanelComponent = props => {
         key={index}
         href={link.href}
         target="_blank"
+        rel="noreferrer"
         startIcon={<DescriptionIcon />}
       >
         {link.text}

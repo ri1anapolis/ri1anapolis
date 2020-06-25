@@ -124,6 +124,7 @@ const ContatoSectionContent = () => {
                           <Link
                             className={classes.contactLink}
                             target="_blank"
+                            rel="noreferrer"
                             href="mailto:primeirocartorioregistro@gmail.com"
                           >
                             primeirocartorioregistro
@@ -159,6 +160,7 @@ const ContatoSectionContent = () => {
                       <Link
                         className={classes.contactLink}
                         target="_blank"
+                        rel="noreferrer"
                         href="https://wa.me/556239374650"
                       >
                         (62) 3937-4650
@@ -175,6 +177,7 @@ const ContatoSectionContent = () => {
                       <Link
                         className={classes.contactLink}
                         target="_blank"
+                        rel="noreferrer"
                         href="https://www.instagram.com/ri1anapolis/"
                       >
                         @ri1anapolis

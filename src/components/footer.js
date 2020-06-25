@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
     padding: "40px 10px",
     color: "rgba(255,255,255,1)",
     background:
-      "linear-gradient(45deg, rgba(46,108,162,1) 0%, rgba(80,149,138,1) 100%)",
+      "linear-gradient(45deg, rgba(46,96,162,0.9) 0%, rgba(80,149,107,0.9) 150%)",
   },
   smallText: {
     fontSize: "12px",
