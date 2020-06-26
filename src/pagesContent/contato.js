@@ -44,7 +44,6 @@ const ContatoSectionContent = () => {
       maxWidth: "75px",
       maxHeight: "75px",
       margin: "0 5px",
-      filter: "invert()",
     },
     alignTextRight: {
       textAlign: "right",

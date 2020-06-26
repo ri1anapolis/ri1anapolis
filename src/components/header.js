@@ -10,7 +10,7 @@ const GradienBgImage = styled(BackgroundImage)({
   backgroundSize: "cover",
   background: "rgb(80,149,107)",
   background:
-    "linear-gradient(45deg, rgba(80,149,107,0.9) 0%, rgba(46,96,162,0.9) 50%)",
+    "linear-gradient(45deg, rgba(80,149,107,0.95) 0%, rgba(46,96,162,0.95) 50%)",
   backgroundSize: "cover",
 })
 
@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
   headerImg: {
     width: "105px",
     height: "130px",
-    filter: "invert(1)",
   },
 }))
 

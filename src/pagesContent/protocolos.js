@@ -19,7 +19,7 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={value !== index}
       id={`${tabBaseId}${index}`}
-      aria-labelledby={`${tabBaseId}-${index}`}
+      aria-labelledby={`${tabBaseId}${index}`}
       {...other}
     >
       <Box

@@ -29,9 +29,14 @@ const ServicosDrawer = props => {
 
     if (drawer) {
       window.history.pushState(null, document.title, document.location.href)
-      window.addEventListener("popstate", handleBrowserBackButton)
+      window.addEventListener("popstate", handleBrowserBackButton, {
+        passive: true,
+      })
     }
-    return () => window.removeEventListener("popstate", handleBrowserBackButton)
+    return () =>
+      window.removeEventListener("popstate", handleBrowserBackButton, {
+        passive: true,
+      })
   }, [drawer, setDrawer])
 
   return (
