@@ -9,7 +9,7 @@ const CartorioSectionContent = () => {
     query {
       file(relativePath: { eq: "cartorio.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 600, quality: 90) {
+          fluid(maxWidth: 500, quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

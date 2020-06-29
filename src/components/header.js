@@ -54,7 +54,7 @@ const HeaderComponent = props => {
     query {
       file(relativePath: { eq: "header_bg.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 1920) {
+          fluid(quality: 80, maxWidth: 1366) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

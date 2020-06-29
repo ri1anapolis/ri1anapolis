@@ -11,7 +11,7 @@ const ServicosSectionContent = () => {
     query {
       file(relativePath: { eq: "servicos.png" }) {
         childImageSharp {
-          fluid(maxWidth: 600, quality: 90) {
+          fluid(maxWidth: 500, quality: 80) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
