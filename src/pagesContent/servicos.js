@@ -37,37 +37,20 @@ const ServicosSectionContent = () => {
 
         <Typography>
           Ao solicitar qualquer tipo de registro e/ou averbação, é necessária a
-          apresentação de uma série de documentos obrigatórios. Abaixo é
-          possível verificar quais são os documentos necessários de acordo com
-          cada tipo de ato. Importante ressaltar que, dependendo da análise
-          jurídica do protocolo, poderá haver o pedido de complementação de
+          apresentação de uma série de documentos obrigatórios. Durante a
+          análise do processo é possível ainda que seja necessária a
+          complementação de documentos.
+        </Typography>
+        <Typography>
+          Nessa seção será possível consultar e baixar os documentos necessários
+          para registro, bem como modelos de requerimentos e outros tipos de
           documentos.
         </Typography>
         <br />
         <Typography>
-          Portanto, a listagem fornecida serve como auxílio inicial, mas pode
-          não ser definitiva. Usuário, caso você tenha um programa anti pop-up,
-          você deverá desativá-lo. Documentos
+          Estamos trabalhando arduamente para disponibilizar todos os arquivos,
+          documentos e informações tão logo quanto possível.
         </Typography>
-        <ul>
-          <li>
-            Adjudicação Compulsória Alienação Fiduciária Sem Compra e Venda
-          </li>
-          <li>
-            Alteração de imóvel Rural para Urbano Arresto Averbação de Alteração
-            de
-          </li>
-          <li>
-            Razão Social Averbação de Casamento Averbação de Construção – Imóvel
-          </li>
-          <li>
-            Rural Averbação de Construção – Imóvel Urbano Averbação de Demolição
-          </li>
-          <li>
-            Averbação de Existência de Ação Averbação de Logradouro/Inscrição
-          </li>
-        </ul>
-        <OpenDrawerButton variant="outlined">Saiba mais</OpenDrawerButton>
       </Section>
     </Article>
   )

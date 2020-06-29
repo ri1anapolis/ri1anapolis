@@ -28,55 +28,76 @@ const CartorioSectionContent = () => {
           Missão
         </Typography>
         <Typography>
-          Garantir segurança jurídica e publicidade das transações imobiliárias
-          com agilidade, eficiência e qualidade.
+          Garantir a segurança jurídica, publicidade e eficácia dos atos
+          jurídicos registrais de forma ágil, satisfatória e com qualidade, à
+          luz da legislação vigente.
         </Typography>
         <br />
         <Typography component="h3" variant="h6">
           Visão
         </Typography>
         <Typography>
-          Ser reconhecido como o melhor cartório pela qualidade e rapidez no
-          serviço, ambiente interno e retorno à sociedade.
+          Prestar um serviço público registral de excelência máxima, com a
+          melhor estrutura, equipe e tecnologias, visando a máxima eficiência,
+          agilidade e conhecimento técnicos e no atendimento ao público.
         </Typography>
         <br />
         <Typography component="h3" variant="h6">
           Valores
         </Typography>
+        <Typography>
+          São nossos valores, que devem permear todas as atividades
+          desenvolvidas na Serventia:
+        </Typography>
         <ul>
           <li>
-            <strong>Segurança jurídica</strong> – na prestação do serviço;
+            <strong>Profissionalismo</strong> - Busca por capacitação
+            profissional permanente;
           </li>
           <li>
-            <strong>Respeito e cordialidade</strong> – no relacionamento com as
-            pessoas;
+            <strong>Comprometimento</strong> - Cumprir em todos os atos o art.
+            1º, parágrafo único, da Constituição Federal, e demais normas legais
+            e regimentais pertinentes, e buscar o sucesso da organização;
           </li>
           <li>
-            <strong>Ética </strong>– no desempenho da função;
+            <strong>Capacidade de Iniciativa</strong> - Agir com criatividade e
+            por iniciativa própria frente às necessidades do ambiente de
+            trabalho, evitando a estagnação na relação funcional;
           </li>
           <li>
-            <strong>Conhecimento</strong> – por meio da capacitação da equipe,
-            comportamental e técnica;
+            <strong>Integridade Moral e Ética</strong> - Ser um espelho de moral
+            e ética frente aos usuários e aos demais colaboradores, demonstrando
+            de forma clara a perfeita honestidade na condução dos trabalhos e na
+            vida pessoal;
           </li>
           <li>
-            <strong>Inovação tecnológica;</strong>
+            <strong>Impessoalidade</strong> - Tratamento igualitário para todos,
+            independentemente de classe social, sexo, cor, raça ou qualquer
+            outro parâmetro de distinção, salvo quando a distinção for
+            necessária para possibilitar a igualdade material entre os usuários;
           </li>
           <li>
-            <strong>Agilidade e eficiência</strong> – na realização dos atos;
+            <strong>Eficiência</strong> - Uso das melhores tecnologias e
+            procedimentos que tragam economia de tempo e meios materiais,
+            visando a segurança jurídica ao trânsito de direitos ligados ao
+            setor imobiliário no Município;
           </li>
           <li>
-            <strong>Comprometimento</strong> – com as necessidades legítimas do
-            usuário;
+            <strong>Solidez Econômica</strong> - Valorizar os resultados
+            econômicos, por ser uma das determinantes do desenvolvimento e
+            manutenção do Cartório e da equipe que o compõe;
+          </li>
+          <li>
+            <strong>Espírito de Equipe</strong> - Integrar-se constantemente ao
+            processo e ao grupo de trabalho, como forma de alimentar o
+            crescimento e o sucesso da organização;
+          </li>
+          <li>
+            <strong>Respeito ao Próximo</strong> - Tratar a todos com atitudes
+            de respeito e consideração, independentemente das inclinações
+            pessoais.
           </li>
         </ul>
-        <br />
-        <Typography component="h3" variant="h6">
-          Política da qualidade
-        </Typography>
-        <Typography>
-          Buscar a melhoria contínua e a satisfação dos seus clientes, conforme
-          disposto em sua missão, visão e valores.
-        </Typography>
       </Section>
       <Aside>
         <Img

@@ -10,6 +10,7 @@ import {
   Link,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
+import Alert from "@material-ui/lab/Alert"
 import { Article, Section } from "../components/section"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
@@ -69,6 +70,23 @@ const ContatoSectionContent = () => {
             presencial e pelos canais de comunicação se dá de segunda a
             sexta-feira das 08:00h as 17:00h
           </Typography>
+          <br />
+
+          <Alert severity="warning" align="justify">
+            A Corregedoria Geral da Justiça do Estado de Goiás determinou, por
+            meio da{" "}
+            <Link
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.tjgo.jus.br/images/docs/corregedoria/PORTARIA_N57_2020.pdf"
+            >
+              Portaria nº 57, de 6 de abril de 2020
+            </Link>
+            , que o atendimento presencial ao público, prestado pelos cartórios,
+            deverão ocorrer das 10h às 16h, todos os dias úteis, com horário
+            previamente agendado, enquanto durar a crise sanitária causada pelo
+            Corona Vírus.
+          </Alert>
           <br />
 
           <Grid container justify="space-around">
@@ -191,9 +209,10 @@ const ContatoSectionContent = () => {
       </Article>
 
       <iframe
+        rel="preconnect"
         title="cri1_map"
         width="100%"
-        height="200"
+        height="300"
         frameBorder="0"
         style={{ border: 0 }}
         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL4ZOwnikXpMR2Wydv1gsibk&key=AIzaSyBZGM23zN53u0yVFX3rhUA6Yyg7b1lwzY0"
