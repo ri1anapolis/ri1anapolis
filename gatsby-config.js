@@ -5,7 +5,6 @@ module.exports = {
     author: `André Martins`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,17 +26,25 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO`,
+        short_name: `1º RI de Anápolis`,
+        lang: `pt-BR`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
+        cache_busting_mode: "none",
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo_icon.svg`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-offline",
+      options: {
+        workboxConfig: {
+          globPatterns: ["**/*"],
+        },
+      },
+    },
+    `gatsby-plugin-react-helmet`,
   ],
 }
