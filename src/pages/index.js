@@ -5,6 +5,7 @@ import SectionProtocolos from "../pagesContent/protocolos"
 import SectionServicos from "../pagesContent/servicos"
 import SectionCartorio from "../pagesContent/cartorio"
 import SectionContato from "../pagesContent/contato"
+import ModalAviso from "../pagesContent/modalAviso"
 
 const IndexPage = () => (
   <Layout>
@@ -13,6 +14,7 @@ const IndexPage = () => (
     <SectionServicos />
     <SectionCartorio />
     <SectionContato />
+    <ModalAviso />
   </Layout>
 )
 
