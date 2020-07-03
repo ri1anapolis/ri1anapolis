@@ -2,6 +2,8 @@
 
 Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b21d6f83-2824-404b-8f63-4d4ecc0ee483/deploy-status)](https://app.netlify.com/sites/cocky-williams-b215ac/deploys)
+
 ## Apresentação
 
 Esse é um site estático feito em Gatsby (React) que usa como backend para as buscas por protocolos o serviço do MongoDB Cloud (Atlas e Realm/Stitch).
