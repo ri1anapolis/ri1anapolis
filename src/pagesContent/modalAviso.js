@@ -13,14 +13,8 @@ const ModalAviso = () => {
       image={avisoImg}
       links={[
         {
-          text: "Protocolo",
-          href: "#protocolos",
-          variant: "outlined",
-          color: "primary",
-        },
-        {
-          text: "Contato",
-          href: "#contato",
+          text: "Ir para o site",
+          href: null,
           variant: "contained",
           color: "primary",
         },
@@ -40,7 +34,7 @@ const ModalAviso = () => {
       <br />
       <br />
       Aqui no site você pode consultar seu protocolo online ou acessar nossos
-      canais de comunicação! Clique nos botões abaixo:
+      canais de comunicação!
     </StyledModalComponent>
   )
 }

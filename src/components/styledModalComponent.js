@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Modal, Backdrop, Fade } from "@material-ui/core"
 import { Typography, Divider } from "@material-ui/core"
 import { Avatar, Button, IconButton } from "@material-ui/core"
@@ -47,39 +47,41 @@ const StyledModalComponent = props => {
   const classes = useStyles(props)
   const { autoOpenModal, title, subtitle, image, links, children } = props
   const [openModal, setOpenModal] = useState(autoOpenModal)
+
+  //BUG: Close the modal and go to the link/anchor is not working on mobile.
+  //     God knows I tried, but I coul not understand why it behaves this way
+  //     on mobiles.
+  //TODO: Fix problem with anchor links on mobile devices.
   const handleClose = () => setOpenModal(false)
 
-  const handleButtonOnClick = event => {
-    function goToAnchorAndStripHash() {
-      window.location.href = event.currentTarget.href
-      setTimeout(() => {
-        // when called the code below without the timeout, it work but, somehow,
-        // the url bar get the hash again. the way I found to prevent this behaviour was setting a timeout
-        window.history.replaceState(
-          "",
-          document.title,
-          window.location.pathname + window.location.search
-        )
-      }, 50)
+  useEffect(() => {
+    return () => {
+      // Use this to strip the hash from the URL when using an anchor as href on buttons.
+      window.history.replaceState(
+        "",
+        document.title,
+        window.location.pathname + window.location.search
+      )
     }
+  })
 
-    goToAnchorAndStripHash()
-    handleClose()
-  }
-
-  const modalButtons = links.map((link, index) => (
-    <Button
-      key={index}
-      size="small"
-      color={link.color || "primary"}
-      variant={link.variant}
-      href={link.href}
-      className={classes.button}
-      onClick={event => handleButtonOnClick(event)}
-    >
-      {link.text}
-    </Button>
-  ))
+  const modalButtons = links.map((link, index) => {
+    const { color, variant, href, text, target } = link
+    return (
+      <Button
+        key={index}
+        size="small"
+        color={color || "primary"}
+        variant={variant}
+        href={href}
+        target={target || "_self"}
+        className={classes.button}
+        onClick={handleClose}
+      >
+        {text}
+      </Button>
+    )
+  })
 
   return (
     <Modal
