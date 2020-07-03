@@ -2,9 +2,8 @@ import { ApolloClient, HttpLink, InMemoryCache } from "apollo-boost"
 import { setContext } from "apollo-link-context"
 import { Stitch, UserApiKeyCredential } from "mongodb-stitch-browser-sdk"
 
-const APP_ID = "teste-mciev"
-const APP_KEY =
-  "QRvGGc4tlitv1tYeBBniljU3DgZctq7kRUXD1YkdMK5BRti5KP1nAOs4BEreE19D"
+const APP_ID = process.env.GATSBY_MONGODB_APP_ID
+const APP_KEY = process.env.GATSBY_MONGODB_APP_KEY
 
 const app = Stitch.hasAppClient(APP_ID)
   ? Stitch.getAppClient(APP_ID)
