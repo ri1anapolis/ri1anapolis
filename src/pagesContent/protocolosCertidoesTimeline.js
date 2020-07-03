@@ -11,57 +11,41 @@ import EntregueIcon from "@material-ui/icons/DoneAll"
 
 const ProtocolosCertidoesTimeline = [
   {
-    title: "Caixa",
-    description: "Prenotação do serviço.",
+    title: "Pedido",
+    description: "Cadastro do serviço e triagem da solicitação.",
     icon: <ProtocoloIcon />,
-  },
-  {
-    title: "Emissão",
-    description: "Emissão das certidões necessárias ao processo.",
-    icon: <CertidaoIcon />,
   },
   {
     title: "Pós-Registro",
     description:
-      "Aguardando a parte cumprir as exigências necessárias para registro.",
+      "Aguardando a finalização do protocolo principal para emissão da certidão com o registro/averbação solicitado.",
     icon: <CertidaoIcon />,
   },
   {
-    title: "Busca/Info",
-    description: "Tratamento e digitalização da documentação apresentada.",
-    icon: <BuscaIcon />,
-  },
-  {
     title: "Análise",
-    description:
-      "O protocolo em questão fica aguardando o cumprimento das exigências de outro protocolo vinculado.",
-    icon: <AnaliseIcon />,
+    description: "Análise e pesquisa da solicitação.",
+    icon: <CertidaoIcon />,
   },
   {
     title: "Pendência de Caixa",
-    description: "Sorteio e distribuição dos processos entre os escreventes.",
+    description:
+      "A certidão está finalizada, todavia, há pendências de caixa a serem resolvidas.",
     icon: <PendenciaCaixaIcon />,
   },
   {
-    title: "Cancelados",
-    description: "Análise do processo e documentação pelo escrevente.",
-    icon: <CanceladoIcon />,
-  },
-  {
-    title: "Balcão/Finalizado",
-    description:
-      "O protocolo deverá ser redistribuido para outro escrevente para conferência da análise.",
+    title: "Finalizado",
+    description: "A certidão está disponível para retirada no cartório.",
     icon: <BalcaoIcon />,
   },
   {
-    title: "Arquivo/Vencidas",
-    description: "Notificação extrajudicial às partes interessadas.",
-    icon: <BalcaoIcon />,
-  },
-  {
-    title: "Retirada",
-    description: "Desenvolvimento e publicação de edital.",
+    title: "Entregue",
+    description: "A certidão foi emitida e já foi retirada pelo usuário.",
     icon: <EntregueIcon />,
+  },
+  {
+    title: "Cancelados",
+    description: "O pedido foi cancelado e a certidão não será emitida.",
+    icon: <CanceladoIcon />,
   },
 ]
 

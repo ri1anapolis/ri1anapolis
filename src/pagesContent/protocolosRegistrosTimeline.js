@@ -20,7 +20,7 @@ import CanceladoIcon from "@material-ui/icons/Close"
 const ProtocolosRegistrosTimeline = [
   {
     title: "Protocolo",
-    description: "Prenotação do serviço.",
+    description: "Prenotação do serviço e triagem da documentação.",
     icon: <ProtocoloIcon />,
   },
   {
@@ -31,85 +31,94 @@ const ProtocolosRegistrosTimeline = [
   {
     title: "Aguardando Reingresso",
     description:
-      "Aguardando a parte cumprir as exigências necessárias para registro.",
+      "O cartório agurada a parte cumprir as exigências necessárias para registro.",
     icon: <AguardandoReingressoIcon />,
   },
   {
     title: "Tratamento Inicial",
-    description: "Tratamento e digitalização da documentação apresentada.",
+    description:
+      "Tratamento e digitalização dos documentos e informações apresentados.",
     icon: <TratamentoInicialIcon />,
   },
   {
     title: "Prot. Viculados",
     description:
-      "O protocolo em questão fica aguardando o cumprimento das exigências de outro protocolo vinculado.",
+      "O protocolo em questão fica retido enquanto o cartório aguarda que a parte cumpra as exigências do protocolo principal vinculado.",
     icon: <ProtocolosVinculadosIcon />,
   },
   {
     title: "Distribuição",
-    description: "Sorteio e distribuição dos processos entre os escreventes.",
+    description: "O processo será distribuído a um escrevente.",
     icon: <DistribuicaoIcon />,
   },
   {
     title: "Análise",
-    description: "Análise do processo e documentação pelo escrevente.",
+    description:
+      "Análise jurídica do processo e da documentação pelo escrevente.",
     icon: <AnaliseIcon />,
   },
   {
     title: "Redistribuição",
     description:
-      "O protocolo deverá ser redistribuido para outro escrevente para conferência da análise.",
+      "O processo será distribuído a um segundo escrevente para conferência dos trabalhos realizados até o momento.",
     icon: <DistribuicaoIcon />,
   },
   {
     title: "Notificação",
-    description: "Notificação extrajudicial às partes interessadas.",
+    description:
+      "O cartório prepara a documentação, notifica as partes interessas e aguarda o prazo legal para suas manifestações.",
     icon: <NotificacaoIcon />,
   },
   {
     title: "Edital",
-    description: "Desenvolvimento e publicação de edital.",
+    description:
+      "O cartório formula o edital para notificação ou intimação e aguarda o solicitante publicar e as partes notificadas se manifestarem, de acordo com os prazos legais.",
     icon: <EditalIcon />,
   },
   {
-    title: "Conferência de Nota",
+    title: "Conferência de Nota Devolutiva",
     description:
-      "Conferência das notas de exigência por parte do oficial registrador.",
+      "O processo foi remetido para a análise do oficial do cartório para averiguação das pendências observadas na análise e para a formulação da Nota Devolutiva.",
     icon: <AnaliseIcon />,
   },
   {
     title: "Conferência de Processo",
-    description: "Análise do processo por outro escrevente em casos complexos.",
+    description:
+      "Um segundo escrevente analisa a possibilidade de realização do ato solicitado no processo, por ser de relativa complexibilidade.",
     icon: <AnaliseIcon />,
   },
   {
     title: "Selagem",
-    description: "Selagem dos documentos.",
+    description:
+      "O processo aguarda até que todos os atos praticados sejam selados. Cada selo é fornecido pelo TJGO e garante a autenticidade do ato e o correto recolhimento dos tributos devidos.",
     icon: <SelagemIcon />,
   },
   {
     title: "Impressão",
-    description: "Impressão da documentação gerada pelo cartório.",
+    description:
+      "Os textos dos atos praticados são impressos na matrícula do imóvel.",
     icon: <ImpressaoIcon />,
   },
   {
     title: "Assinatura",
-    description: "Assinatura dos atos nas matrículas.",
+    description:
+      "O Oficial do cartório confere e assina a matrícula do imóvel.",
     icon: <AssinaturaIcon />,
   },
   {
     title: "Certidão",
-    description: "Emissão de certidões pós atos.",
+    description:
+      "Emissão de certidão da matrícula já com o registro/averbação solicitado (certidão pós-registro).",
     icon: <CertidaoIcon />,
   },
   {
-    title: "Pendencia Caixa",
+    title: "Pendência Caixa",
     description:
-      "Há pendências de caixa que necessitam ser sanadas antes da finalização do processo.",
+      "O processo encontra-se finalizado, todavia, há pendências de caixa que devem ser resolvidas antes da entrega da documentação.",
     icon: <PendenciaCaixaIcon />,
   },
   {
-    title: "Balcão/Arquivo",
+    title: "Finalizado",
     description: "Processo finalizado, aguardando retirada pelo cliente.",
     icon: <BalcaoIcon />,
   },

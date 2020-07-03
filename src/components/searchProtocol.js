@@ -3,9 +3,10 @@ import { useLazyQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 import MaskedInput from "react-text-mask"
 import PropTypes from "prop-types"
-import { Grid, TextField, Button } from "@material-ui/core"
+import { Grid, TextField, Button, Link } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import StyledAlertComponent from "./styledAlertComponent"
+import smoothScroll from "../utils/smoothScroll"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -45,27 +46,67 @@ TextMaskCustom.prototype = {
 }
 
 const gqlQuery = gql`
-  query($protocolo: String!) {
-    protocolo(query: { protocolo: $protocolo }) {
-      etapa
-      natureza
-      protocolo
+  query($protocol: String!) {
+    process(query: { name: $protocol }) {
+      name
       status
+      email
+      step {
+        description
+        name
+      }
     }
   }
 `
 
 const StyledTextField = props => {
-  const [protocolo, setProtocolo] = useState(null)
+  const [protocol, setProtocol] = useState(null)
   const [searchable, setSearchable] = useState(false)
   const classes = useStyles(props)
   const [runSearch, { loading, error, data }] = useLazyQuery(gqlQuery)
 
+  const handleErrors = error => {
+    if (error) {
+      const { graphQLErrors, networkError } = error
+
+      if (graphQLErrors && graphQLErrors.length > 0) {
+        return (
+          <StyledAlertComponent severity="error" title="Erro de sistema">
+            Uma falha de sistema ocorreu. Tente novamente mais tarde.
+            <br />
+            Caso já tenha visto essa mensagem anteriormente,{" "}
+            <Link
+              href="#contato"
+              color="secondary"
+              onClick={event => smoothScroll(event)}
+            >
+              <strong>entre em contato</strong>
+            </Link>{" "}
+            e nos informe!
+          </StyledAlertComponent>
+        )
+      }
+
+      if (networkError && networkError.length > 0) {
+        return (
+          <StyledAlertComponent severity="error" title="Erro de conexão">
+            Uma falha na conexão de rede impediu que sua consulta fosse
+            realizada.
+            <br />
+            Verifique se sua conexão com a internet está ativa ou se há algum
+            firewall bloqueando a conexão.
+          </StyledAlertComponent>
+        )
+      }
+    }
+    return
+  }
+
   const handleButtonClick = () => {
     if (searchable) {
-      runSearch({ variables: { protocolo } })
+      runSearch({ variables: { protocol } })
     }
-    setProtocolo(null)
+    setProtocol(null)
     return
   }
 
@@ -75,19 +116,24 @@ const StyledTextField = props => {
   }
 
   useEffect(() => {
-    if (!!protocolo && protocolo.trim().length >= 8) {
-      setProtocolo(protocolo.toUpperCase())
+    if (error)
+      console.log(`::: Erro ao buscar protocolo: ${JSON.stringify(error)}`)
+  })
+
+  useEffect(() => {
+    if (!!protocol && protocol.trim().length >= 8) {
+      setProtocol(protocol.toUpperCase().trim())
       setSearchable(true)
       return
     }
     setSearchable(false)
-  }, [protocolo])
+  }, [protocol])
 
   return (
     <>
       <Grid container className={classes.root} justify="space-between">
         <TextField
-          onChange={event => setProtocolo(event.target.value)}
+          onChange={event => setProtocol(event.target.value)}
           onKeyDown={event => handleEnterKey(event)}
           className={classes.searchbox}
           id={props.id}
@@ -111,37 +157,64 @@ const StyledTextField = props => {
         {loading && <small>Buscando...</small>}
       </Grid>
 
-      {error && Object.keys(error.networkError).length > 0 && (
-        <StyledAlertComponent severity="error" title="Erro de conexão">
-          Uma falha na conexão de rede impediu que sua consulta fosse realizada.
-        </StyledAlertComponent>
-      )}
-      {error && Object.keys(error.graphQLErrors).length > 0 && (
-        <StyledAlertComponent severity="error" title="Erro de sistema">
-          Uma falha de sistema ocorreu. Tente novamente mais tarde.
-        </StyledAlertComponent>
-      )}
+      {error && handleErrors(error)}
 
-      {data && data.protocolo && (
+      {data && data.process && (
         <StyledAlertComponent
           severity="success"
           title={
             <>
-              Protocolo {data.protocolo.protocolo}{" "}
-              <small>({data.protocolo.natureza})</small>
+              <strong>Protocolo {data.process.name}</strong> - Etapa:{" "}
+              {data.process.step.name}
             </>
           }
         >
-          Tramita na etapa "{data.protocolo.etapa}": Etiam interdum faucibus
-          pulvinar. Sed justo urna, semper scelerisque arcu eu, rutrum semper
-          massa. Vestibulum cursus auctor dolor a mattis. Pellentesque nec
-          porttitor metus, id egestas lacus.
+          {data.process.step.description}
+          {data.process.email && (
+            <>
+              <br />
+              <br />
+              E-mail cadastrado: "{data.process.email}"
+            </>
+          )}
+          {data.process.status && (
+            <>
+              <br />
+              <br />
+              <strong>Atenção</strong>: Seu protocolo possui a seguinte
+              observação: "{data.process.status}".
+              <br />
+              Essa situação pode indicar que existe algum problema com o
+              andamento do seu processo. Caso não saiba o que isso significa,{" "}
+              <Link
+                href="#contato"
+                style={{ color: "green" }}
+                onClick={event => smoothScroll(event)}
+              >
+                entre em contato
+              </Link>{" "}
+              com o cartório.
+            </>
+          )}
         </StyledAlertComponent>
       )}
 
-      {data && !data.protocolo && (
-        <StyledAlertComponent severity="info">
-          O protocolo informado não foi encontrado.
+      {data && !data.process && (
+        <StyledAlertComponent
+          severity="info"
+          title="O protocolo informado não foi encontrado!"
+        >
+          Isso pode ocorrer caso o protocolo tenha sido finalizado há muito
+          tempo ou tenha ocorrido uma falha de sincronização com o servidor do
+          cartório.
+          <br />
+          <br />
+          Caso acredite que isso é um erro, entre em contato conosco pelos
+          nossos{" "}
+          <Link href="#contato" onClick={event => smoothScroll(event)}>
+            <strong>canais de atendimento</strong>
+          </Link>
+          .
         </StyledAlertComponent>
       )}
     </>

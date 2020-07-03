@@ -51,51 +51,31 @@ const CartorioSectionContent = () => {
         </Typography>
         <ul>
           <li>
-            <strong>Profissionalismo</strong> - Busca por capacitação
-            profissional permanente;
+            <strong>Profissionalismo</strong>
           </li>
           <li>
-            <strong>Comprometimento</strong> - Cumprir em todos os atos o art.
-            1º, parágrafo único, da Constituição Federal, e demais normas legais
-            e regimentais pertinentes, e buscar o sucesso da organização;
+            <strong>Comprometimento</strong>
           </li>
           <li>
-            <strong>Capacidade de Iniciativa</strong> - Agir com criatividade e
-            por iniciativa própria frente às necessidades do ambiente de
-            trabalho, evitando a estagnação na relação funcional;
+            <strong>Criatividade e Iniciativa</strong>
           </li>
           <li>
-            <strong>Integridade Moral e Ética</strong> - Ser um espelho de moral
-            e ética frente aos usuários e aos demais colaboradores, demonstrando
-            de forma clara a perfeita honestidade na condução dos trabalhos e na
-            vida pessoal;
+            <strong>Integridade Moral e Ética</strong>
           </li>
           <li>
-            <strong>Impessoalidade</strong> - Tratamento igualitário para todos,
-            independentemente de classe social, sexo, cor, raça ou qualquer
-            outro parâmetro de distinção, salvo quando a distinção for
-            necessária para possibilitar a igualdade material entre os usuários;
+            <strong>Impessoalidade e Justiça</strong>
           </li>
           <li>
-            <strong>Eficiência</strong> - Uso das melhores tecnologias e
-            procedimentos que tragam economia de tempo e meios materiais,
-            visando a segurança jurídica ao trânsito de direitos ligados ao
-            setor imobiliário no Município;
+            <strong>Eficiência</strong>
           </li>
           <li>
-            <strong>Solidez Econômica</strong> - Valorizar os resultados
-            econômicos, por ser uma das determinantes do desenvolvimento e
-            manutenção do Cartório e da equipe que o compõe;
+            <strong>Solidez Econômica</strong>
           </li>
           <li>
-            <strong>Espírito de Equipe</strong> - Integrar-se constantemente ao
-            processo e ao grupo de trabalho, como forma de alimentar o
-            crescimento e o sucesso da organização;
+            <strong>Espírito de Equipe</strong>
           </li>
           <li>
-            <strong>Respeito ao Próximo</strong> - Tratar a todos com atitudes
-            de respeito e consideração, independentemente das inclinações
-            pessoais.
+            <strong>Respeito</strong>
           </li>
         </ul>
       </Section>
