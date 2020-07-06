@@ -30,6 +30,7 @@ const StyledPaper = withStyles(theme => ({
     padding: "6px 10px",
     color: "rgb(85, 85, 85)",
     marginBottom: "10px",
+    textAlign: "left",
   },
 }))(Paper)
 

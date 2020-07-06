@@ -5,7 +5,7 @@ import { Fade } from "@material-ui/core"
 const StyledAlertComponent = props => {
   return (
     <Fade in={true}>
-      <Alert severity={props.severity}>
+      <Alert severity={props.severity} align="left">
         <AlertTitle>{props.title}</AlertTitle>
         {props.children}
       </Alert>
