@@ -2,8 +2,6 @@ import React from "react"
 
 import ProtocoloIcon from "@material-ui/icons/PlayArrow"
 import CertidaoIcon from "@material-ui/icons/Description"
-import BuscaIcon from "@material-ui/icons/Search"
-import AnaliseIcon from "@material-ui/icons/Subject"
 import PendenciaCaixaIcon from "@material-ui/icons/AttachMoney"
 import CanceladoIcon from "@material-ui/icons/Close"
 import BalcaoIcon from "@material-ui/icons/LibraryBooks"
@@ -23,7 +21,8 @@ const ProtocolosCertidoesTimeline = [
   },
   {
     title: "Análise",
-    description: "Análise e pesquisa da solicitação.",
+    description:
+      "São feitas as buscas e análises das informações solicitadas e emitida a certidão.",
     icon: <CertidaoIcon />,
   },
   {
