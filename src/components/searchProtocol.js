@@ -67,9 +67,19 @@ const StyledTextField = props => {
 
   const handleErrors = error => {
     if (error) {
-      const { graphQLErrors, networkError } = error
+      const { networkError } = error
 
-      if (graphQLErrors && graphQLErrors.length > 0) {
+      if (networkError && networkError.length > 0) {
+        return (
+          <StyledAlertComponent severity="error" title="Erro de conexão">
+            Uma falha na conexão de rede impediu que sua consulta fosse
+            realizada.
+            <br />
+            Verifique se sua conexão com a internet está ativa ou se há algum
+            firewall bloqueando a conexão.
+          </StyledAlertComponent>
+        )
+      } else {
         return (
           <StyledAlertComponent severity="error" title="Erro de sistema">
             Uma falha de sistema ocorreu. Tente novamente mais tarde.
@@ -86,19 +96,8 @@ const StyledTextField = props => {
           </StyledAlertComponent>
         )
       }
-
-      if (networkError && networkError.length > 0) {
-        return (
-          <StyledAlertComponent severity="error" title="Erro de conexão">
-            Uma falha na conexão de rede impediu que sua consulta fosse
-            realizada.
-            <br />
-            Verifique se sua conexão com a internet está ativa ou se há algum
-            firewall bloqueando a conexão.
-          </StyledAlertComponent>
-        )
-      }
     }
+
     return
   }
 
