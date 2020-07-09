@@ -15,7 +15,8 @@ const GradienBgImage = styled(BackgroundImage)({
 })
 
 const useStyles = makeStyles(theme => ({
-  navigationMenu: {
+  navigationMenu: props => ({
+    display: props.links && props.links.length > 0 ? "flex" : "none",
     "& a": {
       [theme.breakpoints.down("sm")]: {
         margin: "2px",
@@ -24,15 +25,18 @@ const useStyles = makeStyles(theme => ({
         margin: "10px",
       },
     },
-  },
-  headerContainer: {
-    height: "615px",
+  }),
+  headerContainer: props => ({
+    height: props.height || "615px",
     color: "#fff",
-  },
-  headerContent: {
+  }),
+  headerContent: props => ({
     height: "615px",
     padding: "20px 10px",
-  },
+  }),
+  headerExtra: props => ({
+    display: props.children ? "flex" : "none",
+  }),
   headerImg: {
     width: "105px",
     height: "130px",
@@ -40,11 +44,14 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const HeaderComponent = props => {
-  const { links, title, description, logo, id } = props
+  const { children, links, title, description, logo, id } = props
   const classes = useStyles(props)
-  const linksList = links.map((link, index) => {
-    return <MenuButton key={index} href={link.href} text={link.text} />
-  })
+  const linksList =
+    links && links.length > 0
+      ? links.map((link, index) => {
+          return <MenuButton key={index} href={link.href} text={link.text} />
+        })
+      : []
 
   const {
     file: {
@@ -112,6 +119,9 @@ const HeaderComponent = props => {
             className={classes.navigationMenu}
           >
             {linksList}
+          </Grid>
+          <Grid item container justify="center" className={classes.headerExtra}>
+            {children}
           </Grid>
         </Grid>
       </GradienBgImage>
