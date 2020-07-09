@@ -1,8 +1,31 @@
+const siteUrl =
+  process.env.URL || process.env.DEPLOY_URL || `https://ri1anapolis.com.br`
+
 module.exports = {
   siteMetadata: {
-    title: `Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO`,
+    title: `1º RI de Anápolis/GO`,
     description: `Site oficial do Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO`,
-    author: `André Martins`,
+    siteUrl,
+    keywords: [
+      "cartório",
+      "registro",
+      "prenotação",
+      "averbação",
+      "intimação",
+      "notificação",
+      "busca",
+      "loteamento",
+      "condomínio",
+      "contrato",
+      "compra e venda",
+      "cédula",
+      "financiamento",
+      "imóveis",
+      "circunscrição",
+      "certidão",
+      "anápolis",
+      "goiás",
+    ],
   },
   plugins: [
     {
@@ -27,10 +50,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO`,
-        short_name: `1º RI de Anápolis`,
+        short_name: `1º RI de Anápolis/GO`,
         lang: `pt-BR`,
         start_url: `/`,
-        background_color: `#2e5e9e`,
+        background_color: `#fafafa`,
         theme_color: `#2e5e9e`,
         cache_busting_mode: "none",
         display: `minimal-ui`,
