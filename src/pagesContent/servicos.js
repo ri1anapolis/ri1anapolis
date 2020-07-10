@@ -4,7 +4,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { Article, Section, Aside } from "../components/section"
-import { ServicosDrawer, OpenDrawerButton } from "./servicosDrawer"
 
 const ServicosSectionContent = () => {
   const image = useStaticQuery(graphql`
@@ -21,8 +20,6 @@ const ServicosSectionContent = () => {
 
   return (
     <Article id="servicos" background="true">
-      <ServicosDrawer />
-
       <Aside>
         <Img
           fluid={image.file.childImageSharp.fluid}

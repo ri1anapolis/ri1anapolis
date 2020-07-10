@@ -3,11 +3,21 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { CssBaseline, Grid } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
-
 import { theme, useStyles } from "../config/materialUiTheme"
+import Loadable from "react-loadable"
 import Header from "./header"
-import Footer from "./footer"
-import BackToTopButton from "./backToTopButton"
+import SectionLoadingFallback from "./sectionLoadingFallback"
+
+const Footer = Loadable({
+  loader: () => import("./footer"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+const BackToTopButton = Loadable({
+  loader: () => import("./backToTopButton"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
 
 const Layout = props => {
   const classes = useStyles(props)

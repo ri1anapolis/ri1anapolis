@@ -2,19 +2,38 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import SectionProtocolos from "../pagesContent/protocolos"
-import SectionServicos from "../pagesContent/servicos"
-import SectionCartorio from "../pagesContent/cartorio"
-import SectionContato from "../pagesContent/contato"
-import ModalAviso from "../pagesContent/modalAviso"
+import Loadable from "react-loadable"
+import SectionLoadingFallback from "../components/sectionLoadingFallback"
+
+const ModalAviso = Loadable({
+  loader: () => import("../pagesContent/modalAviso"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+const SectionServicos = Loadable({
+  loader: () => import("../pagesContent/servicos"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+const SectionCartorio = Loadable({
+  loader: () => import("../pagesContent/cartorio"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+const SectionContato = Loadable({
+  loader: () => import("../pagesContent/contato"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <ModalAviso />
     <SectionProtocolos />
     <SectionServicos />
     <SectionCartorio />
     <SectionContato />
-    <ModalAviso />
   </Layout>
 )
 
