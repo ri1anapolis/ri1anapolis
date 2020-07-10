@@ -29,11 +29,11 @@ const SectionContato = Loadable({
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <ModalAviso />
     <SectionProtocolos />
     <SectionServicos />
     <SectionCartorio />
     <SectionContato />
+    <ModalAviso />
   </Layout>
 )
 
