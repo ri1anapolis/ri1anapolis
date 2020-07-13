@@ -31,7 +31,7 @@ const ProtocolosRegistrosTimeline = [
   {
     title: "Aguardando Reingresso",
     description:
-      "O cartório agurada a parte cumprir as exigências necessárias para registro.",
+      "O cartório aguarda a parte cumprir as exigências necessárias para registro.",
     icon: <AguardandoReingressoIcon />,
   },
   {
