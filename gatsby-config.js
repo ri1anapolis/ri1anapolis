@@ -1,5 +1,10 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const siteUrl =
-  process.env.URL || process.env.DEPLOY_URL || `https://ri1anapolis.com.br`
+  process.env.URL || process.env.DEPLOY_URL || process.env.SITE_URL
+const googleTrackingId = process.env.GOOGLE_TRACKING_ID
 
 module.exports = {
   siteMetadata: {
@@ -68,6 +73,16 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: googleTrackingId,
+        head: false,
+        anonymize: true,
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
   ],
 }
