@@ -28,7 +28,7 @@ const SectionContato = Loadable({
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" pathname="/" />
+    <SEO title="Consulte seu Protocolo" pathname="/" />
     <SectionProtocolos />
     <SectionServicos />
     <SectionCartorio />

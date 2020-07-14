@@ -8,8 +8,8 @@ const googleTrackingId = process.env.GOOGLE_TRACKING_ID
 
 module.exports = {
   siteMetadata: {
-    title: `1º RI de Anápolis/GO`,
-    description: `Site oficial do Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO`,
+    title: `1º Registro de Imóveis de Anápolis/GO`,
+    description: `Consulte o andamento do seu pedido de registro ou certidão online! Basta informar o número do protocolo e buscar! Acesse nosso site e entenda como funciona o fluxo de trabalho no 1º RI! O Cartório de Registro de Imóveis da Primeira Circunscrição fica localizado dentro do Anashopping, em Anápolis - GO.`,
     siteUrl,
     keywords: [
       "cartório",
@@ -55,7 +55,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO`,
-        short_name: `1º RI de Anápolis/GO`,
+        short_name: `1º Registro de Imóveis de Anápolis/GO`,
         lang: `pt-BR`,
         start_url: `/`,
         background_color: `#fafafa`,
