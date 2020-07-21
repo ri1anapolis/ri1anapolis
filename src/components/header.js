@@ -5,7 +5,7 @@ import { Typography, Grid } from "@material-ui/core"
 import { makeStyles, styled } from "@material-ui/styles"
 import MenuButton from "./navigationMenuButton"
 
-const GradienBgImage = styled(BackgroundImage)({
+const GradientBgImage = styled(BackgroundImage)({
   opacity: "1!important",
   backgroundSize: "cover",
   background: "rgb(80,149,107)",
@@ -71,7 +71,7 @@ const HeaderComponent = props => {
 
   return (
     <>
-      <GradienBgImage
+      <GradientBgImage
         Tag="header"
         id={id}
         className={classes.headerContainer}
@@ -124,7 +124,7 @@ const HeaderComponent = props => {
             {children}
           </Grid>
         </Grid>
-      </GradienBgImage>
+      </GradientBgImage>
     </>
   )
 }
