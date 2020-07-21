@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
     },
   },
-  searchbox: {
+  searchBox: {
     "& input": {
       width: "280px",
       [theme.breakpoints.down("xs")]: {
@@ -134,7 +134,7 @@ const StyledTextField = props => {
         <TextField
           onChange={event => setProtocol(event.target.value)}
           onKeyDown={event => handleEnterKey(event)}
-          className={classes.searchbox}
+          className={classes.searchBox}
           id={props.id}
           label={props.label}
           placeholder={props.placeholder}
