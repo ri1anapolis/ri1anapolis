@@ -38,6 +38,8 @@ Há duas variáveis de ambiente para o site. Ambas são relativas ao backend do 
 
 - `GATSBY_MONGODB_APP_ID`: ID do App no Realm/Stich
 - `GATSBY_MONGODB_APP_KEY`: Chave do App no Realm/Stich
+- `GOOGLE_TRACKING_ID`: ID do Google Analytics
+- `SITE_URL`: URL do site
 
 Configuração rápida das variáveis no ambente com Gatsby:
 
@@ -48,6 +50,8 @@ Configuração rápida das variáveis no ambente com Gatsby:
    ```
    GATSBY_MONGODB_APP_ID=meu-app
    GATSBY_MONGODB_APP_KEY=çlaskdfjpasidfjaskdfjaçsdkfj
+   GOOGLE_TRACKING_ID=G-AS7SSDF798S
+   SITE_URL=https://ri1anapolis.com.br
    ```
 
 ###### Com Netlify
@@ -72,6 +76,6 @@ A melhor opção no momento é criar uma aplicação que faça as buscas no banc
 
 Como não esse serviço não faz parte do escopo do site, não será descrita aqui sua arquitetura e funcionamento, mas no seu repositório em específico.
 
-## Time
+## Equipe
 
 - [André Martins](https://github.com/fmartins-andre): Encarregado da TI do cartório / Desenvolvedor
