@@ -28,11 +28,14 @@ let theme = createMuiTheme({
 
   palette: {
     primary: {
-      main: "#1A1A1A",
+      main: "#c59543",
+      contrastText: "#252220",
     },
     secondary: {
-      main: "#FBC403",
+      main: "#252220",
+      contrastText: "#fff",
     },
+    contrastThreshold: 3,
   },
 
   typography: {
@@ -40,66 +43,54 @@ let theme = createMuiTheme({
     fontSize: 16,
 
     h1: {
-      fontWeight: 300,
       letterSpacing: ".2rem",
       marginBottom: "1.6rem",
     },
     h2: {
-      fontWeight: 300,
       letterSpacing: ".2rem",
       marginBottom: "1.4rem",
     },
     h3: {
-      fontWeight: 300,
       letterSpacing: ".2rem",
       marginBottom: "1.2rem",
     },
     h4: {
-      fontWeight: 300,
       letterSpacing: ".2rem",
       marginBottom: "1rem",
     },
     h5: {
-      fontWeight: 300,
       letterSpacing: ".1rem",
       marginBottom: ".4rem",
     },
     h6: {
-      fontWeight: 300,
       letterSpacing: ".1rem",
       marginBottom: ".4rem",
     },
     subtitle1: {
-      fontWeight: 400,
       fontSize: "1.5rem",
       letterSpacing: ".05rem",
     },
     subtitle2: {
-      fontWeight: 400,
       fontSize: "1.1rem",
       letterSpacing: ".05rem",
     },
     body1: {
-      fontWeight: 300,
       fontSize: "1rem",
       letterSpacing: ".01rem",
     },
     body2: {
-      fontWeight: 300,
       fontSize: "1rem",
       letterSpacing: ".01rem",
     },
     caption: {
-      fontWeight: 300,
       fontSize: "0.9rem",
       letterSpacing: ".02rem",
     },
     overline: {
-      fontWeight: 300,
       letterSpacing: ".02rem",
     },
     button: {
-      fontWeight: 300,
+      fontWeight: "600",
       letterSpacing: ".01rem",
     },
   },
