@@ -8,7 +8,7 @@ import Header from "./header2"
 import SectionLoadingFallback from "./sectionLoadingFallback"
 
 const Footer = Loadable({
-  loader: () => import("./footer"),
+  loader: () => import("./footer2"),
   loading: SectionLoadingFallback,
   delay: 300,
 })
@@ -25,30 +25,7 @@ const Layout = props => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header
-        id={topElementId}
-        title={
-          <>
-            1º Registro de Imóveis
-            <br />
-            de Anápolis/GO
-          </>
-        }
-        description={
-          <>
-            Segurança para garantir seu direito,
-            <br />
-            qualidade e agilidade para poupar seu tempo.
-          </>
-        }
-        links={[
-          { href: "#protocolos", text: "PROTOCOLOS" },
-          { href: "#servicos", text: "SERVIÇOS" },
-          { href: "#cartorio", text: "O CARTÓRIO" },
-          { href: "#contato", text: "CONTATO" },
-        ]}
-      />
-
+      <Header id={topElementId} />
       <Grid
         container
         direction="column"
