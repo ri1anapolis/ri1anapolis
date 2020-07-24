@@ -3,7 +3,7 @@ import { Typography } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { Article, Section, Aside } from "../components/section"
+import { Article, Section, Aside } from "../components/section2"
 
 const ServicosSectionContent = () => {
   const image = useStaticQuery(graphql`
