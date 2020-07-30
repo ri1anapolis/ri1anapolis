@@ -6,10 +6,10 @@ import CloseIcon from "@material-ui/icons/Close"
 import Drawer from "../components/drawer"
 import Panel from "../components/simpleExpansionPanel"
 
-const toogleDrawer = createStore("drawerStore", false)
+const toggleDrawer = createStore("drawerStore", false)
 
 const OpenDrawerButton = props => {
-  const setDrawer = useStore(toogleDrawer)[1]
+  const setDrawer = useStore(toggleDrawer)[1]
   return (
     <Button {...props} onClick={() => setDrawer(true)}>
       {props.children}
@@ -18,7 +18,7 @@ const OpenDrawerButton = props => {
 }
 
 const ServicosDrawer = props => {
-  const [drawer, setDrawer] = useStore(toogleDrawer)
+  const [drawer, setDrawer] = useStore(toggleDrawer)
   const anchor = props.anchor || "left"
   const variant = props.variant || "temporary"
 
