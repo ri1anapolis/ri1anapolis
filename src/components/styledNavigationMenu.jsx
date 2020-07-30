@@ -75,9 +75,9 @@ const MobileMenu = ({ links, popoverContainerId }) => {
               offset="89"
               href={link.href}
               className={classes.mobileLink}
+              key={index}
             >
               <MenuItem
-                key={index}
                 href={link.href}
                 onClick={handleClose}
                 className={classes.mobileMenuItem}

@@ -123,7 +123,6 @@ const SearchForm = props => {
   const handleButtonClick = () => {
     if (searchable) {
       const _protocol = fistCharIsNaN(protocol) ? protocol : `RE-${protocol}`
-      console.log(`::: Buscando o protocolo: ${_protocol}`)
       runSearch({ variables: { protocol: _protocol } })
     }
     setProtocol(null)
