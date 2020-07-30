@@ -95,7 +95,7 @@ const MobileMenu = ({ links, popoverContainerId }) => {
         <MenuIcon />
       </IconButton>
       <Menu
-        marginThreshold="30"
+        marginThreshold={30}
         id="menu"
         container={handlePopover}
         anchorEl={anchorEl}
@@ -123,7 +123,7 @@ const PcMenu = ({ links }) => {
   )
 }
 
-const NavigationMenu = ({ links, popoverContainerId }) => {
+const StyledNavigationMenu = ({ links, popoverContainerId }) => {
   const theme = useTheme()
   const notMobile = useMediaQuery(theme.breakpoints.up("md"))
 
@@ -134,4 +134,4 @@ const NavigationMenu = ({ links, popoverContainerId }) => {
   )
 }
 
-export default NavigationMenu
+export default StyledNavigationMenu

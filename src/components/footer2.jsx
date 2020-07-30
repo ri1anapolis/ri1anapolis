@@ -63,7 +63,7 @@ const Footer = props => {
   const classes = useStyles(props)
 
   return (
-    <Grid id="footer" className={classes.root} alignItems="center">
+    <Grid id="footer" className={classes.root}>
       <div className={classes.footerHeader}>
         <Container xs={12}>
           <Typography variant="subtitle2" style={{ fontSize: "1em" }}>
@@ -107,7 +107,7 @@ const Footer = props => {
             <Link
               href="https://github.com/fmartins-andre"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className={classes.link}
             >
               André Martins

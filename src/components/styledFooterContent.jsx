@@ -27,12 +27,12 @@ const useStyles = makeStyles(theme => ({
 const StyledFooterContent = props => {
   const classes = useStyles()
   const { title, links } = props
-  const listLinks = links.map(link => (
-    <li>
+  const listLinks = links.map((link, index) => (
+    <li key={index}>
       <Link
         href={link.href}
         target={link.target || "_blank"}
-        rel={link.rel || "noreferrer"}
+        rel={link.rel || "noopener noreferrer"}
         className={classes.link}
       >
         {link.text}
