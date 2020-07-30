@@ -118,7 +118,7 @@ const SearchForm = props => {
 
   useEffect(() => {
     setSearchReturn({ loading, error, data })
-  }, [loading, error, data])
+  }, [loading, error, data, setSearchReturn])
 
   const handleButtonClick = () => {
     if (searchable) {
