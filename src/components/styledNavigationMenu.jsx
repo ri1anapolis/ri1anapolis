@@ -7,13 +7,13 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const useStyles = makeStyles(theme => ({
   mobileLink: {
+    textDecoration: "none",
+    color: "#252220",
+  },
+  mobileMenuItem: {
     transition: "0.4s",
     "&:hover": {
       background: "#f0f0f0",
-    },
-    "& > a": {
-      textDecoration: "none",
-      color: "#252220",
     },
   },
   menuContainer: {
@@ -71,16 +71,20 @@ const MobileMenu = ({ links, popoverContainerId }) => {
     links && links.length > 0
       ? links.map((link, index) => {
           return (
-            <MenuItem
-              key={index}
+            <AnchorLink
+              offset="89"
               href={link.href}
-              onClick={handleClose}
               className={classes.mobileLink}
             >
-              <AnchorLink offset="89" href={link.href}>
+              <MenuItem
+                key={index}
+                href={link.href}
+                onClick={handleClose}
+                className={classes.mobileMenuItem}
+              >
                 {link.text}
-              </AnchorLink>
-            </MenuItem>
+              </MenuItem>
+            </AnchorLink>
           )
         })
       : []
