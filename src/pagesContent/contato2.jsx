@@ -82,10 +82,10 @@ const ContatoSectionContent = () => {
             >
               Portaria nº 57, de 6 de abril de 2020
             </Link>
-            , que o atendimento presencial ao público, prestado pelos cartórios,
-            deverão ocorrer das 10h às 16h, todos os dias úteis, com horário
-            previamente agendado, enquanto durar a crise sanitária causada pelo
-            Corona Vírus.
+            , que os Cartórios Extrajudiciais mantenham atendimento presencial
+            ao público das 10h às 16h em todos os dias úteis, com horário
+            previamente agendado. As medidas são uma resposta à crise sanitária
+            causada pelo coronavírus.
           </Alert>
           <br />
 

@@ -50,7 +50,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -59,7 +58,7 @@ module.exports = {
         lang: `pt-BR`,
         start_url: `/`,
         background_color: `#fafafa`,
-        theme_color: `#2e5e9e`,
+        theme_color: `#c59543`,
         cache_busting_mode: "none",
         display: `minimal-ui`,
         icon: `src/images/logo_icon.png`,

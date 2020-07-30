@@ -94,8 +94,7 @@ const BannerWhatsApp = () => {
           Agora você pode agendar seu atendimento pelo WhatsApp!
         </Typography>
         <Typography paragraph align="center">
-          Basta clicar no botão abaixo, do seu celular, e começar a teclar com a
-          gente!
+          Basta clicar no botão abaixo e conversar com a gente!
         </Typography>
         <Button
           href="https://wa.me/556239374650"
