@@ -1,33 +1,63 @@
 import React, { useState, useEffect } from "react"
 import { useLazyQuery } from "@apollo/react-hooks"
+import { createStore, useStore } from "react-hookstore"
 import gql from "graphql-tag"
 import MaskedInput from "react-text-mask"
 import PropTypes from "prop-types"
 import { Grid, TextField, Button } from "@material-ui/core"
-import { makeStyles } from "@material-ui/styles"
+import { makeStyles, withStyles, useTheme } from "@material-ui/styles"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 import StyledAlertComponent from "./styledAlertComponent"
+import SectionLoadingFallback from "./sectionLoadingFallback"
+
+const searchResults = createStore("searchStore", false)
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  searchContainer: {
     margin: "30px 0",
-    width: "400px",
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-    },
   },
   searchBox: {
     "& input": {
       width: "280px",
-      [theme.breakpoints.down("xs")]: {
-        width: "calc(75vw - 70px)",
-      },
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
     },
   },
 }))
 
+const styledSearchButtonFactory = theme => {
+  return withStyles(
+    {
+      root: {
+        marginLeft: "20px",
+        padding: "4px 20px",
+        [theme.breakpoints.down("xs")]: {
+          margin: "10px auto",
+          width: "100%",
+        },
+      },
+    },
+    { withTheme: theme }
+  )(Button)
+}
+
+function fistCharIsNaN(value) {
+  const firstChar = value && value.length > 0 ? value.split("")[0] : value
+  return isNaN(firstChar)
+}
+
 function TextMaskCustom(props) {
   const { inputRef, ...other } = props
+
+  function mask(value) {
+    if (value && value.length > 0) {
+      return fistCharIsNaN(value)
+        ? [/[CcRrEe]/, /[EeXx]/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
+        : [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
+    }
+    return [/[CcRrEe\d]/]
+  }
 
   return (
     <MaskedInput
@@ -35,7 +65,7 @@ function TextMaskCustom(props) {
       ref={ref => {
         inputRef(ref ? ref.inputElement : null)
       }}
-      mask={[/[CcRr]/, /[Ee]/, "-", /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]}
+      mask={mask}
       placeholderChar={"\u2000"}
     />
   )
@@ -59,11 +89,83 @@ const gqlQuery = gql`
   }
 `
 
-const StyledTextField = props => {
+const SearchForm = props => {
   const [protocol, setProtocol] = useState(null)
   const [searchable, setSearchable] = useState(false)
-  const classes = useStyles(props)
   const [runSearch, { loading, error, data }] = useLazyQuery(gqlQuery)
+  const setSearchReturn = useStore(searchResults)[1]
+  const theme = useTheme()
+  const classes = useStyles(theme)
+  const SearchButton = styledSearchButtonFactory(theme)
+
+  useEffect(() => {
+    if (error)
+      console.error(`::: Erro ao buscar protocolo: ${JSON.stringify(error)}`)
+  })
+
+  useEffect(() => {
+    if (
+      !!protocol &&
+      ((fistCharIsNaN(protocol) && protocol.trim().length >= 8) ||
+        (!fistCharIsNaN(protocol) && protocol.trim().length >= 5))
+    ) {
+      setProtocol(protocol.toUpperCase().trim())
+      setSearchable(true)
+      return
+    }
+    setSearchable(false)
+  }, [protocol])
+
+  useEffect(() => {
+    setSearchReturn({ loading, error, data })
+  }, [loading, error, data])
+
+  const handleButtonClick = () => {
+    if (searchable) {
+      const _protocol = fistCharIsNaN(protocol) ? protocol : `RE-${protocol}`
+      console.log(`::: Buscando o protocolo: ${_protocol}`)
+      runSearch({ variables: { protocol: _protocol } })
+    }
+    setProtocol(null)
+    return
+  }
+
+  const handleEnterKey = event => {
+    if (event.key === "Enter") handleButtonClick()
+    return
+  }
+
+  return (
+    <Grid container className={classes.searchContainer}>
+      <TextField
+        onChange={event => setProtocol(event.target.value)}
+        onKeyDown={event => handleEnterKey(event)}
+        className={classes.searchBox}
+        id={props.id}
+        label={props.label}
+        placeholder={props.placeholder}
+        variant="outlined"
+        size="small"
+        InputProps={{
+          inputComponent: TextMaskCustom,
+        }}
+      />
+      <SearchButton
+        disabled={!searchable}
+        variant="contained"
+        color="primary"
+        size="small"
+        onClick={handleButtonClick}
+      >
+        {props.buttonText}
+      </SearchButton>
+    </Grid>
+  )
+}
+
+const SearchReport = () => {
+  const searchReturn = useStore(searchResults)[0]
+  const { loading, error, data } = searchReturn
 
   const handleErrors = error => {
     if (error) {
@@ -100,61 +202,17 @@ const StyledTextField = props => {
 
     return
   }
-
-  const handleButtonClick = () => {
-    if (searchable) {
-      runSearch({ variables: { protocol } })
-    }
-    setProtocol(null)
-    return
-  }
-
-  const handleEnterKey = event => {
-    if (event.key === "Enter") handleButtonClick()
-    return
-  }
-
-  useEffect(() => {
-    if (error)
-      console.log(`::: Erro ao buscar protocolo: ${JSON.stringify(error)}`)
-  })
-
-  useEffect(() => {
-    if (!!protocol && protocol.trim().length >= 8) {
-      setProtocol(protocol.toUpperCase().trim())
-      setSearchable(true)
-      return
-    }
-    setSearchable(false)
-  }, [protocol])
-
   return (
     <>
-      <Grid container className={classes.root} justify="space-between">
-        <TextField
-          onChange={event => setProtocol(event.target.value)}
-          onKeyDown={event => handleEnterKey(event)}
-          className={classes.searchBox}
-          id={props.id}
-          label={props.label}
-          placeholder={props.placeholder}
-          variant="outlined"
-          size="small"
-          InputProps={{
-            inputComponent: TextMaskCustom,
-          }}
-        />
-        <Button
-          disabled={!searchable}
-          variant="contained"
+      {!error && !data && <></>}
+
+      {loading && (
+        <SectionLoadingFallback
+          height="200px"
           color="primary"
-          size="small"
-          onClick={() => handleButtonClick()}
-        >
-          {props.buttonText}
-        </Button>
-        {loading && <small>Buscando...</small>}
-      </Grid>
+          text="Buscando informações do seu protocolo no banco de dados"
+        />
+      )}
 
       {error && handleErrors(error)}
 
@@ -209,4 +267,5 @@ const StyledTextField = props => {
   )
 }
 
-export default StyledTextField
+export default SearchForm
+export { SearchReport }
