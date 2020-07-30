@@ -7,13 +7,29 @@ import Loadable from "react-loadable"
 import Header from "./header2"
 import SectionLoadingFallback from "./sectionLoadingFallback"
 
+const Banner = Loadable({
+  loader: () => import("./banner"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+const BannerCoronaVirus = Loadable({
+  loader: () => import("../pagesContent/bannerCoronaVirus"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+const BannerWhatsApp = Loadable({
+  loader: () => import("../pagesContent/bannerWhatsApp"),
+  loading: SectionLoadingFallback,
+  delay: 300,
+})
+
 const Footer = Loadable({
   loader: () => import("./footer2"),
   loading: SectionLoadingFallback,
   delay: 300,
 })
 const BackToTopButton = Loadable({
-  loader: () => import("./backToTopButton"),
+  loader: () => import("./backToTopButton2"),
   loading: SectionLoadingFallback,
   delay: 300,
 })
@@ -26,6 +42,10 @@ const Layout = props => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header id={topElementId} />
+      <Banner>
+        <BannerCoronaVirus />
+        <BannerWhatsApp />
+      </Banner>
       <Grid
         container
         direction="column"

@@ -4,20 +4,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Typography, Grid } from "@material-ui/core"
 import { AppBar, Toolbar } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
-import Menu from "./styledNavigationMenu"
-import bg from "../images/bg_repeat.jpg"
+import StyledNavigationMenu from "./styledNavigationMenu"
 
 const useStyles = makeStyles(theme => ({
   headerPlaceholder: {
     height: "90px",
-  },
-  banner: {
-    height: "350px",
-    backgroundColor: "#141414",
-    background: `linear-gradient(90deg, rgba(20,20,20,.95) 0%, rgba(40,40,40,.95) 35%, rgba(20,20,20,.95) 80%), url(${bg})`,
-    borderBottom: "2px solid #606060",
-    color: "#FFF",
-    overflow: "hidden",
   },
   header: {
     display: "flex",
@@ -44,11 +35,6 @@ const useStyles = makeStyles(theme => ({
     width: "70px",
     height: "70px",
   },
-  mobileMenu: {
-    width: "40px",
-    // border: "1px solid #FFF",
-    // display: "none",
-  },
 }))
 
 const HeaderComponent = props => {
@@ -69,7 +55,6 @@ const HeaderComponent = props => {
   return (
     <>
       <div className={classes.headerPlaceholder} id={props.id} />
-      <div className={classes.banner} id="banner" />
       <AppBar
         position="fixed"
         className={classes.header}
@@ -77,7 +62,7 @@ const HeaderComponent = props => {
           background: `linear-gradient(45deg, rgba(170,126,61,1) 0%, rgba(241,207,143,1) 51%, rgba(170,135,40,1) 140%), rgb(170,126,61)`,
         }}
       >
-        <Toolbar container className={classes.content}>
+        <Toolbar className={classes.content}>
           <Grid
             item
             container
@@ -103,7 +88,7 @@ const HeaderComponent = props => {
               de ANÁPOLIS/GO
             </Typography>
           </Grid>
-          <Menu
+          <StyledNavigationMenu
             popoverContainerId={props.id}
             links={[
               { href: "#protocolos", text: "PROTOCOLOS" },
