@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Fab, Fade } from "@material-ui/core"
 import { withStyles } from "@material-ui/styles"
-import smoothScroll from "../utils/smoothScroll"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import debounce from "../utils/debounce"
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp"
 
@@ -40,15 +40,11 @@ const BackToTopButton = props => {
 
   return (
     <Fade in={visible}>
-      <StyledFab
-        onClick={event => smoothScroll(event)}
-        href={topElementId}
-        size="small"
-        color="secondary"
-        aria-label="Voltar ao topo"
-      >
-        <KeyboardArrowUpIcon />
-      </StyledFab>
+      <AnchorLink href={topElementId}>
+        <StyledFab size="small" color="secondary" aria-label="Voltar ao topo">
+          <KeyboardArrowUpIcon />
+        </StyledFab>
+      </AnchorLink>
     </Fade>
   )
 }

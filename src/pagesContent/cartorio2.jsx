@@ -1,7 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { Article, Section, Aside } from "../components/section"
+import { Article, Section, Aside } from "../components/section2"
 import { Typography } from "@material-ui/core"
 
 const CartorioSectionContent = () => {

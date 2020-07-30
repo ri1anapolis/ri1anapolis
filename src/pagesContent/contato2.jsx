@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import Alert from "@material-ui/lab/Alert"
-import { Article, Section } from "../components/section"
+import { Article, Section } from "../components/section2"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import MailOutlineIcon from "@material-ui/icons/MailOutline"
@@ -36,7 +36,7 @@ const ContatoSectionContent = () => {
     listItemIcon: {
       minWidth: "30px",
       "& > svg": {
-        color: "#fff",
+        color: "#FFF",
       },
     },
     locationImg: {
@@ -51,7 +51,7 @@ const ContatoSectionContent = () => {
     },
     contactLink: {
       textDecoration: "none",
-      color: "#fff",
+      color: "#FFF",
     },
   }))
 
@@ -66,7 +66,7 @@ const ContatoSectionContent = () => {
           </Typography>
 
           <Typography>
-            Agende um horário, tire dúvias, faça uma visita. O atendimento
+            Agende um horário, tire dúvidas, faça uma visita. O atendimento
             presencial e pelos canais de comunicação se dá de segunda a
             sexta-feira das 08:00h as 17:00h
           </Typography>
@@ -77,15 +77,15 @@ const ContatoSectionContent = () => {
             meio da{" "}
             <Link
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               href="https://www.tjgo.jus.br/images/docs/corregedoria/PORTARIA_N57_2020.pdf"
             >
               Portaria nº 57, de 6 de abril de 2020
             </Link>
-            , que o atendimento presencial ao público, prestado pelos cartórios,
-            deverão ocorrer das 10h às 16h, todos os dias úteis, com horário
-            previamente agendado, enquanto durar a crise sanitária causada pelo
-            Corona Vírus.
+            , que os Cartórios Extrajudiciais mantenham atendimento presencial
+            ao público das 10h às 16h em todos os dias úteis, com horário
+            previamente agendado. As medidas são uma resposta à crise sanitária
+            causada pelo coronavírus.
           </Alert>
           <br />
 
@@ -141,7 +141,7 @@ const ContatoSectionContent = () => {
                           <Link
                             className={classes.contactLink}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             href="mailto:primeirocartorioregistro@gmail.com"
                           >
                             primeirocartorioregistro
@@ -177,7 +177,7 @@ const ContatoSectionContent = () => {
                       <Link
                         className={classes.contactLink}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         href="https://wa.me/556239374650"
                       >
                         (62) 3937-4650
@@ -194,7 +194,7 @@ const ContatoSectionContent = () => {
                       <Link
                         className={classes.contactLink}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         href="https://www.instagram.com/ri1anapolis/"
                       >
                         @ri1anapolis

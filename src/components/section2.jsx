@@ -6,8 +6,8 @@ const useStyles = makeStyles(theme => ({
   article: {
     margin: 0,
     padding: 0,
+    color: "#444",
     width: "100vw",
-    color: "#555555",
     textAlign: "justify",
     "& div, aside, section": {
       scrollbarWidth: "thin",
@@ -43,10 +43,8 @@ const useStyles = makeStyles(theme => ({
     overflowX: "hidden",
   },
   backgroundDefault: {
-    background:
-      "linear-gradient(45deg, rgba(55,66,62,1) 0%, rgba(86,88,74,1) 50%, rgba(55,66,62,1) 100%)",
-    backgroundSize: "cover",
-    color: "#fff",
+    background: `linear-gradient(45deg, rgba(20,20,20,.8) 0%, rgba(40,40,40,.8) 50%, rgba(20,20,20,.8) 80%), url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23AA7E3D' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+    color: "#FFF",
   },
 }))
 
