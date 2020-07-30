@@ -71,7 +71,7 @@ const Footer = props => {
               <Link
                 href="https://see.tjgo.jus.br/ajuda/publico"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={classes.link}
               >
                 Sistema Extrajudicial Eletrônico
@@ -81,7 +81,7 @@ const Footer = props => {
               <Link
                 href="https://see.tjgo.jus.br/buscas"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={classes.link}
               >
                 Consultar Selos
@@ -91,7 +91,7 @@ const Footer = props => {
               <Link
                 href="http://tjdocs.tjgo.jus.br/pastas/2101"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={classes.link}
               >
                 Código de Normas e Procedimentos do Foro Extrajudicial
@@ -101,7 +101,7 @@ const Footer = props => {
               <Link
                 href="https://www.google.com/maps/d/u/1/viewer?mid=1YBP3QGI5MjBJRj8ukcKHjesdvqMDUqhS"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className={classes.link}
               >
                 Mapa fronteiriço de Anápolis e da Primeira Circunscrição
@@ -123,7 +123,7 @@ const Footer = props => {
             <Link
               href="https://github.com/fmartins-andre"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               style={{ color: "#fff" }}
             >
               André Martins

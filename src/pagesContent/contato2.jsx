@@ -77,7 +77,7 @@ const ContatoSectionContent = () => {
             meio da{" "}
             <Link
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               href="https://www.tjgo.jus.br/images/docs/corregedoria/PORTARIA_N57_2020.pdf"
             >
               Portaria nº 57, de 6 de abril de 2020
@@ -141,7 +141,7 @@ const ContatoSectionContent = () => {
                           <Link
                             className={classes.contactLink}
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             href="mailto:primeirocartorioregistro@gmail.com"
                           >
                             primeirocartorioregistro
@@ -177,7 +177,7 @@ const ContatoSectionContent = () => {
                       <Link
                         className={classes.contactLink}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         href="https://wa.me/556239374650"
                       >
                         (62) 3937-4650
@@ -194,7 +194,7 @@ const ContatoSectionContent = () => {
                       <Link
                         className={classes.contactLink}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         href="https://www.instagram.com/ri1anapolis/"
                       >
                         @ri1anapolis

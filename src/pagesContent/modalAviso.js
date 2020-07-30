@@ -23,7 +23,7 @@ const ModalAviso = () => {
       A Corregedoria Geral da Justiça do Estado de Goiás determinou, por meio da{" "}
       <Link
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         href="https://www.tjgo.jus.br/images/docs/corregedoria/PORTARIA_N57_2020.pdf"
       >
         Portaria nº 57, de 6 de abril de 2020
