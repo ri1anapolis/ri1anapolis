@@ -11661,11 +11661,6 @@ react-helmet@^6.0.0:
     react-fast-compare "^2.0.4"
     react-side-effect "^2.1.0"
 
-react-hookstore@^1.4.4:
-  version "1.4.4"
-  resolved "https://registry.yarnpkg.com/react-hookstore/-/react-hookstore-1.4.4.tgz#576c78a5e70ff65ea80f5fcab1db1a9d9494007c"
-  integrity sha512-/shqvOsn/hoM/yN/je2phtCrK/Uzp6Dl/akXcF0NUEj1W5YCE/9GyIT+7n1EafTmq0EwYIZOqHZwoFlS6agxGQ==
-
 react-hot-loader@^4.12.20:
   version "4.12.20"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.20.tgz#c2c42362a7578e5c30357a5ff7afa680aa0bef8a"

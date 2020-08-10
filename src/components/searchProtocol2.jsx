@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from "react"
 import { useLazyQuery } from "@apollo/react-hooks"
-import { createStore, useStore } from "react-hookstore"
 import gql from "graphql-tag"
 import MaskedInput from "react-text-mask"
 import PropTypes from "prop-types"
 import { Grid, TextField, Button } from "@material-ui/core"
 import { makeStyles, withStyles, useTheme } from "@material-ui/styles"
 import AnchorLink from "react-anchor-link-smooth-scroll"
+
+import createStore from "../utils/simpleRedux"
 import StyledAlertComponent from "./styledAlertComponent"
 import SectionLoadingFallback from "./sectionLoadingFallback"
 
-const searchResults = createStore("searchStore", false)
+const searchReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "UPDATE_STATE":
+      return { ...state, ...action.state }
+    default:
+      return state
+  }
+}
+
+const store = createStore(searchReducer)
 
 const useStyles = makeStyles(theme => ({
   searchContainer: {
@@ -93,7 +103,7 @@ const SearchForm = props => {
   const [protocol, setProtocol] = useState(null)
   const [searchable, setSearchable] = useState(false)
   const [runSearch, { loading, error, data }] = useLazyQuery(gqlQuery)
-  const setSearchReturn = useStore(searchResults)[1]
+
   const theme = useTheme()
   const classes = useStyles(theme)
   const SearchButton = styledSearchButtonFactory(theme)
@@ -117,8 +127,8 @@ const SearchForm = props => {
   }, [protocol])
 
   useEffect(() => {
-    setSearchReturn({ loading, error, data })
-  }, [loading, error, data, setSearchReturn])
+    store.dispatch({ type: "UPDATE_STATE", state: { loading, error, data } })
+  }, [loading, error, data])
 
   const handleButtonClick = () => {
     if (searchable) {
@@ -163,8 +173,12 @@ const SearchForm = props => {
 }
 
 const SearchReport = () => {
-  const searchReturn = useStore(searchResults)[0]
-  const { loading, error, data } = searchReturn
+  const [searchResults, setSearchResults] = useState(store.getState())
+  const { error, loading, data } = searchResults
+
+  store.subscribe(() => {
+    setSearchResults(store.getState())
+  })
 
   const handleErrors = error => {
     if (error) {
