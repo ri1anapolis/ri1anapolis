@@ -11,11 +11,49 @@ import {
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
 import Alert from "@material-ui/lab/Alert"
+import loadableVisibility from "react-loadable-visibility/react-loadable"
+
 import { Article, Section } from "../components/section2"
+import SectionLoadingFallback from "../components/sectionLoadingFallback"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import MailOutlineIcon from "@material-ui/icons/MailOutline"
 import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk"
+
+import delay from "../utils/delay"
+
+const useStyles = makeStyles(theme => ({
+  listItem: {
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
+  listItemIcon: {
+    minWidth: "30px",
+    "& > svg": {
+      color: "#FFF",
+    },
+  },
+  locationImg: {
+    width: "30vw",
+    height: "auto",
+    maxWidth: "75px",
+    maxHeight: "75px",
+    margin: "0 5px",
+  },
+  alignTextRight: {
+    textAlign: "right",
+  },
+  contactLink: {
+    textDecoration: "none",
+    color: "#FFF",
+  },
+}))
+
+const ContatoMap = loadableVisibility({
+  loader: () => import("./contatoMap"),
+  loading: () => <SectionLoadingFallback text="Buscando o mapa pra você..." />,
+  delay: 100,
+})
 
 const ContatoSectionContent = () => {
   const {
@@ -28,34 +66,13 @@ const ContatoSectionContent = () => {
     }
   `)
 
-  const useStyles = makeStyles(theme => ({
-    listItem: {
-      paddingTop: 0,
-      paddingBottom: 0,
-    },
-    listItemIcon: {
-      minWidth: "30px",
-      "& > svg": {
-        color: "#FFF",
-      },
-    },
-    locationImg: {
-      width: "30vw",
-      height: "auto",
-      maxWidth: "75px",
-      maxHeight: "75px",
-      margin: "0 5px",
-    },
-    alignTextRight: {
-      textAlign: "right",
-    },
-    contactLink: {
-      textDecoration: "none",
-      color: "#FFF",
-    },
-  }))
-
   const classes = useStyles()
+
+  async function mapPreload() {
+    await delay(10000)
+    ContatoMap.preload()
+  }
+  mapPreload()
 
   return (
     <>
@@ -207,17 +224,7 @@ const ContatoSectionContent = () => {
           </Grid>
         </Section>
       </Article>
-
-      <iframe
-        rel="preconnect"
-        title="cri1_map"
-        width="100%"
-        height="300"
-        frameBorder="0"
-        style={{ border: 0 }}
-        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL4ZOwnikXpMR2Wydv1gsibk&key=AIzaSyBZGM23zN53u0yVFX3rhUA6Yyg7b1lwzY0"
-        allowFullScreen
-      ></iframe>
+      <ContatoMap />
     </>
   )
 }
