@@ -2,15 +2,30 @@ import React from "react"
 import { Typography, Link } from "@material-ui/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import Loadable from "react-loadable"
+
 import Button from "../components/styledButton"
 import { Article, Section, Aside } from "../components/section2"
 import StyledDrawer, {
   useDrawerToggler,
 } from "../components/styledDrawerComponent"
-import ServicosPanel from "../pagesContent/servicosPanel"
+import SectionLoadingFallback from "../components/sectionLoadingFallback"
+
+// const ServicosPanel = Loadable({
+//   loader: () => import("../pagesContent/servicosPanel"),
+//   loading: () => <SectionLoadingFallback height="0" />,
+//   delay: 300,
+// })
+const CertidaoPanel = Loadable({
+  loader: () => import("../pagesContent/certidaoPanel"),
+  loading: () => <SectionLoadingFallback height="0" />,
+  delay: 300,
+})
 
 const ServicosSectionContent = () => {
   const handleDrawer = useDrawerToggler()
+  // ServicosPanel.preload()
+  CertidaoPanel.preload()
 
   const image = useStaticQuery(graphql`
     query {
@@ -38,22 +53,21 @@ const ServicosSectionContent = () => {
           Serviços
         </Typography>
 
-        <Typography paragraph>
+        <Typography>
           Ao solicitar qualquer tipo de registro e/ou averbação é necessária a
           apresentação de uma série de documentos obrigatórios. Durante a
           análise do processo é possível ainda que seja necessária a
           complementação de documentos.
         </Typography>
         <Typography paragraph>
-          Para facilitar e agilizar o processo de identificação e recepção da
-          documentação adequada ao processo, o usuário do cartório pode fazer{" "}
-          <em>download</em> dos documentos necessários para registro, bem como
-          de modelos e requirimentos.
+          Em breve, nessa seção, será possível consultar e baixar os documentos
+          necessários para registro, bem como modelos de requerimentos e outros
+          tipos de documentos.
         </Typography>
 
         <Typography paragraph>
-          Também é possível fazer a solicitação de emissão de certidão por
-          e-mail! Basta encaminhar sua solicitação para o endereço{" "}
+          Solicite buscas ou emissão de certidões clicando no botão abaixo, ou
+          encaminhe suas solicitações por email, no endereço{" "}
           <Link
             href="mailto:certidaoanapolis@gmail.com"
             rel="noreferrer noopener"
@@ -62,16 +76,16 @@ const ServicosSectionContent = () => {
           >
             certidaoanapolis@gmail.com
           </Link>
-          , ou aqui pelo site, clicando no botão abaixo.
+          .
         </Typography>
 
-        <Button
+        {/* <Button
           variant="contained"
           color="secondary"
           onClick={handleDrawer("drawerServicos")}
         >
           Baixar documentos
-        </Button>
+        </Button> */}
 
         <Button
           variant="contained"
@@ -81,11 +95,11 @@ const ServicosSectionContent = () => {
           Solicitar Certidão
         </Button>
       </Section>
-      <StyledDrawer id="drawerServicos">
+      {/* <StyledDrawer id="drawerServicos">
         <ServicosPanel />
-      </StyledDrawer>
+      </StyledDrawer> */}
       <StyledDrawer id="drawerCertidoes" anchor="bottom">
-        drawerCertidoes
+        <CertidaoPanel handleDrawer={handleDrawer("drawerCertidoes")} />
       </StyledDrawer>
     </Article>
   )

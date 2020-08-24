@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Drawer } from "@material-ui/core"
+import { Drawer, IconButton, Tooltip } from "@material-ui/core"
 import { makeStyles, withStyles } from "@material-ui/styles"
+import CloseIcon from "@material-ui/icons/Close"
 import createStore from "../utils/simpleRedux"
 
 const MuiDrawer = withStyles(themes => ({
@@ -27,6 +28,13 @@ const useStyles = makeStyles(theme => ({
         overflowX: "auto",
       },
     },
+  },
+  actions: {
+    height: "30px",
+    width: "100%",
+    padding: "2px",
+    display: "flex",
+    justifyContent: "flex-end",
   },
 }))
 
@@ -89,6 +97,18 @@ const StyledDrawer = props => {
       {...props}
       className={classes.drawer}
     >
+      <div className={classes.actions}>
+        <Tooltip
+          title="Fechar"
+          aria-label="Fechar"
+          placement="bottom-end"
+          arrow
+        >
+          <IconButton size="small" onClick={handleCloseDrawer}>
+            <CloseIcon fontSize="small" />
+          </IconButton>
+        </Tooltip>
+      </div>
       {children}
     </MuiDrawer>
   )
