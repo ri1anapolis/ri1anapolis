@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Typography, Grid } from "@material-ui/core"
 import { AppBar, Toolbar } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import StyledNavigationMenu from "./styledNavigationMenu"
 
 const useStyles = makeStyles(theme => ({
@@ -35,6 +36,10 @@ const useStyles = makeStyles(theme => ({
     width: "70px",
     height: "70px",
   },
+  logoLink: {
+    textDecoration: "none",
+    outline: "none",
+  },
 }))
 
 const HeaderComponent = props => {
@@ -63,31 +68,33 @@ const HeaderComponent = props => {
         }}
       >
         <Toolbar className={classes.content}>
-          <Grid
-            item
-            container
-            alignItems="center"
-            className={classes.logoContainer}
-          >
-            <div className={classes.logo}>
-              <Img
-                fluid={logo.file.childImageSharp.fluid}
-                alt="Logo"
-                className={classes.imgLogo}
-                style={{ width: "100%" }}
-              />
-            </div>
-            <Typography
-              className={classes.title}
-              variant="subtitle2"
-              align="center"
-              noWrap
+          <AnchorLink href={`#${props.id}`} className={classes.logoLink}>
+            <Grid
+              item
+              container
+              alignItems="center"
+              className={classes.logoContainer}
             >
-              1º REGISTRO de IMÓVEIS
-              <br />
-              de ANÁPOLIS/GO
-            </Typography>
-          </Grid>
+              <div className={classes.logo}>
+                <Img
+                  fluid={logo.file.childImageSharp.fluid}
+                  alt="Logo"
+                  className={classes.imgLogo}
+                  style={{ width: "100%" }}
+                />
+              </div>
+              <Typography
+                className={classes.title}
+                variant="subtitle2"
+                align="center"
+                noWrap
+              >
+                1º REGISTRO de IMÓVEIS
+                <br />
+                de ANÁPOLIS/GO
+              </Typography>
+            </Grid>
+          </AnchorLink>
           <StyledNavigationMenu
             popoverContainerId={props.id}
             links={[
