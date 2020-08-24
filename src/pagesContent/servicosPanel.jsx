@@ -1,28 +1,23 @@
 import React from "react"
 import { Typography } from "@material-ui/core"
-import { makeStyles, useTheme } from "@material-ui/styles"
+import { makeStyles } from "@material-ui/styles"
 import SimplePanelComponent from "../components/simpleExpansionPanel"
 
 const useStyles = makeStyles(theme => ({
   container: {
-    margin: "30px 10px",
+    margin: "0 10px",
+    paddingBottom: "50px",
     maxWidth: "400px",
     minWidth: "280px",
-    [theme.breakpoints.down("xs")]: {
-      width: "93%",
-    },
   },
 }))
 
-const ServicosPanel = props => {
-  const theme = useTheme()
-  const classes = useStyles(theme)
+const ServicosPanel = () => {
+  const classes = useStyles()
 
   return (
     <div className={classes.container}>
-      <Typography component="h3" variant="h5">
-        Serviços
-      </Typography>
+      <Typography variant="h5">Serviços</Typography>
       <Typography variant="caption">
         Modelos de requerimentos
         <br />

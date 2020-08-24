@@ -6,20 +6,20 @@ const useStyles = makeStyles(theme => ({
   link: {
     color: "#fff",
   },
-  gridItem: {
+  footerSection: {
     padding: "30px 20px",
-    "& > h6": {
-      color: "#FFF",
-      fontWeight: "600",
-      paddingBottom: "20px",
-    },
-    "& > ul": {
-      padding: 0,
-      margin: 0,
-      listStyleType: "none",
-      "& > li": {
-        padding: "7px 0",
-      },
+  },
+  title: {
+    color: "#FFF",
+    fontWeight: "600",
+    paddingBottom: "20px",
+  },
+  list: {
+    padding: 0,
+    margin: 0,
+    listStyleType: "none",
+    "& > li": {
+      padding: "7px 0",
     },
   },
 }))
@@ -40,9 +40,11 @@ const StyledFooterContent = props => {
     </li>
   ))
   return (
-    <Grid className={classes.gridItem} item xs={12} sm={6} md={4}>
-      <Typography variant="subtitle2">{title}</Typography>
-      <ul>{listLinks}</ul>
+    <Grid className={classes.footerSection} item xs={12} sm={6} md={4}>
+      <Typography variant="subtitle2" className={classes.title}>
+        {title}
+      </Typography>
+      <ul className={classes.list}>{listLinks}</ul>
     </Grid>
   )
 }
