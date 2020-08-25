@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     padding: "10px 15px",
   },
 }))
-const BannerWhatsApp = () => {
+const BannerSolicitaCertidao = () => {
   const theme = useTheme()
   const classes = useStyles(theme)
   return (
@@ -69,4 +69,4 @@ const BannerWhatsApp = () => {
   )
 }
 
-export default BannerWhatsApp
+export default BannerSolicitaCertidao

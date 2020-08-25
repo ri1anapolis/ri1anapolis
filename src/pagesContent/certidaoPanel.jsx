@@ -76,7 +76,7 @@ const CertidaoPanel = props => {
     resolver: yupResolver(validationSchema),
     mode: "onChange",
   })
-  const { isSubmitting, isValid } = formState
+  const { isSubmitting } = formState
 
   const handleCloseFormStatus = () => {
     setPopoverShow(false)
@@ -210,7 +210,7 @@ const CertidaoPanel = props => {
                   color="primary"
                   className={classes.button}
                   type="submit"
-                  disabled={!isValid || isSubmitting}
+                  disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <>

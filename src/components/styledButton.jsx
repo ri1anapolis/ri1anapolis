@@ -6,12 +6,12 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: "5px auto",
     padding: "6px 30px",
-    "&+ button": {
+    "&+button, +a": {
       marginLeft: "20px",
     },
     [theme.breakpoints.down("xs")]: {
       width: "100%",
-      "&+ button": {
+      "&+button, +a": {
         marginLeft: "0",
       },
     },

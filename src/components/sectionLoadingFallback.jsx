@@ -1,5 +1,5 @@
 import React from "react"
-import { Grid, CircularProgress } from "@material-ui/core"
+import { Grid, CircularProgress, Typography } from "@material-ui/core"
 
 const SectionLoadingFallback = props => {
   const color = props.color || "gray"
@@ -20,7 +20,9 @@ const SectionLoadingFallback = props => {
           style={{ color: color }}
         />
       </Grid>
-      <p style={{ color: color }}>{text}</p>
+      <Typography align="center" style={{ color: color, marginTop: "20px" }}>
+        {text}
+      </Typography>
     </Grid>
   )
 }
