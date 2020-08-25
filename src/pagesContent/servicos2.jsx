@@ -11,21 +11,21 @@ import StyledDrawer, {
 } from "../components/styledDrawerComponent"
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
 
-// const ServicosPanel = Loadable({
-//   loader: () => import("../pagesContent/servicosPanel"),
-//   loading: () => <SectionLoadingFallback height="0" />,
-//   delay: 300,
-// })
 const CertidaoPanel = Loadable({
   loader: () => import("../pagesContent/certidaoPanel"),
+  loading: () => <SectionLoadingFallback height="0" />,
+  delay: 300,
+})
+const AgendamentoPanel = Loadable({
+  loader: () => import("../pagesContent/agendamentoPanel"),
   loading: () => <SectionLoadingFallback height="0" />,
   delay: 300,
 })
 
 const ServicosSectionContent = () => {
   const handleDrawer = useDrawerToggler()
-  // ServicosPanel.preload()
   CertidaoPanel.preload()
+  AgendamentoPanel.preload()
 
   const image = useStaticQuery(graphql`
     query {
@@ -53,18 +53,37 @@ const ServicosSectionContent = () => {
           Serviços
         </Typography>
 
-        <Typography>
-          Ao solicitar qualquer tipo de registro e/ou averbação é necessária a
-          apresentação de uma série de documentos obrigatórios. Durante a
-          análise do processo é possível ainda que seja necessária a
-          complementação de documentos.
+        <Typography variant="subtitle2">
+          <strong>Agendamento</strong>
         </Typography>
         <Typography paragraph>
-          Em breve, nessa seção, será possível consultar e baixar os documentos
-          necessários para registro, bem como modelos de requerimentos e outros
-          tipos de documentos.
+          Evite filas e imprevistos. Agende sua visita ou atendimento online,
+          aqui no site, ou pelo WhatsApp!
         </Typography>
+        <Button
+          size="small"
+          variant="contained"
+          color="primary"
+          onClick={handleDrawer("drawerAgendamento")}
+        >
+          Agendamento Online
+        </Button>
+        <Button
+          size="small"
+          color="primary"
+          variant="outlined"
+          rel="noreferrer noopener"
+          target="_blank"
+          href="https://wa.me/556239374650"
+          style={{ filter: "brightness(1.2)" }}
+        >
+          WhatsApp
+        </Button>
+        <Typography paragraph />
 
+        <Typography variant="subtitle2">
+          <strong>Certidões</strong>
+        </Typography>
         <Typography paragraph>
           Solicite buscas ou emissão de certidões clicando no botão abaixo, ou
           encaminhe suas solicitações por email, no endereço{" "}
@@ -79,14 +98,6 @@ const ServicosSectionContent = () => {
           .
         </Typography>
 
-        {/* <Button
-          variant="contained"
-          color="secondary"
-          onClick={handleDrawer("drawerServicos")}
-        >
-          Baixar documentos
-        </Button> */}
-
         <Button
           variant="contained"
           color="primary"
@@ -95,11 +106,13 @@ const ServicosSectionContent = () => {
           Solicitar Certidão
         </Button>
       </Section>
-      {/* <StyledDrawer id="drawerServicos">
-        <ServicosPanel />
-      </StyledDrawer> */}
+
       <StyledDrawer id="drawerCertidoes" anchor="bottom">
         <CertidaoPanel handleDrawer={handleDrawer("drawerCertidoes")} />
+      </StyledDrawer>
+
+      <StyledDrawer id="drawerAgendamento">
+        <AgendamentoPanel />
       </StyledDrawer>
     </Article>
   )
