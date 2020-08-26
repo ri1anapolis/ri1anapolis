@@ -17,8 +17,8 @@ const BannerSolicitaCertidao = Loadable({
   loading: () => <SectionLoadingFallback height="350px" />,
   delay: 300,
 })
-const BannerWhatsApp = Loadable({
-  loader: () => import("../pagesContent/bannerWhatsApp"),
+const BannerAgendamento = Loadable({
+  loader: () => import("../pagesContent/bannerAgendamento"),
   loading: () => <SectionLoadingFallback height="350px" />,
   delay: 300,
 })
@@ -49,7 +49,7 @@ const Layout = props => {
       <Header id={topElementId} />
       <Banner>
         <BannerSolicitaCertidao />
-        <BannerWhatsApp />
+        <BannerAgendamento />
         <BannerCoronaVirus />
       </Banner>
       <Grid

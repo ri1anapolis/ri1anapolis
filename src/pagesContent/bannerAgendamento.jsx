@@ -1,6 +1,7 @@
 import React from "react"
 import { Grid, Typography, Button } from "@material-ui/core"
 import { makeStyles, useTheme } from "@material-ui/styles"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import whatsappImg from "../images/iphone_whatsapp_h350px.svg"
 
 const useStyles = makeStyles(theme => ({
@@ -88,24 +89,28 @@ const BannerWhatsApp = () => {
         justify="center"
       >
         <Typography variant="subtitle2" paragraph align="center">
-          <strong>Agende seu atendimento pelo WhatsApp!</strong>
+          <strong>Agende seu atendimento online ou pelo WhatsApp!</strong>
         </Typography>
         <Typography align="center">
-          Agora você pode agendar seu atendimento pelo WhatsApp!
+          Agora você pode agendar seu atendimento diretamente pelo site, ou
+          solicitar o agendamento pelo WhatsApp!
         </Typography>
         <Typography paragraph align="center">
-          Basta clicar no botão abaixo e conversar com a gente!
+          Clique no botão abaixo e faça seu agendamento agora mesmo!
         </Typography>
-        <Button
-          href="https://wa.me/556239374650"
-          target="_blank"
-          rel="noopener noreferrer"
-          variant="contained"
-          color="primary"
-          style={{ textAlign: "center" }}
+        <AnchorLink
+          offset="100"
+          href="#agendamento"
+          style={{ textDecoration: "none", outline: "none" }}
         >
-          Clique aqui para agendar seu atendimento
-        </Button>
+          <Button
+            variant="contained"
+            color="primary"
+            style={{ textAlign: "center" }}
+          >
+            Clique aqui para agendar seu atendimento
+          </Button>
+        </AnchorLink>
       </Grid>
     </Grid>
   )

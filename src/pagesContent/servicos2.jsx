@@ -53,7 +53,7 @@ const ServicosSectionContent = () => {
           Serviços
         </Typography>
 
-        <Typography variant="subtitle2">
+        <Typography variant="subtitle2" id="agendamento">
           <strong>Agendamento</strong>
         </Typography>
         <Typography paragraph>
@@ -66,7 +66,7 @@ const ServicosSectionContent = () => {
           color="primary"
           onClick={handleDrawer("drawerAgendamento")}
         >
-          Agendamento Online
+          Agendar Online
         </Button>
         <Button
           size="small"
@@ -77,11 +77,11 @@ const ServicosSectionContent = () => {
           href="https://wa.me/556239374650"
           style={{ filter: "brightness(1.2)" }}
         >
-          WhatsApp
+          ou por WhatsApp
         </Button>
         <Typography paragraph />
 
-        <Typography variant="subtitle2">
+        <Typography variant="subtitle2" id="certidoes">
           <strong>Certidões</strong>
         </Typography>
         <Typography paragraph>

@@ -52,8 +52,8 @@ const BannerSolicitaCertidao = () => {
           , ou clicar no botão abaixo!
         </Typography>
         <AnchorLink
-          offset="89"
-          href="#servicos"
+          offset="100"
+          href="#certidoes"
           style={{ textDecoration: "none", outline: "none" }}
         >
           <Button

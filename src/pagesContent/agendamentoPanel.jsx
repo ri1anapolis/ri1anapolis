@@ -53,10 +53,9 @@ const AgendamentoPanel = props => {
           id={iframeId}
           src={iframeSrc}
           rel="preload"
-          frameborder="0"
+          frameBorder="0"
           scrolling="no"
           loading="eager"
-          sandbox
         >
           teste
         </iframe>
