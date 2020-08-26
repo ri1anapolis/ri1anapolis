@@ -9,28 +9,33 @@ import SectionLoadingFallback from "./sectionLoadingFallback"
 
 const Banner = Loadable({
   loader: () => import("./banner"),
-  loading: SectionLoadingFallback,
+  loading: () => <SectionLoadingFallback height="350px" />,
+  delay: 300,
+})
+const BannerSolicitaCertidao = Loadable({
+  loader: () => import("../pagesContent/bannerSolicitaCertidao"),
+  loading: () => <SectionLoadingFallback height="350px" />,
+  delay: 300,
+})
+const BannerAgendamento = Loadable({
+  loader: () => import("../pagesContent/bannerAgendamento"),
+  loading: () => <SectionLoadingFallback height="350px" />,
   delay: 300,
 })
 const BannerCoronaVirus = Loadable({
   loader: () => import("../pagesContent/bannerCoronaVirus"),
-  loading: SectionLoadingFallback,
-  delay: 300,
-})
-const BannerWhatsApp = Loadable({
-  loader: () => import("../pagesContent/bannerWhatsApp"),
-  loading: SectionLoadingFallback,
+  loading: () => <SectionLoadingFallback height="350px" />,
   delay: 300,
 })
 
 const Footer = Loadable({
   loader: () => import("./footer2"),
-  loading: SectionLoadingFallback,
+  loading: () => <SectionLoadingFallback />,
   delay: 300,
 })
 const BackToTopButton = Loadable({
   loader: () => import("./backToTopButton2"),
-  loading: SectionLoadingFallback,
+  loading: () => <SectionLoadingFallback height="0" />,
   delay: 300,
 })
 
@@ -43,8 +48,9 @@ const Layout = props => {
       <CssBaseline />
       <Header id={topElementId} />
       <Banner>
+        <BannerSolicitaCertidao />
+        <BannerAgendamento />
         <BannerCoronaVirus />
-        <BannerWhatsApp />
       </Banner>
       <Grid
         container

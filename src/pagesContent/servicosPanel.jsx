@@ -1,62 +1,23 @@
-import React, { useEffect } from "react"
-import { createStore, useStore } from "react-hookstore"
-import { Typography, Button, IconButton } from "@material-ui/core"
-import CloseIcon from "@material-ui/icons/Close"
+import React from "react"
+import { Typography } from "@material-ui/core"
+import { makeStyles } from "@material-ui/styles"
+import SimplePanelComponent from "../components/simpleExpansionPanel"
 
-import Drawer from "../components/drawer"
-import Panel from "../components/simpleExpansionPanel"
+const useStyles = makeStyles(theme => ({
+  container: {
+    margin: "0 10px",
+    paddingBottom: "50px",
+    maxWidth: "400px",
+    minWidth: "280px",
+  },
+}))
 
-const toggleDrawer = createStore("drawerStore", false)
-
-const OpenDrawerButton = props => {
-  const setDrawer = useStore(toggleDrawer)[1]
-  return (
-    <Button {...props} onClick={() => setDrawer(true)}>
-      {props.children}
-    </Button>
-  )
-}
-
-const ServicosDrawer = props => {
-  const [drawer, setDrawer] = useStore(toggleDrawer)
-  const anchor = props.anchor || "left"
-  const variant = props.variant || "temporary"
-
-  useEffect(() => {
-    function handleBrowserBackButton(event) {
-      setDrawer(false)
-    }
-
-    if (drawer) {
-      window.history.pushState(null, document.title, document.location.href)
-      window.addEventListener("popstate", handleBrowserBackButton, {
-        passive: true,
-      })
-    }
-    return () =>
-      window.removeEventListener("popstate", handleBrowserBackButton, {
-        passive: true,
-      })
-  }, [drawer, setDrawer])
+const ServicosPanel = () => {
+  const classes = useStyles()
 
   return (
-    <Drawer
-      anchor={anchor}
-      variant={variant}
-      open={drawer}
-      onClose={() => setDrawer(false)}
-    >
-      <IconButton
-        size="small"
-        style={{ float: "right" }}
-        onClick={() => setDrawer(false)}
-      >
-        <CloseIcon fontSize="small" />
-      </IconButton>
-
-      <Typography component="h3" variant="h5">
-        Serviços
-      </Typography>
+    <div className={classes.container}>
+      <Typography variant="h5">Serviços</Typography>
       <Typography variant="caption">
         Modelos de requerimentos
         <br />
@@ -65,7 +26,7 @@ const ServicosDrawer = props => {
       <br />
       <br />
 
-      <Panel
+      <SimplePanelComponent
         title="Averbação"
         links={[
           { href: "https://duckduckgo.com", text: "Documentos necessários" },
@@ -75,8 +36,8 @@ const ServicosDrawer = props => {
         turpis nec nisl commodo, et molestie neque porttitor. Nunc sodales
         consectetur auctor. Vestibulum elementum velit justo, vel scelerisque
         nunc ornare sed
-      </Panel>
-      <Panel
+      </SimplePanelComponent>
+      <SimplePanelComponent
         title="Distrato"
         links={[
           { href: "https://duckduckgo.com", text: "Requerimento" },
@@ -87,8 +48,8 @@ const ServicosDrawer = props => {
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-      <Panel
+      </SimplePanelComponent>
+      <SimplePanelComponent
         title="Indisponibilidade"
         links={[
           { href: "https://duckduckgo.com", text: "Documentos necessários" },
@@ -98,8 +59,8 @@ const ServicosDrawer = props => {
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-      <Panel
+      </SimplePanelComponent>
+      <SimplePanelComponent
         title="Compra e Venda"
         links={[
           { href: "https://duckduckgo.com", text: "Documentos necessários" },
@@ -109,8 +70,8 @@ const ServicosDrawer = props => {
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-      <Panel
+      </SimplePanelComponent>
+      <SimplePanelComponent
         title="Intimação"
         links={[
           { href: "https://duckduckgo.com", text: "Documentos necessários" },
@@ -120,8 +81,8 @@ const ServicosDrawer = props => {
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-      <Panel
+      </SimplePanelComponent>
+      <SimplePanelComponent
         title="Receita de Miojo"
         links={[
           { href: "https://duckduckgo.com", text: "Documentos necessários" },
@@ -131,22 +92,21 @@ const ServicosDrawer = props => {
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-      <Panel title="Miajuda">
+      </SimplePanelComponent>
+      <SimplePanelComponent title="Miajuda">
         Vivamus in euismod eros, vel dignissim felis. Ut sagittis turpis nec
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-      <Panel title="Disfarça">
+      </SimplePanelComponent>
+      <SimplePanelComponent title="Disfarça">
         Vivamus in euismod eros, vel dignissim felis. Ut sagittis turpis nec
         nisl commodo, et molestie neque porttitor. Nunc sodales consectetur
         auctor. Vestibulum elementum velit justo, vel scelerisque nunc ornare
         sed
-      </Panel>
-    </Drawer>
+      </SimplePanelComponent>
+    </div>
   )
 }
 
-export default ServicosDrawer
-export { ServicosDrawer, OpenDrawerButton }
+export default ServicosPanel
