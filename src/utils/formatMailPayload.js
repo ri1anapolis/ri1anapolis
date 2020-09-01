@@ -101,23 +101,25 @@ function formatMailPayload(data) {
   } = data
 
   const name = requesterName.split(" ")
+  const email = `${requesterEmail.toLowerCase()}`
+
   payload.subject = `${name[0]} ${
     name[name.length - 1]
   }: solicitação de certidão/busca no site do 1º RI de Anápolis!`
 
-  payload.replyTo = requesterEmail
+  payload.replyTo = email
 
   const requesterInfoText = `
       Nome: ${requesterName}
       CPF/CNPJ: ${requesterID}
       Telefone: ${requesterPhone}
-      E-mail: ${requesterEmail}
+      E-mail: ${email}
       `
   const requesterInfoHtml = `
       Nome: ${requesterName}<br/>
       CPF/CNPJ: ${requesterID}<br/>
       Telefone: ${requesterPhone}<br/>
-      E-mail: ${requesterEmail}
+      E-mail: ${email}
       `
   const requestDescriptionText = `
       ${propertyAddress && "Endereço do Imóvel: " + propertyAddress}

@@ -2,12 +2,11 @@
 
 Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b21d6f83-2824-404b-8f63-4d4ecc0ee483/deploy-status)](https://app.netlify.com/sites/cocky-williams-b215ac/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b21d6f83-2824-404b-8f63-4d4ecc0ee483/deploy-status)](https://app.netlify.com/sites/ri1anapolis/deploys)
 
 ## Apresentação
 
-Esse é um site estático feito em Gatsby (React) que usa como backend para as buscas por protocolos o serviço do MongoDB Cloud (Atlas e Realm/Stitch).
-O site será servido pela Netlify.
+Esse é um site estático feito em Gatsby (React) que usa como backend para as buscas por protocolos o serviço do MongoDB Cloud (Atlas e Realm/Stitch) e para envio de email uma função na netlify.
 
 ###### Design
 
@@ -19,7 +18,7 @@ A idéia é ter um site simples, de fácil acesso e navegação, sem conteúdos 
 
 ###### Problemas
 
-- Um problema herdado do design é que, como trata-se de uma SPA, todos os conteúdos e assets são carregados na primeira(única) página, o que torna mais desafiador deixar o carregamento do site rápido.
+- Um problema herdado do design é que, como trata-se de uma SPA, todos os conteúdos e assets são carregados na primeira(única) página, o que torna mais desafiador deixar o carregamento do site rápido, todavia o fatiamento dos componentes e o carregamento dinâmico tem dado bons resultados.
 
 ## Desenvolvimento
 
@@ -34,34 +33,56 @@ Como o site é todo desenvolvido com Gatsby, recomenda-se ter amplos conheciment
 
 ###### [Com Gatsby](https://www.gatsbyjs.org/docs/environment-variables/):
 
-Há duas variáveis de ambiente para o site. Ambas são relativas ao backend do mongodb cloud:
+A seguir, as variáveis de ambiente necessárias para o frontend! Devem todas serem prefixadas com `GATSBY_` tal como demanda o próprio Gatsby:
 
 - `GATSBY_MONGODB_APP_ID`: ID do App no Realm/Stich
 - `GATSBY_MONGODB_APP_KEY`: Chave do App no Realm/Stich
 - `GOOGLE_TRACKING_ID`: ID do Google Analytics
-- `SITE_URL`: URL do site
+- `GATSBY_LOGROCKET_APP_ID`: ID de App no LogRocket para acompanhamento de uso e erros
 
-Configuração rápida das variáveis no ambente com Gatsby:
+Configuração rápida das variáveis no ambiente com Gatsby:
 
-1. Crie os arquivos, na raíz do projeto:
-   - `.env.development`: para ambiente de desenvolvimento;
-   - `.env.production`: para ambiente de produção;
+1. Crie o arquivo `.env.development` na raíz do projeto para configurar as variáveis de ambiente de desenvolvimento. Esse passo somente é necessário para o ambiente de desenvolvimento, caso seja necessário usar valores diferentes do ambiente de produção.
 2. Grave as variáveis acima indicadas em cada um desses arquivos com seus respectivos valores. Ex.:
    ```
    GATSBY_MONGODB_APP_ID=meu-app
    GATSBY_MONGODB_APP_KEY=çlaskdfjpasidfjaskdfjaçsdkfj
    GOOGLE_TRACKING_ID=G-AS7SSDF798S
-   SITE_URL=https://ri1anapolis.com.br
+   GATSBY_LOGROCKET_APP_ID=asdfg/ri1anapolis
    ```
 
 ###### Com Netlify
 
-Em breve.
+Para utilizar as variáveis de ambiente registrada no Netlify, é necessário instalar o pacote netlify-cli:
+
+- `yarn add -D netlify-cli`
+
+Uma vez com o netlify-cli instalado, é necessário:
+
+1. Fazer login no netlify: `netlify login`;
+2. Linkar o projeto com o netlify: `netlify link`
+3. Iniciar o servidor de desenvolvimento: `netlify dev`
+
+Uma vez que o ambiente de desenvolvimento da netlify esteja rodando (após o `netlify dev`), o ambiente terá um proxy para compatibilizar as chamadas às funções (lambda).
+
+As chamadas às funções no netlify somente funcionarão via proxy gerado pelo comando `netlify dev`!
+
+As variáveis necessárias ao correto funcionamento do site, além das acima citadas, e que devem estar registradas no Netlify são:
+
+- `GOOGLE_TRACKING_ID`: ID de rastreamento do google analytics;
+- `SITE_URL`: para indicar ao gatsby o endereço correto do site;
+- `SMTP_FROM`: o remetente das mensagens de email enviadas pelo site;
+- `SMTP_TO`: destinatário dos emails enviados pelo site;
+- `SMTP_HOST`: endereço do serviço de smtp;
+- `SMTP_PORT`: porta do serviço de smtp;
+- `SMTP_USER`: usuário de logon no serviço de smtp;
+- `SMTP_PASS`: senha de acesso ao serviço de smtp.
 
 #### Execução
 
 - `gatsby develop`: para servir em desenvolvimento;
   - `gatsby develop -H 192.168.1.20 -p 8000`: para habilitar acesso pela rede.
+  - `netlify dev`: para acesso local via proxy netlify, com funcionamento integrado das funções (lambda).
 - `gatsby build`: para gerar a build de produção;
 - `gatsby serve`: para servir a build e produção.
   - `gatsby serve -H 192.168.1.20 -p 9000`: para habilitar acesso pela rede.

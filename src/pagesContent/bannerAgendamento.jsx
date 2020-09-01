@@ -85,6 +85,7 @@ const BannerWhatsApp = () => {
         sm={10}
         md={6}
         className={classes.bannerTextWrapper}
+        direction="column"
         alignItems="center"
         justify="center"
       >
