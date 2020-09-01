@@ -40,11 +40,15 @@ const BackToTopButton = props => {
 
   return (
     <Fade in={visible}>
-      <AnchorLink href={topElementId}>
-        <StyledFab size="small" color="secondary" aria-label="Voltar ao topo">
-          <KeyboardArrowUpIcon />
-        </StyledFab>
-      </AnchorLink>
+      <StyledFab
+        component={AnchorLink}
+        href={topElementId}
+        size="small"
+        color="secondary"
+        aria-label="Voltar ao topo"
+      >
+        <KeyboardArrowUpIcon />
+      </StyledFab>
     </Fade>
   )
 }

@@ -99,19 +99,15 @@ const BannerWhatsApp = () => {
         <Typography paragraph align="center">
           Clique no botão abaixo e faça seu agendamento agora mesmo!
         </Typography>
-        <AnchorLink
-          offset="100"
+        <Button
+          component={AnchorLink}
+          offset="104"
           href="#agendamento"
-          style={{ textDecoration: "none", outline: "none" }}
+          variant="contained"
+          color="primary"
         >
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ textAlign: "center" }}
-          >
-            Clique aqui para agendar seu atendimento
-          </Button>
-        </AnchorLink>
+          Clique aqui para agendar seu atendimento
+        </Button>
       </Grid>
     </Grid>
   )

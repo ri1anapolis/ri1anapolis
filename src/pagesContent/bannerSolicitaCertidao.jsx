@@ -51,19 +51,15 @@ const BannerSolicitaCertidao = () => {
           </Link>
           , ou clicar no botão abaixo!
         </Typography>
-        <AnchorLink
-          offset="100"
+        <Button
+          component={AnchorLink}
+          offset="104"
           href="#certidoes"
-          style={{ textDecoration: "none", outline: "none" }}
+          variant="contained"
+          color="primary"
         >
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ textAlign: "center" }}
-          >
-            Clique para solicitar sua certidão
-          </Button>
-        </AnchorLink>
+          Clique para solicitar sua certidão
+        </Button>
       </Grid>
     </Grid>
   )
