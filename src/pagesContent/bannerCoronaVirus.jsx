@@ -1,6 +1,7 @@
 import React from "react"
 import { Grid, Container, Typography, Link } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 import coronaImg from "../images/coronavirus_bg_2_opt.svg"
 
 const useStyles = makeStyles({
@@ -25,27 +26,24 @@ const BannerCoronaVirus = () => {
     >
       <Container className={classes.text}>
         <Typography variant="subtitle2" align="center">
-          Atendimento durante a pandemia
-          <br />
+          <strong>Atendimento durante a pandemia</strong>
         </Typography>
-        <Typography align="center">
-          <small>Mudanças nos horários de atendimento</small>
+        <Typography paragraph align="center">
+          <small>Atendimento agendado</small>
         </Typography>
-        <br />
-        <Typography align="justify" style={{ fontSize: ".9em" }}>
-          A Corregedoria Geral da Justiça do Estado de Goiás determinou, por
-          meio da{" "}
+        <Typography>
+          Por força das Portarias nº 57/2020 e nº 76/2020, a CGJ/GO determinou
+          que os cartórios realizem o atendimento presencial ao público com
+          horário previamente agendado.{" "}
           <Link
-            href="https://www.tjgo.jus.br/images/docs/corregedoria/PORTARIA_N57_2020.pdf"
-            rel="noopener noreferrer"
-            target="_blank"
+            component={AnchorLink}
+            href="#agendamento"
+            offset="104"
+            color="primary"
           >
-            Portaria nº 57, de 6 de abril de 2020
-          </Link>
-          , que os Cartórios Extrajudiciais mantenham atendimento presencial ao
-          público das 10h às 16h em todos os dias úteis, com horário previamente
-          agendado. Aqui no site você pode consultar seu protocolo online ou
-          acessar nossos canais de comunicação!
+            Agende seu atendimento no site ou pelo WhatsApp
+          </Link>{" "}
+          e evite aglomerações!
         </Typography>
       </Container>
     </Grid>
