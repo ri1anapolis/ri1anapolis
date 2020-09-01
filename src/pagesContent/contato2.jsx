@@ -10,7 +10,6 @@ import {
   Link,
 } from "@material-ui/core"
 import { makeStyles } from "@material-ui/styles"
-import Alert from "@material-ui/lab/Alert"
 import loadableVisibility from "react-loadable-visibility/react-loadable"
 
 import { Article, Section } from "../components/section2"
@@ -87,23 +86,6 @@ const ContatoSectionContent = () => {
             presencial e pelos canais de comunicação se dá de segunda a
             sexta-feira das 08:00h as 17:00h
           </Typography>
-          <br />
-
-          <Alert severity="warning" align="justify">
-            A Corregedoria Geral da Justiça do Estado de Goiás determinou, por
-            meio da{" "}
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.tjgo.jus.br/images/docs/corregedoria/PORTARIA_N57_2020.pdf"
-            >
-              Portaria nº 57, de 6 de abril de 2020
-            </Link>
-            , que os Cartórios Extrajudiciais mantenham atendimento presencial
-            ao público das 10h às 16h em todos os dias úteis, com horário
-            previamente agendado. As medidas são uma resposta à crise sanitária
-            causada pelo coronavírus.
-          </Alert>
           <br />
 
           <Grid container justify="space-around">
