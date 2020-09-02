@@ -22,6 +22,7 @@ let theme = createMuiTheme({
             overflowX: "auto",
           },
         },
+        body: { paddingRight: "0px !important" },
       },
     },
   },

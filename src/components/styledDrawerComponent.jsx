@@ -62,7 +62,6 @@ const store = createStore(drawerReducer)
 const StyledDrawer = props => {
   const classes = useStyles({ ...props })
   const { id, children } = props
-  const containerEl = document.getElementById("home") // workaround to avoid MUI margin on modal to be showed
 
   const initialState = {}
   initialState[id] = false
@@ -94,7 +93,6 @@ const StyledDrawer = props => {
     <MuiDrawer
       id={id}
       open={drawerStore[id]}
-      container={containerEl}
       onClose={handleCloseDrawer}
       {...props}
       className={classes.drawer}
