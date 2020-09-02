@@ -31,7 +31,7 @@ const BannerCoronaVirus = () => {
         <Typography paragraph align="center">
           <small>Atendimento agendado</small>
         </Typography>
-        <Typography>
+        <Typography align="justify">
           Por força das Portarias nº 57/2020 e nº 76/2020, a CGJ/GO determinou
           que os cartórios realizem o atendimento presencial ao público com
           horário previamente agendado.{" "}
