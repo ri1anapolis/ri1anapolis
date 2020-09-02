@@ -105,8 +105,9 @@ const BannerWhatsApp = () => {
           href="#agendamento"
           variant="contained"
           color="primary"
+          align="center"
         >
-          Clique aqui para agendar seu atendimento
+          Agende seu atendimento
         </Button>
       </Grid>
     </Grid>

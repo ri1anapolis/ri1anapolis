@@ -57,8 +57,9 @@ const BannerSolicitaCertidao = () => {
           href="#certidoes"
           variant="contained"
           color="primary"
+          align="center"
         >
-          Clique para solicitar sua certidão
+          Solicite sua certidão
         </Button>
       </Grid>
     </Grid>
