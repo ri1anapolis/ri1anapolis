@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   buttonContainer: {
     order: "7",
+    flexShrink: 1,
     [theme.breakpoints.up("md")]: {
       order: "2",
     },
@@ -36,6 +37,16 @@ const useStyles = makeStyles(theme => ({
   button: {
     [theme.breakpoints.down("xs")]: {
       width: "100%",
+    },
+  },
+  footer: {
+    color: "#a0a0a0",
+    order: "8",
+    flexGrow: 1,
+    justifyContent: "center",
+    [theme.breakpoints.only("sm")]: {
+      justifyContent: "flex-start",
+      order: "6",
     },
   },
   popoverStatus: {
@@ -202,28 +213,43 @@ const CertidaoPanel = props => {
                 item
                 container
                 justify="flex-end"
+                sm={5}
                 md={3}
                 className={clsx(classes.sections, classes.buttonContainer)}
               >
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.button}
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <CircularProgress
-                        style={{ color: "grey", marginRight: "5px" }}
-                        size={20}
-                      />
-                      Enviando
-                    </>
-                  ) : (
-                    "Enviar Solicitação"
-                  )}
-                </Button>
+                <div className={classes.button}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    disabled={isSubmitting}
+                    fullWidth
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <CircularProgress
+                          style={{ color: "grey", marginRight: "5px" }}
+                          size={20}
+                        />
+                        Enviando
+                      </>
+                    ) : (
+                      "Enviar Solicitação"
+                    )}
+                  </Button>
+                </div>
+              </Grid>
+              <Grid
+                item
+                container
+                xs={12}
+                sm={7}
+                md={12}
+                className={clsx(classes.sections, classes.footer)}
+              >
+                <Typography variant="caption" align="center">
+                  Somente os itens com asterisco (*) são obrigatórios
+                </Typography>
               </Grid>
             </Grid>
           </form>
