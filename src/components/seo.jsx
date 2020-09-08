@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, keywords, pathname }) {
+function SEO({ description, lang, meta, title, pathname }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,7 +18,6 @@ function SEO({ description, lang, meta, title, keywords, pathname }) {
           siteMetadata {
             title
             description
-            keywords
             siteUrl
           }
         }
@@ -27,7 +26,6 @@ function SEO({ description, lang, meta, title, keywords, pathname }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaKeywords = keywords || site.siteMetadata.keywords
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
@@ -84,16 +82,7 @@ function SEO({ description, lang, meta, title, keywords, pathname }) {
           name: `viewport`,
           content: `minimum-scale=1, initial-scale=1, width=device-width`,
         },
-      ]
-        .concat(
-          metaKeywords.length > 0
-            ? {
-                name: `keywords`,
-                content: metaKeywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
+      ].concat(meta)}
     />
   )
 }
@@ -101,7 +90,6 @@ function SEO({ description, lang, meta, title, keywords, pathname }) {
 SEO.defaultProps = {
   lang: `pt-BR`,
   meta: [],
-  keywords: [],
   description: ``,
 }
 
@@ -110,7 +98,6 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  keywords: PropTypes.arrayOf(PropTypes.string),
   pathname: PropTypes.string,
 }
 

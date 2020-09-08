@@ -68,7 +68,7 @@ const ContatoSectionContent = () => {
   const classes = useStyles()
 
   async function mapPreload() {
-    await delay(10000)
+    await delay(20000)
     ContatoMap.preload()
   }
   mapPreload()
@@ -113,7 +113,7 @@ const ContatoSectionContent = () => {
                   <ListItemIcon className={classes.listItemIcon}>
                     <img
                       src={place}
-                      alt="localização"
+                      alt="Endereço: Av. Universitária, nº 2221 - Anashopping - Anápolis/GO"
                       className={classes.locationImg}
                     />
                   </ListItemIcon>

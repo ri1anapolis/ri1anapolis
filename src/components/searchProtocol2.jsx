@@ -147,6 +147,7 @@ const SearchForm = props => {
   return (
     <Grid container className={classes.searchContainer}>
       <TextField
+        autoComplete="off"
         onChange={event => setProtocol(event.target.value)}
         onKeyDown={event => handleEnterKey(event)}
         className={classes.searchBox}

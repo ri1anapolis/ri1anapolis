@@ -76,7 +76,7 @@ const CartorioSectionContent = () => {
       <Aside>
         <Img
           fluid={image.file.childImageSharp.fluid}
-          alt="Imagem da equipe do cartório"
+          alt="1º RI de Anápolis/GO: Eficiência e Profissionalismo!"
           style={{ width: "100%" }}
         />
       </Aside>

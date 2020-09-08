@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useForm, FormProvider, useFormContext } from "react-hook-form"
 import clsx from "clsx"
 import { Container, Grid, Typography } from "@material-ui/core"
@@ -8,9 +8,11 @@ import { makeStyles, useTheme } from "@material-ui/styles"
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline"
 import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline"
 import { yupResolver } from "@hookform/resolvers"
+
 import validationSchema from "../utils/formValidationSchemaCertidao"
 import { TextMaskCpfCnpj, TextMaskPhone } from "../components/muiMaskedInputs"
 import mailer from "../utils/mailer"
+import delay from "../utils/delay"
 
 const useStyles = makeStyles(theme => ({
   sections: {
@@ -39,15 +41,24 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
     },
   },
-  footer: {
+  notice: {
     color: "#a0a0a0",
     order: "8",
     flexGrow: 1,
     justifyContent: "center",
-    [theme.breakpoints.only("sm")]: {
+    [theme.breakpoints.down("sm")]: {
       justifyContent: "flex-start",
       order: "6",
     },
+    [theme.breakpoints.down("xs")]: {
+      order: "0",
+    },
+  },
+  glowText: {
+    "-webkit-transition": "color 2s ease, text-shadow 2s ease",
+    "-moz-transition": "color 2s ease, text-shadow 2s ease",
+    "-o-transition": "color 2s ease, text-shadow 2s ease",
+    transition: "color 2s ease, text-shadow 2s ease",
   },
   popoverStatus: {
     maxWidth: "500px",
@@ -82,6 +93,24 @@ const CertidaoPanel = props => {
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null)
   const [popoverShow, setPopoverShow] = useState(false)
   const [popoverStatus, setPopoverStatus] = useState(null)
+  const [didItGlow, setDidItGlow] = useState(false)
+
+  useEffect(() => {
+    async function glowText(style) {
+      const glowTextEl = document.getElementsByClassName("glowText")
+
+      if (glowTextEl && glowTextEl.length > 0) {
+        setDidItGlow(true)
+        await delay(500)
+        Array.from(glowTextEl).forEach(el => {
+          el.style = style
+        })
+        await delay(2000)
+        glowText("color: inherit; text-shadow: inherit")
+      }
+    }
+    glowText("color: #ff0000; text-shadow: 0 0 10px #e52086")
+  }, [didItGlow, setDidItGlow])
 
   const { formState, handleSubmit, reset, ...formMethods } = useForm({
     resolver: yupResolver(validationSchema),
@@ -245,10 +274,13 @@ const CertidaoPanel = props => {
                 xs={12}
                 sm={7}
                 md={12}
-                className={clsx(classes.sections, classes.footer)}
+                className={clsx(classes.notice, classes.sections)}
               >
-                <Typography variant="caption" align="center">
-                  Somente os itens com asterisco (*) são obrigatórios
+                <Typography
+                  variant="caption"
+                  className={clsx(classes.glowText, "glowText")}
+                >
+                  Somente os itens com asterisco (*) são obrigatórios!
                 </Typography>
               </Grid>
             </Grid>

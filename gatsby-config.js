@@ -9,28 +9,8 @@ const googleTrackingId = process.env.GOOGLE_TRACKING_ID
 module.exports = {
   siteMetadata: {
     title: `1º Registro de Imóveis de Anápolis/GO`,
-    description: `Consulte o andamento do seu pedido de registro ou certidão online! Basta informar o número do protocolo e buscar! Acesse nosso site e entenda como funciona o fluxo de trabalho no 1º RI! O Cartório de Registro de Imóveis da Primeira Circunscrição fica localizado dentro do Anashopping, em Anápolis - GO.`,
+    description: `Consulte o andamento do seu protocolo, solicite certidões, agende seu atendimento! Agora você tem todos esses serviços disponíveis online no site! Acompanhe o andamento do seu protocolo online e entenda o processo de registro/averbação! Sua certidão pronta em até 20 minutos*! Solicite sua certidão pelo site ou e-mail! Agende seu atendimento online no site ou por WhatsApp e evite filas e aglomerações! O Cartório de Registro de Imóveis da Primeira Circunscrição fica localizado dentro do Anashopping, em Anápolis - GO.`,
     siteUrl,
-    keywords: [
-      "cartório",
-      "registro",
-      "prenotação",
-      "averbação",
-      "intimação",
-      "notificação",
-      "busca",
-      "loteamento",
-      "condomínio",
-      "contrato",
-      "compra e venda",
-      "cédula",
-      "financiamento",
-      "imóveis",
-      "circunscrição",
-      "certidão",
-      "anápolis",
-      "goiás",
-    ],
   },
   plugins: [
     {

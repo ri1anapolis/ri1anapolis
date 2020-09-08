@@ -1,11 +1,16 @@
-import React from "react"
-import { Grid, Container, Typography } from "@material-ui/core"
-import { useTheme, makeStyles } from "@material-ui/styles"
+import React, { useState, useEffect } from "react"
+import { Grid, Container, Tooltip } from "@material-ui/core"
+import { Typography, Link } from "@material-ui/core"
+import { makeStyles } from "@material-ui/styles"
+
+import WhatsAppIcon from "@material-ui/icons/WhatsApp"
+import WebIcon from "@material-ui/icons/Web"
+
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
+import delay from "../utils/delay"
 
 const iframeId = "iframe-agendamento"
-const iframeSrc =
-  "https://my.setmore.com/bookanappointmentv3.do?uniqueKey=31973490-0c3c-475e-97a4-98a98cbc81bb"
+const iframeSrc = "https://ri1anapolis.setmore.com/"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,11 +33,34 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     overflow: "hidden",
   },
+  iframeFallback: {
+    padding: "20px",
+  },
 }))
 
 const AgendamentoPanel = props => {
-  const theme = useTheme()
-  const classes = useStyles(theme)
+  const classes = useStyles()
+  const [showFallbackMessage, setShowFallbackMessage] = useState("none")
+  const [iframeLoaded, setIframeLoaded] = useState(false)
+  const [timeIsOut, setTimeIsOut] = useState(false)
+
+  const handleOnLoad = () => {
+    setIframeLoaded(true)
+  }
+
+  useEffect(() => {
+    async function waitIframe() {
+      await delay(6000)
+      setTimeIsOut(true)
+    }
+    !timeIsOut && waitIframe()
+  }, [timeIsOut, setTimeIsOut])
+
+  useEffect(() => {
+    timeIsOut && !iframeLoaded
+      ? setShowFallbackMessage("flex")
+      : setShowFallbackMessage("none")
+  }, [timeIsOut, iframeLoaded])
 
   return (
     <Grid container direction="column" className={classes.root}>
@@ -56,9 +84,50 @@ const AgendamentoPanel = props => {
           frameBorder="0"
           scrolling="no"
           loading="eager"
+          onLoad={handleOnLoad}
         >
           teste
         </iframe>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="column"
+        justify="center"
+        align="center"
+        className={classes.iframeFallback}
+        style={{ display: showFallbackMessage }}
+      >
+        <Typography paragraph align="center">
+          Está com problemas por aqui?
+        </Typography>
+        <Typography paragraph align="center" variant="caption">
+          Tente agendar pelo site do serviço ou pelo nosso WhatsApp!
+        </Typography>
+        <Grid item container justify="space-around">
+          <Link
+            href={iframeSrc}
+            target="_blank"
+            rel="noopener noreferrer"
+            color="secondary"
+            variant="caption"
+          >
+            <Tooltip arrow title="Agende pelo site do serviço">
+              <WebIcon fontSize="large" />
+            </Tooltip>
+          </Link>
+          <Link
+            href="https://wa.me/556239374650"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="secondary"
+            variant="caption"
+          >
+            <Tooltip arrow title="Agende pelo WhatsApp">
+              <WhatsAppIcon fontSize="large" />
+            </Tooltip>
+          </Link>
+        </Grid>
       </Grid>
     </Grid>
   )

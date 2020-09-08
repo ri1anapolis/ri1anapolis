@@ -44,7 +44,7 @@ const ServicosSectionContent = () => {
       <Aside>
         <Img
           fluid={image.file.childImageSharp.fluid}
-          alt="Serviços"
+          alt="Serviços disponíveis no site: Consulta de protocolos, Agendamento de atendimento e Solicitação de certidões e buscas!"
           style={{ width: "100%" }}
         />
       </Aside>
