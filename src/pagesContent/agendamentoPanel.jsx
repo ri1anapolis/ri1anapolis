@@ -48,6 +48,10 @@ const AgendamentoPanel = props => {
     setIframeLoaded(true)
   }
 
+  const handleError = error => {
+    console.error(`Error loading iframe content: ${error}`)
+  }
+
   useEffect(() => {
     async function waitIframe() {
       await delay(6000)
@@ -57,9 +61,17 @@ const AgendamentoPanel = props => {
   }, [timeIsOut, setTimeIsOut])
 
   useEffect(() => {
-    timeIsOut && !iframeLoaded
-      ? setShowFallbackMessage("flex")
-      : setShowFallbackMessage("none")
+    if (timeIsOut) {
+      if (!iframeLoaded) {
+        setShowFallbackMessage("flex")
+        console.info(
+          `The iframe request is taking too much time to finish loading...`
+        )
+      } else {
+        setShowFallbackMessage("none")
+        console.info(`The iframe request finished to load.`)
+      }
+    }
   }, [timeIsOut, iframeLoaded])
 
   return (
@@ -85,8 +97,20 @@ const AgendamentoPanel = props => {
           scrolling="no"
           loading="eager"
           onLoad={handleOnLoad}
+          onError={handleError}
         >
-          teste
+          <Container justify="center" align="center">
+            <Typography paragraph align="center">
+              Opa! Parece que seu navegador não suporta esse recurso!
+            </Typography>
+            <Typography paragraph align="center">
+              Faça o agendamento diretamente pelo site do serviço! Bata clicar
+              no link abaixo
+            </Typography>
+            <Link color="primary" href={iframeSrc} rel="noopener noreferrer">
+              {iframeSrc}
+            </Link>
+          </Container>
         </iframe>
       </Grid>
       <Grid
