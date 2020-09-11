@@ -101,8 +101,18 @@ const BannerWhatsApp = () => {
         </Typography>
         <Button
           component={AnchorLink}
-          offset="104"
-          href="#agendamento"
+          offset={
+            window.matchMedia("(max-width: 959px)").matches &&
+            window.matchMedia("(max-height: 959px)").matches
+              ? 104
+              : 89
+          }
+          href={
+            window.matchMedia("(max-width: 959px)").matches &&
+            window.matchMedia("(max-height: 959px)").matches
+              ? "#agendamento"
+              : "#servicos"
+          }
           variant="contained"
           color="primary"
           align="center"
