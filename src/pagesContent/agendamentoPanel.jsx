@@ -29,12 +29,17 @@ const useStyles = makeStyles(theme => ({
     zIndex: "-1",
   },
   iframe: {
+    position: "absolute",
+    top: 0,
+    left: 0,
     width: "100%",
     height: "100%",
     overflow: "hidden",
+    zIndex: 10,
   },
   iframeFallback: {
     padding: "20px",
+    background: "#f3f3f3",
   },
 }))
 
@@ -84,9 +89,6 @@ const AgendamentoPanel = props => {
         </Container>
       </Grid>
       <Grid item style={{ flexGrow: 1, position: "relative" }}>
-        <Container className={classes.fallback}>
-          <SectionLoadingFallback text="Conectando-se ao serviço de agendamento..." />
-        </Container>
         <iframe
           className={classes.iframe}
           title={iframeId}
@@ -112,6 +114,9 @@ const AgendamentoPanel = props => {
             </Link>
           </Container>
         </iframe>
+        <Container className={classes.fallback}>
+          <SectionLoadingFallback text="Conectando-se ao serviço de agendamento..." />
+        </Container>
       </Grid>
       <Grid
         item
