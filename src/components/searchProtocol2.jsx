@@ -4,6 +4,7 @@ import gql from "graphql-tag"
 import MaskedInput from "react-text-mask"
 import PropTypes from "prop-types"
 import { Grid, TextField, Button } from "@material-ui/core"
+import { Divider, Typography } from "@material-ui/core"
 import { makeStyles, withStyles, useTheme } from "@material-ui/styles"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
@@ -89,6 +90,7 @@ const gqlQuery = gql`
   query($protocol: String!) {
     process(query: { name: $protocol }) {
       name
+      nature
       status
       email
       step {
@@ -188,27 +190,33 @@ const SearchReport = () => {
       if (networkError && networkError.length > 0) {
         return (
           <StyledAlertComponent severity="error" title="Erro de conexão">
-            Uma falha na conexão de rede impediu que sua consulta fosse
-            realizada.
-            <br />
-            Verifique se sua conexão com a internet está ativa ou se há algum
-            firewall bloqueando a conexão.
+            <Typography paragraph>
+              Uma falha na conexão de rede impediu que sua consulta fosse
+              realizada.
+            </Typography>
+            <Typography>
+              Verifique se sua conexão com a internet está ativa ou se há algum
+              firewall bloqueando a conexão.
+            </Typography>
           </StyledAlertComponent>
         )
       } else {
         return (
           <StyledAlertComponent severity="error" title="Erro de sistema">
-            Uma falha de sistema ocorreu. Tente novamente mais tarde.
-            <br />
-            Caso já tenha visto essa mensagem anteriormente,{" "}
-            <AnchorLink
-              href="#contato"
-              offset="89"
-              style={{ color: "#611A15" }}
-            >
-              entre em contato
-            </AnchorLink>{" "}
-            e nos informe!
+            <Typography paragraph>
+              Uma falha de sistema ocorreu. Tente novamente mais tarde.
+            </Typography>
+            <Typography>
+              Caso já tenha visto essa mensagem anteriormente,{" "}
+              <AnchorLink
+                href="#contato"
+                offset="89"
+                style={{ color: "#611A15" }}
+              >
+                entre em contato
+              </AnchorLink>{" "}
+              e nos informe!
+            </Typography>
           </StyledAlertComponent>
         )
       }
@@ -233,29 +241,35 @@ const SearchReport = () => {
       {data && data.process && (
         <StyledAlertComponent
           severity="success"
-          title={
-            <>
-              <strong>Protocolo {data.process.name}</strong> - Etapa:{" "}
-              {data.process.step.name}
-            </>
-          }
+          title={<strong>Protocolo {data.process.name.split("-")[1]}</strong>}
         >
-          {data.process.step.description}
+          {data.process.nature && (
+            <Typography>
+              <span style={{ fontWeight: "600" }}>Natureza:</span>{" "}
+              {data.process.nature}
+            </Typography>
+          )}
+          <Typography paragraph>
+            <span style={{ fontWeight: "600" }}>Etapa:</span>{" "}
+            {data.process.step.name}
+          </Typography>
+
+          <Divider />
+          <Typography paragraph></Typography>
+
+          <Typography paragraph align="justify">
+            {data.process.step.description}
+          </Typography>
           {data.process.email && (
-            <>
-              <br />
-              <br />
+            <Typography paragraph>
               E-mail cadastrado: "{data.process.email}"
-            </>
+            </Typography>
           )}
           {data.process.status && (
-            <>
-              <br />
-              <br />
+            <Typography>
               <strong>Atenção</strong>: Seu protocolo possui a seguinte
               observação: "{data.process.status}".
-              <br />
-            </>
+            </Typography>
           )}
         </StyledAlertComponent>
       )}
@@ -265,16 +279,22 @@ const SearchReport = () => {
           severity="info"
           title="O protocolo informado não foi encontrado!"
         >
-          Isso pode ocorrer caso o protocolo tenha sido finalizado há muito
-          tempo ou tenha ocorrido uma falha de sincronização com o servidor do
-          cartório.
-          <br />
-          <br />
-          Caso acredite que isso é um erro, entre em contato conosco pelos
-          nossos{" "}
-          <AnchorLink href="#contato" offset="89" style={{ color: "#0D3C61" }}>
-            canais de atendimento.
-          </AnchorLink>
+          <Typography paragraph>
+            Isso pode ocorrer caso o protocolo tenha sido finalizado há muito
+            tempo ou tenha ocorrido uma falha de sincronização com o servidor do
+            cartório.
+          </Typography>
+          <Typography>
+            Caso acredite que isso é um erro, entre em contato conosco pelos
+            nossos{" "}
+            <AnchorLink
+              href="#contato"
+              offset="89"
+              style={{ color: "#0D3C61" }}
+            >
+              canais de atendimento.
+            </AnchorLink>
+          </Typography>
         </StyledAlertComponent>
       )}
     </>
