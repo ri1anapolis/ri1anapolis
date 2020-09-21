@@ -1,31 +1,48 @@
 import React from "react"
-import { Typography, Link } from "@material-ui/core"
+import Typography from "@material-ui/core/Typography"
+import makeStyles from "@material-ui/styles/makeStyles"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Loadable from "react-loadable"
 
 import Button from "../components/styledButton"
 import { Article, Section, Aside } from "../components/section2"
-import StyledDrawer, {
-  useDrawerToggler,
-} from "../components/styledDrawerComponent"
+import StyledDrawer from "../components/styledDrawerComponent"
+import { useDrawerToggler } from "../components/styledDrawerComponent"
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
 
+const useStyles = makeStyles({
+  hyphenate: {
+    wordWrap: "break-word !important",
+    overflowWrap: "break-word !important",
+    "-webkit-hyphens": "auto",
+    "-ms-hyphens": "auto",
+    hyphens: "auto",
+  },
+})
+
 const CertidaoPanel = Loadable({
-  loader: () => import("../pagesContent/certidaoPanel"),
+  loader: () => import("./certidaoPanel"),
   loading: () => <SectionLoadingFallback height="0" />,
   delay: 300,
 })
 const AgendamentoPanel = Loadable({
-  loader: () => import("../pagesContent/agendamentoPanel"),
+  loader: () => import("./agendamentoPanel"),
+  loading: () => <SectionLoadingFallback height="0" />,
+  delay: 300,
+})
+const DocumentosPanel2 = Loadable({
+  loader: () => import("./documentosPanel2"),
   loading: () => <SectionLoadingFallback height="0" />,
   delay: 300,
 })
 
 const ServicosSectionContent = () => {
+  const classes = useStyles()
   const handleDrawer = useDrawerToggler()
   CertidaoPanel.preload()
   AgendamentoPanel.preload()
+  DocumentosPanel2.preload()
 
   const image = useStaticQuery(graphql`
     query {
@@ -53,12 +70,12 @@ const ServicosSectionContent = () => {
           Serviços
         </Typography>
 
-        <Typography variant="subtitle2" id="agendamento">
+        <Typography align="left" variant="subtitle2" id="agendamento">
           <strong>Agendamento</strong>
         </Typography>
-        <Typography paragraph>
-          Evite filas e imprevistos. Agende sua visita ou atendimento online,
-          aqui no site, ou pelo WhatsApp!
+        <Typography align="left" className={classes.hyphenate}>
+          Agendamento de atendimento presencial, entrega ou retirada de
+          documentos.
         </Typography>
         <Button
           size="small"
@@ -81,29 +98,49 @@ const ServicosSectionContent = () => {
         </Button>
         <Typography paragraph />
 
-        <Typography variant="subtitle2" id="certidoes">
+        <Typography align="left" variant="subtitle2" id="certidoes">
           <strong>Certidões</strong>
         </Typography>
-        <Typography paragraph>
-          Solicite buscas ou emissão de certidões clicando no botão abaixo, ou
-          encaminhe suas solicitações por email, no endereço{" "}
-          <Link
-            href="mailto:certidaoanapolis@gmail.com"
-            rel="noreferrer noopener"
-            target="_blank"
-            style={{ filter: "brightness(1.3)" }}
-          >
-            certidaoanapolis@gmail.com
-          </Link>
-          .
+        <Typography align="left" className={classes.hyphenate}>
+          Solicite buscas ou emissão de certidões
         </Typography>
 
         <Button
+          size="small"
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerCertidoes")}
         >
-          Solicitar Certidão
+          Solicitar Online
+        </Button>
+        <Button
+          size="small"
+          color="primary"
+          variant="outlined"
+          rel="noreferrer noopener"
+          target="_blank"
+          href="mailto:certidaoanapolis@gmail.com"
+          style={{ filter: "brightness(1.2)" }}
+        >
+          ou por E-mail
+        </Button>
+
+        <Typography paragraph />
+
+        <Typography variant="subtitle2" align="left" id="agendamento">
+          <strong>Documentos para Registro</strong>
+        </Typography>
+        <Typography align="left" className={classes.hyphenate}>
+          Baixe as listas de documentos necessários para registro, modelos,
+          requerimentos e manuais.
+        </Typography>
+        <Button
+          size="small"
+          variant="contained"
+          color="primary"
+          onClick={handleDrawer("drawerDocumentos2")}
+        >
+          Listar Documentos
         </Button>
       </Section>
 
@@ -113,6 +150,10 @@ const ServicosSectionContent = () => {
 
       <StyledDrawer id="drawerAgendamento">
         <AgendamentoPanel />
+      </StyledDrawer>
+
+      <StyledDrawer id="drawerDocumentos2">
+        <DocumentosPanel2 />
       </StyledDrawer>
     </Article>
   )
