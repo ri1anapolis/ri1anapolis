@@ -1,9 +1,21 @@
 import React from "react"
-import { Typography } from "@material-ui/core"
+import Typography from "@material-ui/core/Typography"
+import makeStyles from "@material-ui/styles/makeStyles"
 import { Article, Section, Aside } from "../components/section2"
 import SearchForm, { SearchReport } from "../components/searchProtocol2"
 
+const useStyles = makeStyles({
+  hyphenate: {
+    wordWrap: "break-word !important",
+    overflowWrap: "break-word !important",
+    "-webkit-hyphens": "auto",
+    "-ms-hyphens": "auto",
+    hyphens: "auto",
+  },
+})
+
 const ProtocolosSectionContent = () => {
+  const classes = useStyles()
   return (
     <Article id="protocolos">
       <Section md={6} lg={5}>
@@ -11,8 +23,8 @@ const ProtocolosSectionContent = () => {
           Protocolos
         </Typography>
 
-        <Typography>
-          Acompanhe o andamento do seu processo! Informe no campo abaixo o
+        <Typography className={classes.hyphenate}>
+          Acompanhe o andamento do seu processo. Informe no campo abaixo o
           número do protocolo presente em seu recibo e faça uma busca.
         </Typography>
 

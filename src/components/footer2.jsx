@@ -77,6 +77,10 @@ const Footer = props => {
           title="Links Úteis"
           links={[
             {
+              href: "https://ri1anapolis.page.link/tabela_custas_simplificada",
+              text: "Tabela de Custas Vigente",
+            },
+            {
               href: "https://see.tjgo.jus.br/ajuda/publico",
               text: "Sistema Extrajudicial Eletrônico",
             },
@@ -90,8 +94,9 @@ const Footer = props => {
             },
             {
               href:
-                "https://www.google.com/maps/d/u/1/viewer?mid=1YBP3QGI5MjBJRj8ukcKHjesdvqMDUqhS",
-              text: "Mapa fronteiriço de Anápolis e da Primeira Circunscrição",
+                "https://www.google.com/maps/d/u/1/viewer?mid=1YBP3QGI5MjBJRj8ukcKHjesdvqMDUqhS&ll=-16.258738796402053%2C-48.99141507421872&z=10",
+              text:
+                "Mapa fronteiriço de Anápolis e da Primeira Circunscrição (ver no computador)",
             },
           ]}
         />

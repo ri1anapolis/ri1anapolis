@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react"
-import { Drawer, IconButton, Tooltip } from "@material-ui/core"
-import { makeStyles, withStyles } from "@material-ui/styles"
+import Drawer from "@material-ui/core/Drawer"
+import IconButton from "@material-ui/core/IconButton"
+import Tooltip from "@material-ui/core/Tooltip"
+import makeStyles from "@material-ui/styles/makeStyles"
+import withStyles from "@material-ui/styles/withStyles"
 import CloseIcon from "@material-ui/icons/Close"
+
 import createStore from "../utils/simpleRedux"
 
 const MuiDrawer = withStyles(themes => ({
@@ -12,6 +16,8 @@ const MuiDrawer = withStyles(themes => ({
 
 const useStyles = makeStyles(theme => ({
   drawer: {
+    overscrollBehavior: "none",
+    overscrollBehaviorBlock: "none",
     "& > div": {
       overflowX: "hidden",
       scrollbarWidth: "thin",

@@ -1,6 +1,11 @@
 import React from "react"
-import { Grid, Typography, Button, Link } from "@material-ui/core"
-import { makeStyles, useTheme } from "@material-ui/styles"
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
+import Link from "@material-ui/core/Link"
+import makeStyles from "@material-ui/styles/makeStyles"
+import useTheme from "@material-ui/styles/useTheme"
+
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +43,7 @@ const BannerSolicitaCertidao = () => {
           <strong>Solicite sua certidão por e-mail ou pelo site!</strong>
         </Typography>
         <Typography align="center">
-          Solicite certidões e/ou buscas diretamente por email ou aqui no site!
+          Solicite certidões e/ou buscas diretamente por e-mail ou aqui no site.
         </Typography>
         <Typography paragraph align="center">
           Basta remeter sua solicitação para o email{" "}
@@ -49,8 +54,8 @@ const BannerSolicitaCertidao = () => {
             style={{ filter: "brightness(1.3)" }}
           >
             certidaoanapolis@gmail.com
-          </Link>
-          , ou clicar no botão abaixo!
+          </Link>{" "}
+          ou clicar no botão abaixo.
         </Typography>
         <Button
           component={AnchorLink}
@@ -70,7 +75,7 @@ const BannerSolicitaCertidao = () => {
           color="primary"
           align="center"
         >
-          Solicite sua certidão
+          Solicite sua certidão / busca
         </Button>
       </Grid>
     </Grid>

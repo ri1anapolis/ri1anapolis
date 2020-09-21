@@ -43,7 +43,7 @@ const BannerCoronaVirus = () => {
           >
             Agende seu atendimento no site ou pelo WhatsApp
           </Link>{" "}
-          e evite aglomerações!
+          e evite aglomerações.
         </Typography>
       </Container>
     </Grid>

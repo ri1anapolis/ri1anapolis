@@ -1,6 +1,7 @@
 import React from "react"
 import { Button as MuiButton } from "@material-ui/core"
-import { makeStyles, useTheme } from "@material-ui/styles"
+import makeStyles from "@material-ui/styles/makeStyles"
+import useTheme from "@material-ui/styles/useTheme"
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down("xs")]: {
       width: "100%",
+      padding: "6px 0",
       "&+button, +a": {
         marginLeft: "0",
       },
