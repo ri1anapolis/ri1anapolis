@@ -3,9 +3,14 @@ import { useLazyQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 import MaskedInput from "react-text-mask"
 import PropTypes from "prop-types"
-import { Grid, TextField, Button } from "@material-ui/core"
-import { Divider, Typography } from "@material-ui/core"
-import { makeStyles, withStyles, useTheme } from "@material-ui/styles"
+import Grid from "@material-ui/core/Grid"
+import TextField from "@material-ui/core/TextField"
+import Button from "@material-ui/core/Button"
+import Divider from "@material-ui/core/Divider"
+import Typography from "@material-ui/core/Typography"
+import makeStyles from "@material-ui/styles/makeStyles"
+import withStyles from "@material-ui/styles/withStyles"
+import useTheme from "@material-ui/styles/useTheme"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
 import createStore from "../utils/simpleRedux"
@@ -34,6 +39,13 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("xs")]: {
       width: "100%",
     },
+  },
+  hyphenate: {
+    wordWrap: "break-word !important",
+    overflowWrap: "break-word !important",
+    "-webkit-hyphens": "auto",
+    "-ms-hyphens": "auto",
+    hyphens: "auto",
   },
 }))
 
@@ -176,6 +188,7 @@ const SearchForm = props => {
 }
 
 const SearchReport = () => {
+  const classes = useStyles()
   const [searchResults, setSearchResults] = useState(store.getState())
   const { error, loading, data } = searchResults
 
@@ -190,11 +203,11 @@ const SearchReport = () => {
       if (networkError && networkError.length > 0) {
         return (
           <StyledAlertComponent severity="error" title="Erro de conexão">
-            <Typography paragraph>
+            <Typography paragraph className={classes.hyphenate}>
               Uma falha na conexão de rede impediu que sua consulta fosse
               realizada.
             </Typography>
-            <Typography>
+            <Typography className={classes.hyphenate}>
               Verifique se sua conexão com a internet está ativa ou se há algum
               firewall bloqueando a conexão.
             </Typography>
@@ -203,10 +216,10 @@ const SearchReport = () => {
       } else {
         return (
           <StyledAlertComponent severity="error" title="Erro de sistema">
-            <Typography paragraph>
+            <Typography paragraph className={classes.hyphenate}>
               Uma falha de sistema ocorreu. Tente novamente mais tarde.
             </Typography>
-            <Typography>
+            <Typography className={classes.hyphenate}>
               Caso já tenha visto essa mensagem anteriormente,{" "}
               <AnchorLink
                 href="#contato"
@@ -244,12 +257,12 @@ const SearchReport = () => {
           title={<strong>Protocolo {data.process.name.split("-")[1]}</strong>}
         >
           {data.process.nature && (
-            <Typography>
+            <Typography className={classes.hyphenate}>
               <span style={{ fontWeight: "600" }}>Natureza:</span>{" "}
               {data.process.nature}
             </Typography>
           )}
-          <Typography paragraph>
+          <Typography paragraph className={classes.hyphenate}>
             <span style={{ fontWeight: "600" }}>Etapa:</span>{" "}
             {data.process.step.name}
           </Typography>
@@ -257,7 +270,7 @@ const SearchReport = () => {
           <Divider />
           <Typography paragraph></Typography>
 
-          <Typography paragraph align="justify">
+          <Typography paragraph align="justify" className={classes.hyphenate}>
             {data.process.step.description}
           </Typography>
           {data.process.email && (
@@ -266,7 +279,7 @@ const SearchReport = () => {
             </Typography>
           )}
           {data.process.status && (
-            <Typography>
+            <Typography className={classes.hyphenate}>
               <strong>Atenção</strong>: Seu protocolo possui a seguinte
               observação: "{data.process.status}".
             </Typography>
@@ -279,12 +292,12 @@ const SearchReport = () => {
           severity="info"
           title="O protocolo informado não foi encontrado!"
         >
-          <Typography paragraph>
+          <Typography paragraph className={classes.hyphenate}>
             Isso pode ocorrer caso o protocolo tenha sido finalizado há muito
             tempo ou tenha ocorrido uma falha de sincronização com o servidor do
             cartório.
           </Typography>
-          <Typography>
+          <Typography className={classes.hyphenate}>
             Caso acredite que isso é um erro, entre em contato conosco pelos
             nossos{" "}
             <AnchorLink

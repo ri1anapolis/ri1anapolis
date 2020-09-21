@@ -94,10 +94,10 @@ const BannerWhatsApp = () => {
         </Typography>
         <Typography align="center">
           Agora você pode agendar seu atendimento diretamente pelo site, ou
-          solicitar o agendamento pelo WhatsApp!
+          solicitar o agendamento pelo WhatsApp.
         </Typography>
         <Typography paragraph align="center">
-          Clique no botão abaixo e faça seu agendamento agora mesmo!
+          Clique no botão abaixo e faça seu agendamento agora mesmo.
         </Typography>
         <Button
           component={AnchorLink}

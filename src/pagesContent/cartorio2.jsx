@@ -2,9 +2,21 @@ import React from "react"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { Article, Section, Aside } from "../components/section2"
-import { Typography } from "@material-ui/core"
+import Typography from "@material-ui/core/Typography"
+import makeStyles from "@material-ui/styles/makeStyles"
+
+const useStyles = makeStyles({
+  hyphenate: {
+    wordWrap: "break-word !important",
+    overflowWrap: "break-word !important",
+    "-webkit-hyphens": "auto",
+    "-ms-hyphens": "auto",
+    hyphens: "auto",
+  },
+})
 
 const CartorioSectionContent = () => {
+  const classes = useStyles()
   const image = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "cartorio.jpg" }) {
@@ -25,21 +37,21 @@ const CartorioSectionContent = () => {
         </Typography>
 
         <Typography variant="h6">Missão</Typography>
-        <Typography>
+        <Typography paragraph className={classes.hyphenate}>
           Garantir a segurança jurídica, publicidade e eficácia dos atos
           jurídicos registrais de forma ágil, satisfatória e com qualidade, à
           luz da legislação vigente.
         </Typography>
-        <br />
+
         <Typography variant="h6">Visão</Typography>
-        <Typography>
+        <Typography paragraph className={classes.hyphenate}>
           Prestar um serviço público registral de excelência máxima, com a
           melhor estrutura, equipe e tecnologias, visando a máxima eficiência,
           agilidade e conhecimento técnicos e no atendimento ao público.
         </Typography>
-        <br />
+
         <Typography variant="h6">Valores</Typography>
-        <Typography>
+        <Typography paragraph className={classes.hyphenate}>
           São nossos valores, que devem permear todas as atividades
           desenvolvidas na Serventia:
         </Typography>
