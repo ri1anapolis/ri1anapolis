@@ -140,7 +140,7 @@ const ServicosSectionContent = () => {
           color="primary"
           onClick={handleDrawer("drawerDocumentos2")}
         >
-          Listar Documentos
+          Lista de Documentos
         </Button>
       </Section>
 
