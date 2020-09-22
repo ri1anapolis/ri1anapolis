@@ -1,99 +1,41 @@
 import React, { useState, useEffect } from "react"
-import { useForm, FormProvider, useFormContext } from "react-hook-form"
+import { useForm, FormProvider } from "react-hook-form"
+
+import Container from "@material-ui/core/Container"
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
+import CircularProgress from "@material-ui/core/CircularProgress"
+import LinearProgress from "@material-ui/core/LinearProgress"
+import StyledPopover from "./styledPopover"
+
 import clsx from "clsx"
-import { Container, Grid, Typography } from "@material-ui/core"
-import { Button, TextField, Popover, Link } from "@material-ui/core"
-import { CircularProgress, LinearProgress } from "@material-ui/core"
-import { makeStyles, useTheme } from "@material-ui/styles"
-import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline"
-import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline"
+import useTheme from "@material-ui/styles/useTheme"
+import useStyles from "./styles"
+
+import FormTextField from "./formTextField"
+import { TextMaskCpfCnpj } from "../../components/muiMaskedInputs"
+import { TextMaskPhone } from "../../components/muiMaskedInputs"
 import { yupResolver } from "@hookform/resolvers"
+import validationSchema from "./formValidationSchemaCertidao"
 
-import validationSchema from "../utils/formValidationSchemaCertidao"
-import { TextMaskCpfCnpj, TextMaskPhone } from "../components/muiMaskedInputs"
-import mailer from "../utils/mailer"
-import delay from "../utils/delay"
-
-const useStyles = makeStyles(theme => ({
-  sections: {
-    padding: "10px",
-    paddingBottom: "20px",
-  },
-  inputs: {
-    marginBottom: ".35rem",
-  },
-  captionContainer: {
-    width: "100%",
-    order: "1",
-    [theme.breakpoints.down("xs")]: {
-      order: "4",
-    },
-  },
-  buttonContainer: {
-    order: "7",
-    flexShrink: 1,
-    [theme.breakpoints.up("md")]: {
-      order: "2",
-    },
-  },
-  button: {
-    [theme.breakpoints.down("xs")]: {
-      width: "100%",
-    },
-  },
-  notice: {
-    color: "#a0a0a0",
-    order: "8",
-    flexGrow: 1,
-    justifyContent: "center",
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "flex-start",
-      order: "6",
-    },
-    [theme.breakpoints.down("xs")]: {
-      order: "0",
-    },
-  },
-  glowText: {
-    "-webkit-transition": "color 2s ease, text-shadow 2s ease",
-    "-moz-transition": "color 2s ease, text-shadow 2s ease",
-    "-o-transition": "color 2s ease, text-shadow 2s ease",
-    transition: "color 2s ease, text-shadow 2s ease",
-  },
-  popoverStatus: {
-    maxWidth: "500px",
-    minWidth: "300px",
-    padding: "30px",
-  },
-}))
-
-const FormTextField = props => {
-  const { register, errors, trigger } = useFormContext()
-  const classes = useStyles()
-  const { name, ...other } = props
-  return (
-    <TextField
-      fullWidth
-      className={classes.inputs}
-      inputRef={register}
-      name={name}
-      {...other}
-      helperText={errors[name] ? errors[name].message : null}
-      error={!!errors[name]}
-      onChange={() => {
-        trigger(name)
-      }}
-    />
-  )
-}
+import mailer from "../../utils/mailer"
+import delay from "../../utils/delay"
 
 const CertidaoPanel = props => {
+  const localStorageId = "formData"
+
   const theme = useTheme()
   const classes = useStyles(theme)
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null)
   const [popoverShow, setPopoverShow] = useState(false)
   const [popoverStatus, setPopoverStatus] = useState(null)
   const [didItGlow, setDidItGlow] = useState(false)
+
+  const savedData =
+    window.localStorage?.getItem(localStorageId) || null
+      ? JSON.parse(window.localStorage.getItem(localStorageId))
+      : {}
 
   useEffect(() => {
     async function glowText(style) {
@@ -115,6 +57,7 @@ const CertidaoPanel = props => {
   const { formState, handleSubmit, reset, ...formMethods } = useForm({
     resolver: yupResolver(validationSchema),
     mode: "onChange",
+    defaultValues: savedData,
   })
   const { isSubmitting } = formState
 
@@ -127,6 +70,17 @@ const CertidaoPanel = props => {
     setPopoverAnchorEl(document.getElementById("certidao-form-container"))
     setPopoverStatus("loading")
     setPopoverShow(true)
+
+    try {
+      const formData = { ...data }
+      delete formData.propertyAddress
+      delete formData.propertyId
+      delete formData.proprietaryId
+      delete formData.requestDescription
+      window.localStorage.setItem(localStorageId, JSON.stringify(formData))
+    } catch (error) {
+      console.error(`Error saving form to storage: ${error}`)
+    }
 
     const response = await mailer(data)
     if (response.status && response.status < 300) {
@@ -287,72 +241,12 @@ const CertidaoPanel = props => {
           </form>
         </FormProvider>
       </Container>
-      <Popover
+      <StyledPopover
         open={popoverShow}
-        onClose={handleCloseFormStatus}
+        sendingStatus={popoverStatus}
         anchorEl={popoverAnchorEl}
-        anchorOrigin={{ vertical: "center", horizontal: "center" }}
-        transformOrigin={{ vertical: "center", horizontal: "center" }}
-        disableRestoreFocus
-      >
-        {popoverStatus === "loading" && (
-          <Container
-            className={classes.popoverStatus}
-            justify="center"
-            align="center"
-          >
-            <CircularProgress />
-            <Typography align="center">Enviando sua solicitação...</Typography>
-          </Container>
-        )}
-        {popoverStatus === "success" && (
-          <Container
-            className={classes.popoverStatus}
-            justify="center"
-            align="center"
-          >
-            <CheckCircleOutlineIcon
-              size="large"
-              style={{ color: "green", fontSize: 50 }}
-            />
-            <Typography paragraph align="center" variant="subtitle2">
-              Solicitação realizada com sucesso!
-            </Typography>
-            <Typography align="center">
-              Agora é só aguardar que nossa equipe entrará em contato com você
-              para finalizar seu pedido!
-            </Typography>
-          </Container>
-        )}
-        {popoverStatus === "fail" && (
-          <Container
-            className={classes.popoverStatus}
-            justify="center"
-            align="center"
-          >
-            <ErrorOutlineIcon
-              size="large"
-              style={{ color: "red", fontSize: 50 }}
-            />
-            <Typography paragraph align="center" variant="subtitle2">
-              Houve um erro ao submeter sua solicitação!
-            </Typography>
-            <Typography align="center">
-              Mas não desista ainda! Você também pode fazer sua solicitação por
-              e-mail! Basta enviar seu pedido para{" "}
-              <Link
-                href="mailto:certidaoanapolis@gmail.com"
-                rel="noreferrer noopener"
-                target="_blank"
-                style={{ filter: "brightness(.7)" }}
-                onClick={handleCloseFormStatus}
-              >
-                certidaoanapolis@gmail.com
-              </Link>
-            </Typography>
-          </Container>
-        )}
-      </Popover>
+        handleClose={handleCloseFormStatus}
+      />
       {isSubmitting && <LinearProgress />}
     </>
   )
