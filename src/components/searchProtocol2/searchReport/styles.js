@@ -8,6 +8,15 @@ const styles = makeStyles({
     "-ms-hyphens": "auto",
     hyphens: "auto",
   },
+  verificationInput: {
+    "&input::-webkit-outer-spin-button, input::-webkit-inner-spin-button": {
+      "-webkit-appearance": "none",
+      margin: 0,
+    },
+    "& input[type=number]": {
+      "-moz-appearance": "textfield",
+    },
+  },
   dialogContent: {
     overflowX: "hidden",
     marginBottom: "5px",

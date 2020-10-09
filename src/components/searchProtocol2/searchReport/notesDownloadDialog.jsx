@@ -109,10 +109,12 @@ const NotesDownloadDialog = ({ data }) => {
               }}
             >
               <TextField
+                className={classes.verificationInput}
                 label="Verificador"
                 placeholder="Ex.: 10123456"
                 autoComplete="off"
                 onChange={validateInput}
+                type="number"
               />
               <Grow in={!preventDownload.disabled}>
                 <CheckCircleOutlineIcon style={{ color: "#4CAF50" }} />
