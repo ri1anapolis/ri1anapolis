@@ -1,4 +1,5 @@
 import React from "react"
+import clsx from "clsx"
 import { Grid, Typography, Button } from "@material-ui/core"
 import { makeStyles, useTheme } from "@material-ui/styles"
 import AnchorLink from "react-anchor-link-smooth-scroll"
@@ -29,15 +30,25 @@ const useStyles = makeStyles(theme => ({
   iPhoneTextBody: {
     position: "absolute",
     top: "100px",
-    left: "40px",
-    width: "260px",
+    left: "30px",
+    width: "270px",
     "& > p": {
-      backgroundColor: "#e2ffc7",
       color: "#11230b",
-      fontSize: ".95em",
+      fontSize: ".93em",
       borderRadius: "5px",
       padding: "2px 6px",
       marginBottom: "3px",
+    },
+    "& > .sent": {
+      backgroundColor: "#e2ffc7",
+      marginLeft: "40px",
+    },
+    "& > .received": {
+      backgroundColor: "#fff",
+      marginRight: "40px",
+    },
+    "& > .marginExtra": {
+      marginBottom: "8px !important",
     },
   },
   bannerTextWrapper: {
@@ -59,22 +70,34 @@ const BannerWhatsApp = () => {
           Caro Cliente
         </Typography>
         <div className={classes.iPhoneTextBody}>
-          <Typography>
-            Você já pode solicitar o agendamento do seu atendimento pelo
-            WhatsApp!!1!
+          <Typography className={clsx("received", "marginExtra")}>
+            Bom dia, gostaria de agendar meu atendimento. Pode ser?
           </Typography>
-          <Typography>
-            Basta clicar no link abaixo, do seu celular, e começar a teclar com
-            a gente!
-          </Typography>
-          <Typography>
-            <a
-              href="https://wa.me/556239374650"
-              target="_blank"
-              rel="noopener noreferrer"
+          <Typography className="sent">
+            Bom dia, pode sim! Você pode agendar pelo site{" "}
+            <AnchorLink
+              offset={
+                window.matchMedia("(max-width: 959px)").matches &&
+                window.matchMedia("(max-height: 959px)").matches
+                  ? 104
+                  : 89
+              }
+              href={
+                window.matchMedia("(max-width: 959px)").matches &&
+                window.matchMedia("(max-height: 959px)").matches
+                  ? "#agendamento"
+                  : "#servicos"
+              }
+              variant="contained"
+              color="primary"
+              align="center"
             >
-              https://wa.me/556239374650
-            </a>
+              ri1anapolis.com.br
+            </AnchorLink>{" "}
+            e ter uma lista de datas e horários à sua escolha
+          </Typography>
+          <Typography className="sent">
+            E pelo WhatsApp posso informar um horário disponível!
           </Typography>
         </div>
       </Grid>

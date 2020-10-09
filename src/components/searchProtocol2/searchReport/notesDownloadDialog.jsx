@@ -74,10 +74,10 @@ const NotesDownloadDialog = ({ data }) => {
   return (
     <>
       <Button
-        style={{ padding: 0, marginLeft: "-25px" }}
+        variant="contained"
         startIcon={<GetAppIcon />}
         size="small"
-        color="inherit"
+        color="primary"
         onClick={toggleDialog}
       >
         Baixar Nota Devolutiva

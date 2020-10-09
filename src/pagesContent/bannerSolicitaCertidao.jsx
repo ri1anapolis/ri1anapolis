@@ -1,13 +1,12 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
-import Fab from "@material-ui/core/Fab"
-import AnchorLink from "react-anchor-link-smooth-scroll"
-
+import Button from "@material-ui/core/Button"
+import Link from "@material-ui/core/Link"
 import makeStyles from "@material-ui/styles/makeStyles"
 import useTheme from "@material-ui/styles/useTheme"
 
-import ArrowDownwardRoundedIcon from "@material-ui/icons/ArrowDownwardRounded"
+import AnchorLink from "react-anchor-link-smooth-scroll"
 
 const useStyles = makeStyles(theme => ({
   banner: {
@@ -40,38 +39,14 @@ const BannerSolicitaCertidao = () => {
         alignItems="center"
         justify="center"
       >
-        <Typography variant="h5" paragraph align="center">
-          <strong>Certidão Online</strong>
-        </Typography>
         <Typography variant="subtitle2" paragraph align="center">
-          <strong>
-            Faça seus pedidos online aqui no site e receba as certidões e buscas
-            em meio digital
-          </strong>
+          <strong>Solicite certidões e buscas online!</strong>
         </Typography>
-        <Typography paragraph />
-        <Typography paragraph variant="caption" align="center">
-          Clique no botão abaixo
+        <Typography paragraph align="center">
+          Acesse a seção de serviços do site, solicite certidões e buscas online
+          e receba os documentos em meio digital.
         </Typography>
-        <Fab
-          color="primary"
-          component={AnchorLink}
-          offset={
-            window.matchMedia("(max-width: 959px)").matches &&
-            window.matchMedia("(max-height: 959px)").matches
-              ? 104
-              : 89
-          }
-          href={
-            window.matchMedia("(max-width: 959px)").matches &&
-            window.matchMedia("(max-height: 959px)").matches
-              ? "#certidoes"
-              : "#servicos"
-          }
-        >
-          <ArrowDownwardRoundedIcon fontSize="large" />
-        </Fab>
-        {/* <Button
+        <Button
           component={AnchorLink}
           offset={
             window.matchMedia("(max-width: 959px)").matches &&
@@ -89,8 +64,8 @@ const BannerSolicitaCertidao = () => {
           color="primary"
           align="center"
         >
-          Solicite sua certidão / busca
-        </Button> */}
+          Solicitar certidões / buscas
+        </Button>
       </Grid>
     </Grid>
   )
