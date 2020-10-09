@@ -82,8 +82,11 @@ const validationSchema = yup.object().shape({
   requestDescription: yup
     .string()
     .trim()
-    .min(20, "Descreva detalhadamente sua solicitação!")
-    .max(400, "Sua descrição está muito extensa! Por favor, seja mais sucinto!")
+    .min(8, "Descreva detalhadamente sua solicitação!")
+    .max(
+      1500,
+      "Sua descrição está muito extensa! Por favor, seja mais sucinto!"
+    )
     .matches(
       textRegex,
       'Há um ou mais caracteres inválidos no endereço! Ex.: "<>{}[]"'

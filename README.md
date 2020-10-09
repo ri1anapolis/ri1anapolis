@@ -39,6 +39,7 @@ A seguir, as variáveis de ambiente necessárias para o frontend! Devem todas se
 - `GATSBY_MONGODB_APP_KEY`: Chave do App no Realm/Stich
 - `GOOGLE_TRACKING_ID`: ID do Google Analytics
 - `GATSBY_LOGROCKET_APP_ID`: ID de App no LogRocket para acompanhamento de uso e erros
+- `GATSBY_CRYPTO_KEY`: Segredo/Chave para decriptar dados das notas devolutivas
 
 Configuração rápida das variáveis no ambiente com Gatsby:
 
@@ -49,6 +50,7 @@ Configuração rápida das variáveis no ambiente com Gatsby:
    GATSBY_MONGODB_APP_KEY=çlaskdfjpasidfjaskdfjaçsdkfj
    GOOGLE_TRACKING_ID=G-AS7SSDF798S
    GATSBY_LOGROCKET_APP_ID=asdfg/ri1anapolis
+   GATSBY_CRYPTO_KEY=KbPpimb@N4caximb0c49y$B&E)HcQWnZ
    ```
 
 ###### Com Netlify

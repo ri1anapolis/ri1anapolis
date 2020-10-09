@@ -17,6 +17,7 @@
     "apollo-link-context": "^1.0.20",
     "axios": "^0.19.2",
     "clsx": "^1.1.0",
+    "crypto-js": "^4.0.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.21.0",
     "gatsby-background-image": "^1.1.1",
