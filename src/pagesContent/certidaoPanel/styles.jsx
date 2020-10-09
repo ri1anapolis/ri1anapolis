@@ -40,12 +40,6 @@ const useStyles = makeStyles(theme => ({
       order: "0",
     },
   },
-  glowText: {
-    "-webkit-transition": "color 2s ease, text-shadow 2s ease",
-    "-moz-transition": "color 2s ease, text-shadow 2s ease",
-    "-o-transition": "color 2s ease, text-shadow 2s ease",
-    transition: "color 2s ease, text-shadow 2s ease",
-  },
   popoverStatus: {
     maxWidth: "500px",
     minWidth: "300px",

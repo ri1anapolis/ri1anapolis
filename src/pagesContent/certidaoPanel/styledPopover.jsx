@@ -36,6 +36,7 @@ const StyledPopover = props => {
       )}
       {sendingStatus === "success" && (
         <Container
+          onClick={handleClose}
           className={classes.popoverStatus}
           justify="center"
           align="center"
@@ -55,6 +56,7 @@ const StyledPopover = props => {
       )}
       {sendingStatus === "fail" && (
         <Container
+          onClick={handleClose}
           className={classes.popoverStatus}
           justify="center"
           align="center"

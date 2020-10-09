@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useForm, FormProvider } from "react-hook-form"
 
 import Container from "@material-ui/core/Container"
@@ -20,7 +20,6 @@ import { yupResolver } from "@hookform/resolvers"
 import validationSchema from "./formValidationSchemaCertidao"
 
 import mailer from "../../utils/mailer"
-import delay from "../../utils/delay"
 
 const CertidaoPanel = props => {
   const localStorageId = "formData"
@@ -30,29 +29,11 @@ const CertidaoPanel = props => {
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null)
   const [popoverShow, setPopoverShow] = useState(false)
   const [popoverStatus, setPopoverStatus] = useState(null)
-  const [didItGlow, setDidItGlow] = useState(false)
 
   const savedData =
     window.localStorage?.getItem(localStorageId) || null
       ? JSON.parse(window.localStorage.getItem(localStorageId))
       : {}
-
-  useEffect(() => {
-    async function glowText(style) {
-      const glowTextEl = document.getElementsByClassName("glowText")
-
-      if (glowTextEl && glowTextEl.length > 0) {
-        setDidItGlow(true)
-        await delay(500)
-        Array.from(glowTextEl).forEach(el => {
-          el.style = style
-        })
-        await delay(2000)
-        glowText("color: inherit; text-shadow: inherit")
-      }
-    }
-    glowText("color: #ff0000; text-shadow: 0 0 10px #e52086")
-  }, [didItGlow, setDidItGlow])
 
   const { formState, handleSubmit, reset, ...formMethods } = useForm({
     resolver: yupResolver(validationSchema),
@@ -230,10 +211,7 @@ const CertidaoPanel = props => {
                 md={12}
                 className={clsx(classes.notice, classes.sections)}
               >
-                <Typography
-                  variant="caption"
-                  className={clsx(classes.glowText, "glowText")}
-                >
+                <Typography variant="caption" style={{ color: "#FF0000" }}>
                   Somente os itens com asterisco (*) são obrigatórios!
                 </Typography>
               </Grid>

@@ -111,18 +111,7 @@ const ServicosSectionContent = () => {
           color="primary"
           onClick={handleDrawer("drawerCertidoes")}
         >
-          Solicitar Online
-        </Button>
-        <Button
-          size="small"
-          color="primary"
-          variant="outlined"
-          rel="noreferrer noopener"
-          target="_blank"
-          href="mailto:certidaoanapolis@gmail.com"
-          style={{ filter: "brightness(1.2)" }}
-        >
-          ou por E-mail
+          Solicitar Certidão / Busca
         </Button>
 
         <Typography paragraph />
