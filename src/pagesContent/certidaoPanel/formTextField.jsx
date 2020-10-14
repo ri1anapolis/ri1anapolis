@@ -6,7 +6,7 @@ import useStyles from "./styles"
 const FormTextField = props => {
   const { register, errors, trigger } = useFormContext()
   const classes = useStyles()
-  const { name, ...other } = props
+  const { name, onChange, ...other } = props
   return (
     <TextField
       fullWidth
@@ -16,7 +16,8 @@ const FormTextField = props => {
       {...other}
       helperText={errors[name] ? errors[name].message : null}
       error={!!errors[name]}
-      onChange={() => {
+      onChange={event => {
+        if (typeof onChange === "function") onChange(event)
         trigger(name)
       }}
     />

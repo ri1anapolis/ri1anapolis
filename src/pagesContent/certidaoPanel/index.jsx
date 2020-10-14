@@ -119,6 +119,9 @@ const CertidaoPanel = props => {
                   name="requesterID"
                   label="CPF/CNPJ"
                   placeholder="Seu CPF/CNPJ"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                   InputProps={{
                     inputComponent: TextMaskCpfCnpj,
                   }}
@@ -128,6 +131,9 @@ const CertidaoPanel = props => {
                   name="requesterPhone"
                   label="Telefone"
                   placeholder="Seu número de telefone ou WhatsApp"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                   InputProps={{
                     inputComponent: TextMaskPhone,
                   }}
@@ -156,11 +162,17 @@ const CertidaoPanel = props => {
                   name="propertyId"
                   label="Matrícula do Imóvel"
                   placeholder="Número da matrícula do imóvel"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                 />
                 <FormTextField
                   name="proprietaryId"
                   label="CPF/CNPJ do proprietário"
                   placeholder="CPF/CNPJ do proprietário do imóvel"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                   InputProps={{
                     inputComponent: TextMaskCpfCnpj,
                   }}
