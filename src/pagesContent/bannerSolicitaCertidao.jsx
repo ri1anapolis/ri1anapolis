@@ -33,6 +33,8 @@ const BannerSolicitaCertidao = () => {
         xs={12}
         sm={10}
         md={6}
+        lg={5}
+        xl={4}
         className={classes.bannerTextWrapper}
         direction="column"
         alignItems="center"
@@ -42,8 +44,8 @@ const BannerSolicitaCertidao = () => {
           <strong>Solicite certidões e buscas online!</strong>
         </Typography>
         <Typography paragraph align="center">
-          Acesse a seção de serviços do site, solicite certidões e buscas online
-          e receba os documentos em meio digital.
+          Acesse a seção de serviços e solicite certidões e buscas online. A
+          certidão será enviada unicamente em meio digital.
         </Typography>
         <Button
           component={AnchorLink}

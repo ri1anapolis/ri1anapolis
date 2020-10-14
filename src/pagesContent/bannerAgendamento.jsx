@@ -107,6 +107,7 @@ const BannerWhatsApp = () => {
         xs={12}
         sm={10}
         md={6}
+        lg={5}
         className={classes.bannerTextWrapper}
         direction="column"
         alignItems="center"
@@ -116,11 +117,11 @@ const BannerWhatsApp = () => {
           <strong>Agende seu atendimento online ou pelo WhatsApp!</strong>
         </Typography>
         <Typography align="center">
-          Agora você pode agendar seu atendimento diretamente pelo site, ou
-          solicitar o agendamento pelo WhatsApp.
+          Agora você pode agendar seu atendimento diretamente pelo site ou pelo
+          WhatsApp.
         </Typography>
         <Typography paragraph align="center">
-          Clique no botão abaixo e faça seu agendamento agora mesmo.
+          Clique no botão abaixo e faça seu agendamento.
         </Typography>
         <Button
           component={AnchorLink}
