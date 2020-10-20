@@ -78,7 +78,6 @@ const NotesDownloadDialog = ({ data }) => {
           </DialogContentText>
           <Recaptcha
             sitekey={recaptcha_key}
-            render="explicit"
             hl="pt-BR"
             size={
               window.matchMedia("(min-width: 410px)").matches

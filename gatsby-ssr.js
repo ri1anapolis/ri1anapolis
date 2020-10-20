@@ -3,7 +3,7 @@ import React from "react"
 const HeadComponents = [
   <script
     key="reCaptcha"
-    src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    src="https://www.google.com/recaptcha/api.js"
     type="text/javascript"
     async
     defer
