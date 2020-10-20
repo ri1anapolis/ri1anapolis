@@ -64,7 +64,7 @@ const CertidaoPanel = props => {
     }
 
     const response = await mailer(data)
-    if (response.status && response.status < 300) {
+    if (response?.status < 300) {
       setPopoverStatus("success")
       console.log(`A solicitação foi enviada com sucesso!`)
       reset()
@@ -183,6 +183,23 @@ const CertidaoPanel = props => {
                   name="requestDescription"
                   label="Solicitação"
                   placeholder="Descreva como podemos te ajudar"
+                  hints={[
+                    {
+                      label: "Certidão de Inteiro Teor",
+                      "data-tooltip":
+                        "Cópia integral da Matrícula, com todo o histórico do imóvel.",
+                    },
+                    {
+                      label: "Certidão de Ônus",
+                      "data-tooltip":
+                        "Indica todos os ônus do imóvel e os impedimentos à sua livre comercialização.",
+                    },
+                    {
+                      label: "Busca e informação",
+                      "data-tooltip":
+                        "Ao adicionar esta opção, escreva livremente seu desejo.",
+                    },
+                  ]}
                 />
               </Grid>
               <Grid
