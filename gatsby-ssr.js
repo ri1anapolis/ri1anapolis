@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from "react"
 
-// You can delete this file if you're not using it
+const HeadComponents = [
+  <script
+    key="reCaptcha"
+    src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+    type="text/javascript"
+    async
+    defer
+  />,
+]
+
+export const onRenderBody = ({ setHeadComponents }, pluginOptions) => {
+  setHeadComponents(HeadComponents)
+}
