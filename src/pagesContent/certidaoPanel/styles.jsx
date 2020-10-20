@@ -46,8 +46,8 @@ const useStyles = makeStyles(theme => ({
     padding: "30px",
   },
   hint: {
-    color: "#808080",
-    fontSize: "0.85em",
+    color: "#808080 !important",
+    fontSize: "0.85em !important",
     margin: "0 4px 4px 0",
     position: "relative",
 
@@ -77,7 +77,7 @@ const useStyles = makeStyles(theme => ({
     "&::before": {
       content: "attr(data-tooltip)",
       top: "30px",
-      left: "-20px",
+      left: "-25px",
       width: "190px",
       border: "1px solid #c3c3c3",
       borderRadius: "4px",
