@@ -44,9 +44,8 @@ const useStyles = makeStyles(theme => ({
     width: "160px",
     padding: 0,
     marginTop: "-6px",
-    textTransform: "none",
     fontWeight: "300",
-    fontSize: "1.5em",
+    fontSize: "1.25em",
     textTransform: "lowercase",
     "&:hover": {
       backgroundColor: "transparent",

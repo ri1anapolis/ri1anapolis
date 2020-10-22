@@ -7,7 +7,7 @@ import ListItem from "@material-ui/core/ListItem"
 import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import Link from "@material-ui/core/Link"
-import Tooltip from "@material-ui/core/Tooltip"
+import Button from "@material-ui/core/Button"
 import makeStyles from "@material-ui/styles/makeStyles"
 import loadableVisibility from "react-loadable-visibility/react-loadable"
 
@@ -45,6 +45,14 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none",
     color: "#FFF",
   },
+  routeButton: {
+    width: "max-content",
+    textTransform: "none",
+    fontWeight: "normal",
+    fontSize: "0.75em",
+    padding: "0 10px",
+    margin: "0 auto",
+  },
 }))
 
 const ContatoMap = loadableVisibility({
@@ -80,12 +88,11 @@ const ContatoSectionContent = () => {
             Endereço e Contato
           </Typography>
 
-          <Typography>
+          <Typography paragraph>
             Agende um horário, tire dúvidas, faça uma visita. O atendimento
             presencial e pelos canais de comunicação se dá de segunda a
             sexta-feira das 08:00h as 17:00h.
           </Typography>
-          <br />
 
           <Grid container justify="space-around">
             <Grid
@@ -97,11 +104,7 @@ const ContatoSectionContent = () => {
               alignItems="center"
             >
               <List dense={true} className={classes.list}>
-                <Tooltip
-                  title="Clique para traçar uma rota para o Cartório"
-                  placement="top"
-                  arrow
-                >
+                <Grid container direction="column">
                   <ListItem>
                     <ListItemText
                       className={classes.alignTextRight}
@@ -133,7 +136,18 @@ const ContatoSectionContent = () => {
                       </Link>
                     </ListItemIcon>
                   </ListItem>
-                </Tooltip>
+                  <Button
+                    size="small"
+                    variant="outlined"
+                    color="inherit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="http://bit.ly/Rota1RI"
+                    classes={{ root: classes.routeButton }}
+                  >
+                    Clique para traçar rota
+                  </Button>
+                </Grid>
               </List>
             </Grid>
             <Grid
