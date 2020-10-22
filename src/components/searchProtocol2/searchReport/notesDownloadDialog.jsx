@@ -15,9 +15,7 @@ import styles from "./styles"
 import GetAppIcon from "@material-ui/icons/GetApp"
 
 const NotesDownloadDialog = ({ data }) => {
-  const {
-    requirements_note: { hash, encrypted_url },
-  } = data
+  const encrypted_url = data.requirements_note.encrypted_url
   const crypto_key = process.env.GATSBY_CRYPTO_KEY
   const recaptcha_key = process.env.GATSBY_RECAPTCHA_KEY
   const defaultState = {
