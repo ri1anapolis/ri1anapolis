@@ -27,7 +27,7 @@ const MenuBar = props => {
           width: "100%",
         }}
       >
-        <Slide direction="down" in={openMenu}>
+        <Slide direction="down" in={openMenu} style={{ zIndex: -1 }}>
           <Grid container justify="center" className={classes.exMenuContainer}>
             <Grid
               item
