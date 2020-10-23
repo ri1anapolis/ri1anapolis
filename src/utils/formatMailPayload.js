@@ -126,13 +126,13 @@ function formatMailPayload(data) {
       ${propertyId && "Matrícula do Imóvel: " + propertyId}
       ${proprietaryId && "CPF/CNPJ do Proprietário: " + proprietaryId}
       
-      Solicitação: ${requestDescription}
+      Solicitação: ${requestDescription.replace(/(\n|\r\n)+/g, `\n`)}
       `
   const requestDescriptionHtml = `
       ${propertyAddress && "Endereço do Imóvel: " + propertyAddress + "<br/>"}
       ${propertyId && "Matrícula do Imóvel: " + propertyId + "<br/>"}
       ${proprietaryId && "CPF/CNPJ do Proprietário: " + proprietaryId + "<br/>"}
-      Solicitação: ${requestDescription}
+      Solicitação: ${requestDescription.replace(/(\n|\r\n)+/g, "<br />")}
       `
 
   payload.plainTextMessage = plainTextTemplate

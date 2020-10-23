@@ -102,7 +102,7 @@ const ServicosSectionContent = () => {
           <strong>Certidões</strong>
         </Typography>
         <Typography align="left" className={classes.hyphenate}>
-          Solicite buscas ou emissão de certidões
+          Solicite buscas ou emissão de certidões.
         </Typography>
 
         <Button

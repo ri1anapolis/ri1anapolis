@@ -31,7 +31,7 @@ const ProtocolosSectionContent = () => {
         <SearchForm
           id="protocolo"
           label="Protocolo"
-          placeholder='Ex.: "120123" ou "RE-121345"'
+          placeholder='Ex.: "120123"'
           buttonText="Buscar"
         />
         <br />

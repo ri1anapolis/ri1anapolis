@@ -4,7 +4,7 @@ import { CssBaseline, Grid } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
 import { theme, useStyles } from "../config/materialUiTheme2"
 import Loadable from "react-loadable"
-import Header from "./header2"
+import Header from "./header"
 import SectionLoadingFallback from "./sectionLoadingFallback"
 
 const Banner = Loadable({

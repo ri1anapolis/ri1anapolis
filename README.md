@@ -6,7 +6,7 @@ Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO
 
 ## Apresentação
 
-Esse é um site estático feito em Gatsby (React) que usa como backend para as buscas por protocolos o serviço do MongoDB Cloud (Atlas e Realm/Stitch) e para envio de email uma função na netlify.
+Esse é um site estático feito em Gatsby (React) que usa como "backend" serverless para as buscas por protocolos o serviço do MongoDB Cloud (Atlas e Realm/Stitch), para o armazenamento do download das notas devolutivas o Google Firebase, e para envio de email uma função na netlify.
 
 ###### Design
 
@@ -40,6 +40,7 @@ A seguir, as variáveis de ambiente necessárias para o frontend! Devem todas se
 - `GOOGLE_TRACKING_ID`: ID do Google Analytics
 - `GATSBY_LOGROCKET_APP_ID`: ID de App no LogRocket para acompanhamento de uso e erros
 - `GATSBY_CRYPTO_KEY`: Segredo/Chave para decriptar dados das notas devolutivas
+- `GATSBY_RECAPTCHA_KEY`: Chave da API do Google ReCaptcha, para validar o download das notas devolutivas
 
 Configuração rápida das variáveis no ambiente com Gatsby:
 
@@ -50,7 +51,8 @@ Configuração rápida das variáveis no ambiente com Gatsby:
    GATSBY_MONGODB_APP_KEY=çlaskdfjpasidfjaskdfjaçsdkfj
    GOOGLE_TRACKING_ID=G-AS7SSDF798S
    GATSBY_LOGROCKET_APP_ID=asdfg/ri1anapolis
-   GATSBY_CRYPTO_KEY=KbPpimb@N4caximb0c49y$B&E)HcQWnZ
+   GATSBY_CRYPTO_KEY=KbPlskdfaçsdlkfjsadksdfWnZ
+   GATSBY_RECAPTCHA_KEY=6Leylskdfjlsdkhslkdfr7WQW
    ```
 
 ###### Com Netlify

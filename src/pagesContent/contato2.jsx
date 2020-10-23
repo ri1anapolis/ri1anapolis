@@ -1,15 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import {
-  Typography,
-  Grid,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Link,
-} from "@material-ui/core"
-import { makeStyles } from "@material-ui/styles"
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
+import Link from "@material-ui/core/Link"
+import Button from "@material-ui/core/Button"
+import makeStyles from "@material-ui/styles/makeStyles"
 import loadableVisibility from "react-loadable-visibility/react-loadable"
 
 import { Article, Section } from "../components/section2"
@@ -46,6 +45,14 @@ const useStyles = makeStyles(theme => ({
     textDecoration: "none",
     color: "#FFF",
   },
+  routeButton: {
+    width: "max-content",
+    textTransform: "none",
+    fontWeight: "normal",
+    fontSize: "0.75em",
+    padding: "0 10px",
+    margin: "0 auto",
+  },
 }))
 
 const ContatoMap = loadableVisibility({
@@ -81,12 +88,11 @@ const ContatoSectionContent = () => {
             Endereço e Contato
           </Typography>
 
-          <Typography>
+          <Typography paragraph>
             Agende um horário, tire dúvidas, faça uma visita. O atendimento
             presencial e pelos canais de comunicação se dá de segunda a
-            sexta-feira das 08:00h as 17:00h
+            sexta-feira das 08:00h as 17:00h.
           </Typography>
-          <br />
 
           <Grid container justify="space-around">
             <Grid
@@ -98,26 +104,50 @@ const ContatoSectionContent = () => {
               alignItems="center"
             >
               <List dense={true} className={classes.list}>
-                <ListItem>
-                  <ListItemText
-                    className={classes.alignTextRight}
-                    primary={
-                      <>
-                        Av. Universitária, nº 2221
-                        <br /> Anashopping, LUC 100
-                        <br /> Anápolis/GO
-                        <br /> CEP: 75.083-350
-                      </>
-                    }
-                  />
-                  <ListItemIcon className={classes.listItemIcon}>
-                    <img
-                      src={place}
-                      alt="Endereço: Av. Universitária, nº 2221 - Anashopping - Anápolis/GO"
-                      className={classes.locationImg}
+                <Grid container direction="column">
+                  <ListItem>
+                    <ListItemText
+                      className={classes.alignTextRight}
+                      primary={
+                        <Link
+                          className={classes.contactLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="http://bit.ly/Rota1RI"
+                        >
+                          Av. Universitária, nº 2221
+                          <br /> Anashopping, LUC 100
+                          <br /> Anápolis/GO
+                          <br /> CEP: 75.083-350
+                        </Link>
+                      }
                     />
-                  </ListItemIcon>
-                </ListItem>
+                    <ListItemIcon className={classes.listItemIcon}>
+                      <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href="http://bit.ly/Rota1RI"
+                      >
+                        <img
+                          src={place}
+                          alt="Endereço: Av. Universitária, nº 2221 - Anashopping - Anápolis/GO"
+                          className={classes.locationImg}
+                        />
+                      </Link>
+                    </ListItemIcon>
+                  </ListItem>
+                  <Button
+                    size="small"
+                    variant="outlined"
+                    color="inherit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="http://bit.ly/Rota1RI"
+                    classes={{ root: classes.routeButton }}
+                  >
+                    Clique para traçar rota
+                  </Button>
+                </Grid>
               </List>
             </Grid>
             <Grid

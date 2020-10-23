@@ -1,8 +1,13 @@
 import React from "react"
 import clsx from "clsx"
-import { Grid, Typography, Button } from "@material-ui/core"
-import { makeStyles, useTheme } from "@material-ui/styles"
+import Grid from "@material-ui/core/Grid"
+import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
+import useTheme from "@material-ui/styles/useTheme"
+import makeStyles from "@material-ui/styles/makeStyles"
 import AnchorLink from "react-anchor-link-smooth-scroll"
+
 import whatsappImg from "../images/iphone_whatsapp_h350px.svg"
 
 const useStyles = makeStyles(theme => ({
@@ -77,14 +82,12 @@ const BannerWhatsApp = () => {
             Bom dia, pode sim! Você pode agendar pelo site{" "}
             <AnchorLink
               offset={
-                window.matchMedia("(max-width: 959px)").matches &&
-                window.matchMedia("(max-height: 959px)").matches
+                useMediaQuery("(max-width: 959px) and (max-height: 959px)")
                   ? 104
                   : 89
               }
               href={
-                window.matchMedia("(max-width: 959px)").matches &&
-                window.matchMedia("(max-height: 959px)").matches
+                useMediaQuery("(max-width: 959px) and (max-height: 959px)")
                   ? "#agendamento"
                   : "#servicos"
               }
@@ -107,6 +110,7 @@ const BannerWhatsApp = () => {
         xs={12}
         sm={10}
         md={6}
+        lg={5}
         className={classes.bannerTextWrapper}
         direction="column"
         alignItems="center"
@@ -116,16 +120,16 @@ const BannerWhatsApp = () => {
           <strong>Agende seu atendimento online ou pelo WhatsApp!</strong>
         </Typography>
         <Typography align="center">
-          Agora você pode agendar seu atendimento diretamente pelo site, ou
-          solicitar o agendamento pelo WhatsApp.
+          Agora você pode agendar seu atendimento diretamente pelo site ou pelo
+          WhatsApp.
         </Typography>
         <Typography paragraph align="center">
-          Clique no botão abaixo e faça seu agendamento agora mesmo.
+          Clique no botão abaixo e faça seu agendamento.
         </Typography>
         <Button
           component={AnchorLink}
           offset={
-            window.matchMedia("(max-width: 959px)").matches &&
+            useMediaQuery("(max-width: 959px)").matches &&
             window.matchMedia("(max-height: 959px)").matches
               ? 104
               : 89

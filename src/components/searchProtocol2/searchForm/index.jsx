@@ -8,12 +8,10 @@ import styles from "./styles"
 
 import store from "../reduxStore"
 import gqlQuery from "./searchFormGraphQl"
-import ProtocolInputMask from "./protocolInputMask"
 import styledSearchButtonFactory from "./styledSearchButtonFactory"
-import fistCharIsNaN from "../../../utils/firstCharIsNaN"
 
 const SearchForm = props => {
-  const [protocol, setProtocol] = useState(null)
+  const [protocol, setProtocol] = useState("")
   const [searchable, setSearchable] = useState(false)
   const [runSearch, { loading, error, data }] = useLazyQuery(gqlQuery)
 
@@ -21,57 +19,48 @@ const SearchForm = props => {
   const classes = styles(theme)
   const SearchButton = styledSearchButtonFactory(theme)
 
-  useEffect(() => {
-    if (error)
-      console.error(`::: Erro ao buscar protocolo: ${JSON.stringify(error)}`)
-  })
+  const handleInputChange = event => {
+    event.preventDefault()
+    const _input = event.currentTarget.value?.replace(/[^0-9]/g, "") || ""
+    setProtocol(_input)
 
-  useEffect(() => {
-    if (
-      !!protocol &&
-      ((fistCharIsNaN(protocol) && protocol.trim().length >= 8) ||
-        (!fistCharIsNaN(protocol) && protocol.trim().length >= 5))
-    ) {
-      setProtocol(protocol.toUpperCase().trim())
+    if (_input?.length >= 5) {
       setSearchable(true)
       return
     }
-    setSearchable(false)
-  }, [protocol])
-
-  useEffect(() => {
-    store.dispatch({ type: "UPDATE_STATE", state: { loading, error, data } })
-  }, [loading, error, data])
-
-  const handleButtonClick = () => {
-    if (searchable) {
-      const _protocol = fistCharIsNaN(protocol) ? protocol : `RE-${protocol}`
-      runSearch({ variables: { protocol: _protocol } })
-    }
-    setProtocol(null)
-    return
+    searchable && setSearchable(false)
   }
 
   const handleEnterKey = event => {
     if (event.key === "Enter") handleButtonClick()
-    return
   }
+
+  const handleButtonClick = () => {
+    if (searchable) runSearch({ variables: { protocol: `RE-${protocol}` } })
+    setProtocol("")
+  }
+
+  useEffect(() => {
+    store.dispatch({ type: "UPDATE_STATE", state: { loading, error, data } })
+
+    if (error)
+      console.error(`::: Erro ao buscar protocolo: ${JSON.stringify(error)}`)
+  }, [loading, error, data])
 
   return (
     <Grid container className={classes.searchContainer}>
       <TextField
+        value={protocol}
         autoComplete="off"
-        onChange={event => setProtocol(event.target.value)}
-        onKeyDown={event => handleEnterKey(event)}
+        onChange={handleInputChange}
+        onKeyDown={handleEnterKey}
         className={classes.searchBox}
         id={props.id}
         label={props.label}
         placeholder={props.placeholder}
         variant="outlined"
         size="small"
-        InputProps={{
-          inputComponent: ProtocolInputMask,
-        }}
+        inputProps={{ inputMode: "numeric" }}
       />
       <SearchButton
         disabled={!searchable}

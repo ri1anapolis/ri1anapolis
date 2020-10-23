@@ -64,7 +64,7 @@ const CertidaoPanel = props => {
     }
 
     const response = await mailer(data)
-    if (response.status && response.status < 300) {
+    if (response?.status < 300) {
       setPopoverStatus("success")
       console.log(`A solicitação foi enviada com sucesso!`)
       reset()
@@ -119,6 +119,9 @@ const CertidaoPanel = props => {
                   name="requesterID"
                   label="CPF/CNPJ"
                   placeholder="Seu CPF/CNPJ"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                   InputProps={{
                     inputComponent: TextMaskCpfCnpj,
                   }}
@@ -128,6 +131,9 @@ const CertidaoPanel = props => {
                   name="requesterPhone"
                   label="Telefone"
                   placeholder="Seu número de telefone ou WhatsApp"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                   InputProps={{
                     inputComponent: TextMaskPhone,
                   }}
@@ -156,11 +162,17 @@ const CertidaoPanel = props => {
                   name="propertyId"
                   label="Matrícula do Imóvel"
                   placeholder="Número da matrícula do imóvel"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                 />
                 <FormTextField
                   name="proprietaryId"
                   label="CPF/CNPJ do proprietário"
                   placeholder="CPF/CNPJ do proprietário do imóvel"
+                  inputProps={{
+                    inputMode: "numeric",
+                  }}
                   InputProps={{
                     inputComponent: TextMaskCpfCnpj,
                   }}
@@ -171,6 +183,23 @@ const CertidaoPanel = props => {
                   name="requestDescription"
                   label="Solicitação"
                   placeholder="Descreva como podemos te ajudar"
+                  hints={[
+                    {
+                      label: "Certidão de Inteiro Teor",
+                      "data-tooltip":
+                        "Cópia integral da Matrícula, com todo o histórico do imóvel.",
+                    },
+                    {
+                      label: "Certidão de Ônus",
+                      "data-tooltip":
+                        "Indica todos os ônus do imóvel e os impedimentos à sua livre comercialização.",
+                    },
+                    {
+                      label: "Busca e informação",
+                      "data-tooltip":
+                        "Ao adicionar esta opção, escreva livremente seu desejo.",
+                    },
+                  ]}
                 />
               </Grid>
               <Grid

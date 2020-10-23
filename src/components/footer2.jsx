@@ -94,9 +94,8 @@ const Footer = props => {
             },
             {
               href:
-                "https://www.google.com/maps/d/u/1/viewer?mid=1YBP3QGI5MjBJRj8ukcKHjesdvqMDUqhS&ll=-16.258738796402053%2C-48.99141507421872&z=10",
-              text:
-                "Mapa fronteiriço de Anápolis e da Primeira Circunscrição (ver no computador)",
+                "https://www.google.com/maps/d/viewer?mid=10YpQ9_F-hd614vCPtPjKJqiW-ho2c870",
+              text: "Mapa da Primeira Circunscrição",
             },
           ]}
         />
