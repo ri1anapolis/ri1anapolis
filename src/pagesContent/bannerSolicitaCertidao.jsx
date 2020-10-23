@@ -2,6 +2,7 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import makeStyles from "@material-ui/styles/makeStyles"
 import useTheme from "@material-ui/styles/useTheme"
 
@@ -50,14 +51,12 @@ const BannerSolicitaCertidao = () => {
         <Button
           component={AnchorLink}
           offset={
-            window.matchMedia("(max-width: 959px)").matches &&
-            window.matchMedia("(max-height: 959px)").matches
+            useMediaQuery("(max-width: 959px) and (max-height: 959px)")
               ? 104
               : 89
           }
           href={
-            window.matchMedia("(max-width: 959px)").matches &&
-            window.matchMedia("(max-height: 959px)").matches
+            useMediaQuery("(max-width: 959px) and (max-height: 959px)")
               ? "#certidoes"
               : "#servicos"
           }
