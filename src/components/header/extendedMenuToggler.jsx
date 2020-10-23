@@ -27,13 +27,7 @@ const MenuToggler = props => {
 
   return (
     <>
-      {useMediaQuery(
-        "(min-width:960px) and (max-width:1024px), (max-width:450px)"
-      ) ? (
-        <IconButton aria-label="menu" color="secondary" onClick={toggleMenu}>
-          {openMenu ? <MenuOpenIcon /> : <MenuIcon />}
-        </IconButton>
-      ) : (
+      {useMediaQuery("(min-width:450px) and (max-width:1160px)") ? (
         <Button
           size="large"
           classes={{
@@ -45,6 +39,10 @@ const MenuToggler = props => {
         >
           menu
         </Button>
+      ) : (
+        <IconButton aria-label="menu" color="secondary" onClick={toggleMenu}>
+          {openMenu ? <MenuOpenIcon /> : <MenuIcon />}
+        </IconButton>
       )}
     </>
   )

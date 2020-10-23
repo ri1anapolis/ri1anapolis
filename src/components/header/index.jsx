@@ -12,43 +12,68 @@ const defaultMenus = [
   {
     href: "#protocolos",
     text: "Protocolos",
-    description: (
-      <>
-        Consulte seu protocolo
-        <br />
-        Baixe a Nota Devolutiva
-      </>
-    ),
   },
   {
     href: "#servicos",
     text: "Serviços",
-    description: (
-      <>
-        Solicite Certidões
-        <br />
-        Agende atendimentos
-        <br />
-        Baixe documentos
-      </>
-    ),
   },
   {
     href: "#cartorio",
     text: "O Cartório",
-    description: "Sobre o cartório",
   },
   {
     href: "#contato",
     text: "Contato",
-    description: "Fale conosco",
+  },
+  {
+    href:
+      "https://www.google.com/maps/d/viewer?mid=10YpQ9_F-hd614vCPtPjKJqiW-ho2c870",
+    text: "Circunscrição",
   },
 ]
 
 const extendedMenus = [
-  { groupName: "Navegue no Site", links: defaultMenus },
   {
-    groupName: "Links Úteis",
+    groupName: "",
+    links: [
+      {
+        href: "#protocolos",
+        text: "Protocolos",
+        description: (
+          <>
+            Consulte seu protocolo
+            <br />
+            Baixe a Nota Devolutiva
+          </>
+        ),
+      },
+      {
+        href: "#servicos",
+        text: "Serviços",
+        description: (
+          <>
+            Solicite Certidões
+            <br />
+            Agende atendimentos
+            <br />
+            Baixe documentos
+          </>
+        ),
+      },
+      {
+        href: "#cartorio",
+        text: "O Cartório",
+        description: "Sobre o cartório",
+      },
+      {
+        href: "#contato",
+        text: "Contato",
+        description: "Fale conosco",
+      },
+    ],
+  },
+  {
+    groupName: "",
     links: [
       {
         href:

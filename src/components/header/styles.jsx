@@ -17,16 +17,16 @@ const useStyles = makeStyles(theme => ({
   title: {
     fontWeight: "800 !important",
     fontSize: "16px !important",
-    color: "#3b2c12",
-    textShadow: "1px 1px 2px #efe1ca",
+    color: "#3b2c12 !important",
+    textShadow: "1px 1px 2px #efe1ca !important",
   },
   content: {
     padding: "10px !important",
     maxWidth: "1260px !important",
     width: "100% !important",
     display: "flex !important",
-    flexGrow: 1,
-    justifyContent: "space-between",
+    flexGrow: "1 !important",
+    justifyContent: "space-between !important",
   },
   logoContainer: {
     width: "min-content !important",
@@ -37,8 +37,8 @@ const useStyles = makeStyles(theme => ({
     height: "70px !important",
   },
   logoLink: {
-    textDecoration: "none",
-    outline: "none",
+    textDecoration: "none !important",
+    outline: "none !important",
   },
   headerBarMenuButton: {
     width: "160px !important",
@@ -59,18 +59,19 @@ const useStyles = makeStyles(theme => ({
     marginLeft: "calc(2vw + 3px)",
   },
   defaultMenuButton: {
-    fontSize: "0.91rem",
+    fontSize: "0.91rem !important",
     wordWrap: "",
-    color: "#5f3f09",
-    textDecoration: "none",
-    textTransform: "uppercase",
-    borderTop: "1px solid #caa36a",
-    padding: "10px 20px",
-    borderRadius: 0,
-    transition: "0.4s",
+    color: "#5f3f09 !important",
+    outline: "none !important",
+    textDecoration: "none !important",
+    textTransform: "uppercase !important",
+    borderTop: "1px solid #caa36a !important",
+    padding: "10px 20px !important",
+    borderRadius: "0 !important",
+    transition: "0.4s !important",
     "&:hover": {
-      borderTop: "1px solid #252220",
-      color: "#252220",
+      borderTop: "1px solid #252220 !important",
+      color: "#252220 !important",
     },
   },
   exMenuWrapper: {
@@ -97,9 +98,10 @@ const useStyles = makeStyles(theme => ({
     color: "#c3c3c3",
   },
   exMenuItem: {
-    textDecoration: "none",
+    textDecoration: "none !important",
     color: theme.palette.secondary.light,
     padding: "0 2px !important",
+    outline: "none !important",
   },
   exMenuItemText: {
     fontSize: "1.1em !important",
