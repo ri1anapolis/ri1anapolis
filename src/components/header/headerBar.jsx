@@ -42,8 +42,7 @@ const HeaderBar = props => {
             <div className={classes.logo}>
               <Img
                 fluid={logo.file.childImageSharp.fluid}
-                alt="Logo"
-                className={classes.imgLogo}
+                alt="Cartório de Registro de Imóveis da Primeira Circunscrição de Anápolis/GO"
                 style={{ width: "100%" }}
               />
             </div>

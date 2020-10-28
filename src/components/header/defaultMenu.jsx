@@ -34,9 +34,8 @@ const PcMenu = ({ links }) => {
           const _offset = isAnchor ? "89" : null
 
           return (
-            <Grid className={classes.defaultMenuContainer} item>
+            <Grid key={index} className={classes.defaultMenuContainer} item>
               <Link
-                key={index}
                 component={_component}
                 href={link.href}
                 target={_target}
@@ -53,7 +52,7 @@ const PcMenu = ({ links }) => {
       : []
 
   return (
-    <Grow in={openMenu} direction="up">
+    <Grow in={openMenu}>
       <Grid item component="nav" container>
         {linksList}
       </Grid>

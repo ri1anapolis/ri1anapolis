@@ -24,6 +24,17 @@ const styles = makeStyles({
   dialogButton: {
     padding: "6px 25px",
   },
+  captchaWrapper: {
+    position: "relative",
+    height: "78px",
+  },
+  captchaContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    backgroundColor: "#FFF",
+  },
 })
 
 export default styles
