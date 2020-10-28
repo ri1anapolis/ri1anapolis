@@ -113,7 +113,7 @@ const ContatoSectionContent = () => {
                           className={classes.contactLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          href="http://bit.ly/Rota1RI"
+                          href="https://ri1anapolis.page.link/rota"
                         >
                           Av. Universitária, nº 2221
                           <br /> Anashopping, LUC 100
@@ -126,7 +126,7 @@ const ContatoSectionContent = () => {
                       <Link
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="http://bit.ly/Rota1RI"
+                        href="https://ri1anapolis.page.link/rota"
                       >
                         <img
                           src={place}
@@ -142,7 +142,7 @@ const ContatoSectionContent = () => {
                     color="inherit"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="http://bit.ly/Rota1RI"
+                    href="https://ri1anapolis.page.link/rota"
                     classes={{ root: classes.routeButton }}
                   >
                     Clique para traçar rota
