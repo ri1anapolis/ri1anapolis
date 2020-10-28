@@ -24,6 +24,19 @@ const styles = makeStyles({
   dialogButton: {
     padding: "6px 25px",
   },
+  captchaWrapper: {
+    minHeight: window.matchMedia("(min-width: 410px)").matches
+      ? "78px"
+      : "150px",
+    position: "relative",
+  },
+  captchaContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    backgroundColor: "#FFF",
+  },
 })
 
 export default styles

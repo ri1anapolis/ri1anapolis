@@ -11744,10 +11744,10 @@ react-multi-carousel@^2.5.5:
   resolved "https://registry.yarnpkg.com/react-multi-carousel/-/react-multi-carousel-2.5.5.tgz#f83aa1bd39d64ebbda08f724590ebe8994559fcd"
   integrity sha512-yjRNA3KypwJHDQba1XUz1cVrcejZ9c+4cdY3ODPBj/FMVT+Vj7bE3V4wkWiHRzeYNzhaf902/pbO3cP2e9261A==
 
-react-recaptcha@^2.3.10:
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/react-recaptcha/-/react-recaptcha-2.3.10.tgz#1f7a001f24ab7e1a323fcf1fd8644afecb56f7da"
-  integrity sha512-IyanbozsYCuHvTYDuskZTIEcRAMG/sdvAu5b29iQWoC8Kd3Zk9WGCv2oNxh6RfGHvSvgHAyaLjmC6ei/yMsJ7g==
+react-recaptcha-x@^1.1.10:
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/react-recaptcha-x/-/react-recaptcha-x-1.1.10.tgz#a3e3d65a88b5d5c6844f4942d76623bcc7f29b38"
+  integrity sha512-dX6uxX8I+886jJP3Irx1VrMXNFsAsfYux57g5p+ujdpfJbkAmG2Ai3876Q9MPlnurEeIE3HCWU1SCRywE2Rmiw==
 
 react-reconciler@^0.24.0:
   version "0.24.0"
