@@ -5,7 +5,6 @@ import HmacMD5 from "crypto-js/hmac-md5"
 import AES from "crypto-js/aes"
 import Utf8Encoder from "crypto-js/enc-utf8"
 import Typography from "@material-ui/core/Typography"
-import Link from "@material-ui/core/Link"
 import Button from "@material-ui/core/Button"
 import Dialog from "@material-ui/core/Dialog"
 import DialogActions from "@material-ui/core/DialogActions"
@@ -15,6 +14,7 @@ import DialogTitle from "@material-ui/core/DialogTitle"
 import TextField from "@material-ui/core/TextField"
 import Grid from "@material-ui/core/Grid"
 import Grow from "@material-ui/core/Grow"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import {
   EReCaptchaV2Size,
@@ -23,6 +23,7 @@ import {
   ReCaptchaV2,
 } from "react-recaptcha-x"
 
+import useTheme from "@material-ui/styles/useTheme"
 import styles from "./styles"
 
 import GetAppIcon from "@material-ui/icons/GetApp"
@@ -37,7 +38,8 @@ const NotesDownloadDialog = ({ data }) => {
     disabled: true,
     url: "#",
   }
-  const classes = styles()
+  const theme = useTheme()
+  const classes = styles(theme)
   const [showDownloadForm, setShowDownloadForm] = useState(false)
   const [preventDownload, setPreventDownload] = useState(defaultState)
   const [useCaptchaFallback, setUseCaptchaFallback] = useState(false)
@@ -121,49 +123,48 @@ const NotesDownloadDialog = ({ data }) => {
           <Typography variant="subtitle1">Nota Devolutiva</Typography>
         </DialogTitle>
         <DialogContent className={classes.dialogContent}>
-          {!useCaptchaFallback && (
-            <>
-              <DialogContentText paragraph align="justify">
-                Valide seu acesso para baixar da Nota Devolutiva do protocolo{" "}
-                {data.process.name.split("-")[1]}.
-              </DialogContentText>
+          <div style={{ display: !useCaptchaFallback ? "block" : "none" }}>
+            <DialogContentText paragraph align="justify">
+              Valide seu acesso para baixar da Nota Devolutiva do protocolo{" "}
+              {data.process.name.split("-")[1]}.
+            </DialogContentText>
 
-              <Grid
-                container
-                alignContent="center"
-                className={classes.captchaWrapper}
-              >
-                <Grid item container spacing={2} wrap="nowrap">
-                  <Grid item>
-                    <CircularProgress />
-                  </Grid>
-                  <Grid item>
-                    <Button
-                      color="secondary"
-                      onClick={() => setUseCaptchaFallback(true)}
-                    >
-                      <small>Prolemas? Clique aqui!</small>
-                    </Button>
-                  </Grid>
+            <Grid
+              container
+              alignContent="center"
+              className={classes.captchaWrapper}
+            >
+              <Grid item container spacing={2} wrap="nowrap">
+                <Grid item>
+                  <CircularProgress />
                 </Grid>
-                <div className={classes.captchaContainer}>
-                  <ReCaptchaProvider siteKeyV2={recaptcha_key} langCode="pt-BR">
-                    <ReCaptchaV2
-                      callback={v2Callback}
-                      theme={EReCaptchaV2Theme.Light}
-                      size={
-                        window.matchMedia("(min-width: 410px)").matches
-                          ? EReCaptchaV2Size.Normal
-                          : EReCaptchaV2Size.Compact
-                      }
-                      tabIndex={0}
-                      id="requirements-notes-recaptcha"
-                    />
-                  </ReCaptchaProvider>
-                </div>
+                <Grid item>
+                  <Button
+                    color="secondary"
+                    onClick={() => setUseCaptchaFallback(true)}
+                  >
+                    <small>Prolemas? Clique aqui!</small>
+                  </Button>
+                </Grid>
               </Grid>
-            </>
-          )}
+              <div
+                className={classes.captchaContainer}
+                style={{
+                  marginLeft: useMediaQuery("(max-width: 392px)") ? "-25px" : 0,
+                }}
+              >
+                <ReCaptchaProvider siteKeyV2={recaptcha_key} langCode="pt-BR">
+                  <ReCaptchaV2
+                    callback={v2Callback}
+                    theme={EReCaptchaV2Theme.Light}
+                    size={EReCaptchaV2Size.Normal}
+                    tabIndex={0}
+                    id="requirements-notes-recaptcha"
+                  />
+                </ReCaptchaProvider>
+              </div>
+            </Grid>
+          </div>
 
           {useCaptchaFallback && (
             <>

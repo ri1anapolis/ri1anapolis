@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "space-between !important",
   },
   logoContainer: {
-    width: "min-content !important",
+    width: "max-content !important",
     minWidth: "300px !important",
   },
   logo: {
@@ -52,7 +52,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   headerBarMenuButtonEndIcon: {
-    marginTop: "6px !important",
+    marginTop: "4px !important",
   },
   defaultMenuContainer: {
     maxWidth: "200px",

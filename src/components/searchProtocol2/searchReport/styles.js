@@ -25,10 +25,8 @@ const styles = makeStyles({
     padding: "6px 25px",
   },
   captchaWrapper: {
-    minHeight: window.matchMedia("(min-width: 410px)").matches
-      ? "78px"
-      : "150px",
     position: "relative",
+    height: "78px",
   },
   captchaContainer: {
     position: "absolute",
