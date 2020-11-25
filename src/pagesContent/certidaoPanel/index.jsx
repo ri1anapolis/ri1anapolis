@@ -176,12 +176,12 @@ const CertidaoPanel = props => {
                 <Typography>Dados da solicitação:</Typography>
                 <FormTextField
                   name="propertyAddress"
-                  label="Endereço do imóvel"
+                  label="Endereço do imóvel (opcional)"
                   placeholder="Lote, quadra, bairro do imóvel"
                 />
                 <FormTextField
                   name="propertyId"
-                  label="Matrícula do Imóvel"
+                  label="Matrícula do Imóvel (opcional)"
                   placeholder="Número da matrícula do imóvel"
                   inputProps={{
                     inputMode: "numeric",
@@ -189,7 +189,7 @@ const CertidaoPanel = props => {
                 />
                 <FormTextField
                   name="proprietaryId"
-                  label="CPF/CNPJ do proprietário"
+                  label="CPF/CNPJ do proprietário (opcional)"
                   placeholder="CPF/CNPJ do proprietário do imóvel"
                   onKeyDown={handleAskProprietaryName}
                   inputProps={{
