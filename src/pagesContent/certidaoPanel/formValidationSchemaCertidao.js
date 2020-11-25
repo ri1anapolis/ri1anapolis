@@ -79,6 +79,16 @@ const validationSchema = yup.object().shape({
     .string()
     .trim()
     .emptyOrLengths([14, 18], "O CPF informado não é válido!"),
+  proprietaryName: yup.string().when("proprietaryId", {
+    is: value => [14, 18].includes(value.length),
+    then: yup
+      .string()
+      .trim()
+      .min(8, "Informe o nome completo do proprietário do imóvel!")
+      .max(100, "Abrevie um pouco o nome!")
+      .matches(nameRegex, "Informe um nome válido! ")
+      .required("Informe o nome do proprietário do imóvel!"),
+  }),
   requestDescription: yup
     .string()
     .trim()

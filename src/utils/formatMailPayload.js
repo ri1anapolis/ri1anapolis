@@ -87,43 +87,39 @@ _requestDescription_
 `
 
 function formatMailPayload(data) {
+  const requestDescription = data.requestDescription.toUpperCase()
+  const proprietaryId = data.proprietaryId
+  const proprietaryName = data.proprietaryName?.toUpperCase()
+  const propertyId = data.propertyId?.toUpperCase()
+  const propertyAddress = data.propertyAddress?.toUpperCase()
+  const requesterEmail = data.requesterEmail.toLowerCase()
+  const requesterPhone = data.requesterPhone
+  const requesterID = data.requesterID
+  const requesterName = data.requesterName?.toUpperCase()
+  const _name_ = requesterName.split(" ")
+
   const payload = {}
-
-  const {
-    requestDescription,
-    proprietaryId,
-    propertyId,
-    propertyAddress,
-    requesterEmail,
-    requesterPhone,
-    requesterID,
-    requesterName,
-  } = data
-
-  const name = requesterName.split(" ")
-  const email = `${requesterEmail.toLowerCase()}`
-
-  payload.subject = `${name[0]} ${
-    name[name.length - 1]
+  payload.subject = `${_name_[0]} ${
+    _name_[_name_.length - 1]
   }: solicitação de certidão/busca no site do 1º RI de Anápolis!`
-
-  payload.replyTo = email
+  payload.replyTo = requesterEmail
 
   const requesterInfoText = `
       Nome: ${requesterName}
       CPF/CNPJ: ${requesterID}
       Telefone: ${requesterPhone}
-      E-mail: ${email}
+      E-mail: ${requesterEmail}
       `
   const requesterInfoHtml = `
       Nome: ${requesterName}<br/>
       CPF/CNPJ: ${requesterID}<br/>
       Telefone: ${requesterPhone}<br/>
-      E-mail: ${email}
+      E-mail: ${requesterEmail}
       `
   const requestDescriptionText = `
       ${propertyAddress && "Endereço do Imóvel: " + propertyAddress}
       ${propertyId && "Matrícula do Imóvel: " + propertyId}
+      ${proprietaryName && "Nome do Proprietário: " + proprietaryName}
       ${proprietaryId && "CPF/CNPJ do Proprietário: " + proprietaryId}
       
       Solicitação: ${requestDescription.replace(/(\n|\r\n)+/g, `\n`)}
@@ -131,6 +127,7 @@ function formatMailPayload(data) {
   const requestDescriptionHtml = `
       ${propertyAddress && "Endereço do Imóvel: " + propertyAddress + "<br/>"}
       ${propertyId && "Matrícula do Imóvel: " + propertyId + "<br/>"}
+      ${proprietaryName && "Nome do Proprietário: " + proprietaryName + "<br/>"}
       ${proprietaryId && "CPF/CNPJ do Proprietário: " + proprietaryId + "<br/>"}
       Solicitação: ${requestDescription.replace(/(\n|\r\n)+/g, "<br />")}
       `
