@@ -83,18 +83,7 @@ const ServicosSectionContent = () => {
           color="primary"
           onClick={handleDrawer("drawerAgendamento")}
         >
-          Agendar Online
-        </Button>
-        <Button
-          size="small"
-          color="primary"
-          variant="outlined"
-          rel="noreferrer noopener"
-          target="_blank"
-          href="https://wa.me/556239374650"
-          style={{ filter: "brightness(1.2)" }}
-        >
-          ou por WhatsApp
+          Agendar atendimento
         </Button>
         <Typography paragraph />
 
