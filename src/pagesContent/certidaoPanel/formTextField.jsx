@@ -38,7 +38,13 @@ const FormTextField = props => {
   const { name, onChange, hints, ...other } = props
 
   const handleChange = event => {
-    if (typeof onChange === "function") onChange(event)
+    if (typeof onChange === "function") {
+      try {
+        onChange(event)
+      } catch (error) {
+        console.error(error)
+      }
+    }
     trigger(name)
   }
 

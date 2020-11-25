@@ -89,13 +89,13 @@ _requestDescription_
 function formatMailPayload(data) {
   const requestDescription = data.requestDescription.toUpperCase()
   const proprietaryId = data.proprietaryId
-  const proprietaryName = data.proprietaryName.toUpperCase()
-  const propertyId = data.propertyId.toUpperCase()
-  const propertyAddress = data.propertyAddress.toUpperCase()
+  const proprietaryName = data.proprietaryName?.toUpperCase()
+  const propertyId = data.propertyId?.toUpperCase()
+  const propertyAddress = data.propertyAddress?.toUpperCase()
   const requesterEmail = data.requesterEmail.toLowerCase()
   const requesterPhone = data.requesterPhone
   const requesterID = data.requesterID
-  const requesterName = data.requesterName.toUpperCase()
+  const requesterName = data.requesterName?.toUpperCase()
   const _name_ = requesterName.split(" ")
 
   const payload = {}
