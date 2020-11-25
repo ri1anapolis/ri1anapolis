@@ -29,6 +29,7 @@ const CertidaoPanel = props => {
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null)
   const [popoverShow, setPopoverShow] = useState(false)
   const [popoverStatus, setPopoverStatus] = useState(null)
+  const [proprietaryName, setProprietaryName] = useState(false)
 
   const savedData =
     window.localStorage?.getItem(localStorageId) || null
@@ -47,6 +48,15 @@ const CertidaoPanel = props => {
     props.handleDrawer()
   }
 
+  const onProprietaryChange = event => {
+    const proprietaryId = formMethods
+      .getValues("proprietaryId")
+      .replace(/[\s.\-/]/g, "")
+    const validLengths = [11, 14]
+    const isValid = validLengths.some(n => n === proprietaryId.length)
+    setProprietaryName(isValid)
+  }
+
   const onSubmit = async data => {
     setPopoverAnchorEl(document.getElementById("certidao-form-container"))
     setPopoverStatus("loading")
@@ -57,6 +67,7 @@ const CertidaoPanel = props => {
       delete formData.propertyAddress
       delete formData.propertyId
       delete formData.proprietaryId
+      delete formData.proprietaryName
       delete formData.requestDescription
       window.localStorage.setItem(localStorageId, JSON.stringify(formData))
     } catch (error) {
@@ -170,6 +181,7 @@ const CertidaoPanel = props => {
                   name="proprietaryId"
                   label="CPF/CNPJ do proprietário"
                   placeholder="CPF/CNPJ do proprietário do imóvel"
+                  onChange={onProprietaryChange}
                   inputProps={{
                     inputMode: "numeric",
                   }}
@@ -177,6 +189,14 @@ const CertidaoPanel = props => {
                     inputComponent: TextMaskCpfCnpj,
                   }}
                 />
+                {proprietaryName && (
+                  <FormTextField
+                    required
+                    name="proprietaryName"
+                    label="Nome do Proprietário"
+                    placeholder="Nome do proprietário do imóvel"
+                  />
+                )}
                 <FormTextField
                   required
                   multiline
