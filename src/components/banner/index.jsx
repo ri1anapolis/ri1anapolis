@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { makeStyles } from "@material-ui/styles"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import bg from "../images/bg_repeat.jpg"
+import bg from "../../images/bg_repeat.jpg"
 
 const useStyles = makeStyles(theme => ({
   banner: {
