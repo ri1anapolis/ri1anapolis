@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { CssBaseline, Grid } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
@@ -6,9 +6,15 @@ import { theme, useStyles } from "../config/materialUiTheme2"
 import Loadable from "react-loadable"
 import Header from "./header"
 import SectionLoadingFallback from "./sectionLoadingFallback"
+import getBanners from "./banner/getBanners"
 
+const BuildBanners = Loadable({
+  loader: () => import("./banner/buildBanners"),
+  loading: () => <SectionLoadingFallback height="0" />,
+  delay: 300,
+})
 const Banner = Loadable({
-  loader: () => import("./banner"),
+  loader: () => import("./banner/index"),
   loading: () => <SectionLoadingFallback height="350px" />,
   delay: 300,
 })
@@ -42,12 +48,24 @@ const BackToTopButton = Loadable({
 const Layout = props => {
   const classes = useStyles(props)
   const topElementId = "home"
+  const [banners, setBanners] = useState(null)
+
+  useEffect(() => {
+    async function _getBanners() {
+      if (!Array.isArray(banners)) {
+        const _banners = await getBanners()
+        setBanners(_banners)
+      }
+    }
+    _getBanners()
+  }, [banners, setBanners])
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header id={topElementId} />
       <Banner>
+        {banners && <BuildBanners data={banners} />}
         <BannerSolicitaCertidao />
         <BannerAgendamento />
         <BannerCoronaVirus />
