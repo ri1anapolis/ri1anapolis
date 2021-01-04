@@ -79,13 +79,4 @@ const DefaultBanner = ({ data }) => {
   )
 }
 
-const BuildBanners = ({ data }) => {
-  if (Array.isArray(data) && data?.length > 0) {
-    return data.map(banner => {
-      return <DefaultBanner key={banner.title} data={banner} />
-    })
-  }
-  return null
-}
-
-export default BuildBanners
+export default DefaultBanner

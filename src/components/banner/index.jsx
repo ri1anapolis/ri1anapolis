@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { makeStyles } from "@material-ui/styles"
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
+import DefaultBanner from "./defaultBanner"
 import bg from "../../images/bg_repeat.jpg"
 
 const useStyles = makeStyles(theme => ({
@@ -36,13 +37,29 @@ const responsive = {
   },
 }
 
-const Banner = ({ children }) => {
+const Banner = ({ children, onlineBanners }) => {
   const classes = useStyles()
   const [playable, setPlayable] = useState(false)
+  const [banners, setBanners] = useState(null)
 
   useEffect(() => {
-    if (!!children && children.length > 1) setPlayable(true)
-  }, [children, setPlayable])
+    const allChildrenLength = children?.length || 0 + onlineBanners?.length || 0
+    if (allChildrenLength > 1) setPlayable(true)
+
+    if (!banners && onlineBanners?.length > 0) {
+      try {
+        const _banners = Array.from(onlineBanners).map(banner => {
+          if (banner.title.length < 3 || banner.body[0].length < 3)
+            throw Error("banner data is not valid!")
+
+          return <DefaultBanner key={banner.title} data={banner} />
+        })
+        setBanners(_banners)
+      } catch (error) {
+        console.warn(error, onlineBanners)
+      }
+    }
+  }, [children, onlineBanners, banners, setBanners, setPlayable])
 
   return (
     <Carousel
@@ -57,6 +74,7 @@ const Banner = ({ children }) => {
       autoPlay={playable}
       autoPlaySpeed={10000}
     >
+      {banners}
       {children}
     </Carousel>
   )
