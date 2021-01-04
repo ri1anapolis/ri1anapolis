@@ -13,8 +13,8 @@ const getBanners = async () => {
     )
 
     if (status !== 200) throw Error(statusText)
-
     if (branch === "development") console.log(`banners data:`, data)
+
     return data
   } catch (error) {
     console.error(error)

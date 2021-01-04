@@ -8,11 +8,6 @@ import Header from "./header"
 import SectionLoadingFallback from "./sectionLoadingFallback"
 import getBanners from "./banner/getBanners"
 
-const BuildBanners = Loadable({
-  loader: () => import("./banner/buildBanners"),
-  loading: () => <SectionLoadingFallback height="0" />,
-  delay: 300,
-})
 const Banner = Loadable({
   loader: () => import("./banner/index"),
   loading: () => <SectionLoadingFallback height="350px" />,
@@ -64,8 +59,7 @@ const Layout = props => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header id={topElementId} />
-      <Banner>
-        {banners && <BuildBanners data={banners} />}
+      <Banner onlineBanners={banners}>
         <BannerSolicitaCertidao />
         <BannerAgendamento />
         <BannerCoronaVirus />
