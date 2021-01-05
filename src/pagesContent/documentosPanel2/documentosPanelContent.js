@@ -260,6 +260,14 @@ const documentos = [
         text: "2. Dispensa de Certidões Exigidas PJ",
         href: "https://ri1anapolis.page.link/dispensa_cert_pj",
       },
+      {
+        text: "3. Declaração de Valor de Imóvel PF",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+      },
+      {
+        text: "3. Declaração de Valor de Imóvel PJ",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+      },
     ],
   },
   {
@@ -276,6 +284,14 @@ const documentos = [
       {
         text: "2. Dispensa de Certidões Exigidas PJ",
         href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+      },
+      {
+        text: "3. Declaração de Valor de Imóvel PF",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+      },
+      {
+        text: "3. Declaração de Valor de Imóvel PJ",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
       },
     ],
   },
@@ -296,7 +312,15 @@ const documentos = [
         href: "https://ri1anapolis.page.link/dispensa_cert_pj",
       },
       {
-        text: "3. Declaração de Primeira Aquisição",
+        text: "3. Declaração de Valor de Imóvel PF",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+      },
+      {
+        text: "3. Declaração de Valor de Imóvel PJ",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+      },
+      {
+        text: "4. Declaração de Primeira Aquisição",
         href:
           "https://ri1anapolis.page.link/contrato_compra_venda_alienacao_mcmv__declaracao",
       },
@@ -319,7 +343,15 @@ const documentos = [
         href: "https://ri1anapolis.page.link/dispensa_cert_pj",
       },
       {
-        text: "3. Declaração de Primeira Aquisição",
+        text: "3. Declaração de Valor de Imóvel PF",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+      },
+      {
+        text: "3. Declaração de Valor de Imóvel PJ",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+      },
+      {
+        text: "4. Declaração de Primeira Aquisição",
         href:
           "https://ri1anapolis.page.link/contrato_compra_venda_alienacao_sfh__declaracao",
       },
@@ -430,6 +462,14 @@ const documentos = [
       {
         text: "3. Dispensa de Certidões Exigidas PJ",
         href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+      },
+      {
+        text: "4. Declaração de Valor de Imóvel PF",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+      },
+      {
+        text: "4. Declaração de Valor de Imóvel PJ",
+        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
       },
     ],
   },
