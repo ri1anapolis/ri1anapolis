@@ -5,15 +5,6 @@ import SectionProtocolos from "../pagesContent/protocolos2"
 import Loadable from "react-loadable"
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
 
-import LogRocket from "logrocket"
-import setupLogRocketReact from "logrocket-react"
-if (process.env.NODE_ENV === "production") {
-  LogRocket.init(process.env.GATSBY_LOGROCKET_APP_ID, {
-    shouldAggregateConsoleErrors: true,
-  })
-  setupLogRocketReact(LogRocket)
-}
-
 const SectionServicos = Loadable({
   loader: () => import("../pagesContent/servicos2"),
   loading: () => <SectionLoadingFallback height="465px" />,
