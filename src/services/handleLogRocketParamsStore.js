@@ -13,7 +13,7 @@ const handleParamsStore = (name, params = defaultParams) => {
     const expirationDate = new Date(dateString(paramsObj.expire)).getTime()
     const todayDate = new Date(dateString()).getTime()
 
-    if (expirationDate <= todayDate) return paramsObj
+    if (expirationDate >= todayDate) return paramsObj
     console.info("LogRocket recording params expired!")
   }
 
