@@ -56,7 +56,7 @@ const Banner = ({ children, onlineBanners }) => {
         })
         setBanners(_banners)
       } catch (error) {
-        console.warn(error, onlineBanners)
+        console.info(error, onlineBanners)
       }
     }
   }, [children, onlineBanners, banners, setBanners, setPlayable])

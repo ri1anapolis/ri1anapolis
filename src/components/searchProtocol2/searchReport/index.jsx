@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Divider from "@material-ui/core/Divider"
 import Typography from "@material-ui/core/Typography"
 import AnchorLink from "react-anchor-link-smooth-scroll"
-import Loadable from "react-loadable"
+import loadable from "@loadable/component"
 
 import store from "../reduxStore"
 import HandleErrors from "./handleErrors"
@@ -11,11 +11,7 @@ import SectionLoadingFallback from "../../sectionLoadingFallback"
 
 import styles from "./styles"
 
-const NotesDownloadDialog = Loadable({
-  loader: () => import("./notesDownloadDialog"),
-  loading: () => <></>,
-  delay: 300,
-})
+const NotesDownloadDialog = loadable(() => import("./notesDownloadDialog"))
 
 const SearchReport = () => {
   const classes = styles()
