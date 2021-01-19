@@ -91,7 +91,7 @@ const ContatoSectionContent = () => {
           <Typography paragraph>
             Agende um horário, tire dúvidas, faça uma visita. O atendimento
             presencial e pelos canais de comunicação se dá de segunda a
-            sexta-feira das 08:00h as 17:00h.
+            sexta-feira das 09:00h as 17:00h.
           </Typography>
 
           <Grid container justify="space-around">

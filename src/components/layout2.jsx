@@ -13,6 +13,11 @@ const Banner = Loadable({
   loading: () => <SectionLoadingFallback height="350px" />,
   delay: 300,
 })
+const BannerNovoHorarioAtendimento = Loadable({
+  loader: () => import("../pagesContent/bannerNovoHorarioAtendimento"),
+  loading: () => <SectionLoadingFallback height="350px" />,
+  delay: 300,
+})
 const BannerSolicitaCertidao = Loadable({
   loader: () => import("../pagesContent/bannerSolicitaCertidao"),
   loading: () => <SectionLoadingFallback height="350px" />,
@@ -60,6 +65,7 @@ const Layout = props => {
       <CssBaseline />
       <Header id={topElementId} />
       <Banner onlineBanners={banners}>
+        <BannerNovoHorarioAtendimento />
         <BannerSolicitaCertidao />
         <BannerAgendamento />
         <BannerCoronaVirus />
