@@ -17,7 +17,7 @@ const getBanners = async () => {
 
     return data
   } catch (error) {
-    console.error(error)
+    console.info(error)
     return null
   }
 }

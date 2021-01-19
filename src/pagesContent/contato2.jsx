@@ -9,16 +9,13 @@ import ListItemText from "@material-ui/core/ListItemText"
 import Link from "@material-ui/core/Link"
 import Button from "@material-ui/core/Button"
 import makeStyles from "@material-ui/styles/makeStyles"
-import loadableVisibility from "react-loadable-visibility/react-loadable"
-
+import loadable from "@loadable/component"
 import { Article, Section } from "../components/section2"
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import MailOutlineIcon from "@material-ui/icons/MailOutline"
 import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk"
-
-import delay from "../utils/delay"
 
 const useStyles = makeStyles(theme => ({
   listItem: {
@@ -55,10 +52,8 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ContatoMap = loadableVisibility({
-  loader: () => import("./contatoMap"),
-  loading: () => <SectionLoadingFallback text="Buscando o mapa pra você..." />,
-  delay: 100,
+const ContatoMap = loadable(() => import("./contatoMap"), {
+  fallback: <SectionLoadingFallback text="Buscando o mapa pra você..." />,
 })
 
 const ContatoSectionContent = () => {
@@ -73,12 +68,6 @@ const ContatoSectionContent = () => {
   `)
 
   const classes = useStyles()
-
-  async function mapPreload() {
-    await delay(20000)
-    ContatoMap.preload()
-  }
-  mapPreload()
 
   return (
     <>

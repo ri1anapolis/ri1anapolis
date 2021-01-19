@@ -3,7 +3,7 @@ import Typography from "@material-ui/core/Typography"
 import makeStyles from "@material-ui/styles/makeStyles"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-import Loadable from "react-loadable"
+import loadable from "@loadable/component"
 
 import Button from "../components/styledButton"
 import { Article, Section, Aside } from "../components/section2"
@@ -21,28 +21,29 @@ const useStyles = makeStyles({
   },
 })
 
-const CertidaoPanel = Loadable({
-  loader: () => import("./certidaoPanel"),
-  loading: () => <SectionLoadingFallback height="0" />,
-  delay: 300,
+const CertidaoPanel = loadable(() => import("./certidaoPanel"), {
+  fallback: <SectionLoadingFallback height="0" />,
 })
-const AgendamentoPanel = Loadable({
-  loader: () => import("./agendamentoPanel"),
-  loading: () => <SectionLoadingFallback height="0" />,
-  delay: 300,
+const AgendamentoPanel = loadable(() => import("./agendamentoPanel"), {
+  fallback: <SectionLoadingFallback height="0" />,
 })
-const DocumentosPanel2 = Loadable({
-  loader: () => import("./documentosPanel2"),
-  loading: () => <SectionLoadingFallback height="0" />,
-  delay: 300,
+const DocumentosPanel = loadable(() => import("./documentosPanel2"), {
+  fallback: <SectionLoadingFallback height="0" />,
 })
+
+function preloadCertidaoPanel() {
+  CertidaoPanel.preload()
+}
+function preloadAgendamentoPanel() {
+  AgendamentoPanel.preload()
+}
+function preloadDocumentosPanel() {
+  DocumentosPanel.preload()
+}
 
 const ServicosSectionContent = () => {
   const classes = useStyles()
   const handleDrawer = useDrawerToggler()
-  CertidaoPanel.preload()
-  AgendamentoPanel.preload()
-  DocumentosPanel2.preload()
 
   const image = useStaticQuery(graphql`
     query {
@@ -82,6 +83,7 @@ const ServicosSectionContent = () => {
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerAgendamento")}
+          onMouseEnter={preloadAgendamentoPanel}
         >
           Agendar atendimento
         </Button>
@@ -99,6 +101,7 @@ const ServicosSectionContent = () => {
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerCertidoes")}
+          onMouseEnter={preloadCertidaoPanel}
         >
           Solicitar Certidão / Busca
         </Button>
@@ -117,6 +120,7 @@ const ServicosSectionContent = () => {
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerDocumentos2")}
+          onMouseEnter={preloadDocumentosPanel}
         >
           Lista de Documentos
         </Button>
@@ -131,7 +135,7 @@ const ServicosSectionContent = () => {
       </StyledDrawer>
 
       <StyledDrawer id="drawerDocumentos2">
-        <DocumentosPanel2 />
+        <DocumentosPanel />
       </StyledDrawer>
     </Article>
   )

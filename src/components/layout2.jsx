@@ -3,46 +3,31 @@ import PropTypes from "prop-types"
 import { CssBaseline, Grid } from "@material-ui/core"
 import { ThemeProvider } from "@material-ui/core/styles"
 import { theme, useStyles } from "../config/materialUiTheme2"
-import Loadable from "react-loadable"
+import loadable from "@loadable/component"
 import Header from "./header"
 import SectionLoadingFallback from "./sectionLoadingFallback"
+import Banner from "./banner/index"
 import getBanners from "./banner/getBanners"
+import BannerNovoHorarioAtendimento from "../pagesContent/bannerNovoHorarioAtendimento"
 
-const Banner = Loadable({
-  loader: () => import("./banner/index"),
-  loading: () => <SectionLoadingFallback height="350px" />,
-  delay: 300,
-})
-const BannerNovoHorarioAtendimento = Loadable({
-  loader: () => import("../pagesContent/bannerNovoHorarioAtendimento"),
-  loading: () => <SectionLoadingFallback height="350px" />,
-  delay: 300,
-})
-const BannerSolicitaCertidao = Loadable({
-  loader: () => import("../pagesContent/bannerSolicitaCertidao"),
-  loading: () => <SectionLoadingFallback height="350px" />,
-  delay: 300,
-})
-const BannerAgendamento = Loadable({
-  loader: () => import("../pagesContent/bannerAgendamento"),
-  loading: () => <SectionLoadingFallback height="350px" />,
-  delay: 300,
-})
-const BannerCoronaVirus = Loadable({
-  loader: () => import("../pagesContent/bannerCoronaVirus"),
-  loading: () => <SectionLoadingFallback height="350px" />,
-  delay: 300,
-})
+const BannerSolicitaCertidao = loadable(
+  () => import("../pagesContent/bannerSolicitaCertidao"),
+  { fallback: <SectionLoadingFallback height="350px" /> }
+)
+const BannerAgendamento = loadable(
+  () => import("../pagesContent/bannerAgendamento"),
+  { fallback: <SectionLoadingFallback height="350px" /> }
+)
+const BannerCoronaVirus = loadable(
+  () => import("../pagesContent/bannerCoronaVirus"),
+  { fallback: <SectionLoadingFallback height="350px" /> }
+)
 
-const Footer = Loadable({
-  loader: () => import("./footer2"),
-  loading: () => <SectionLoadingFallback />,
-  delay: 300,
+const Footer = loadable(() => import("./footer2"), {
+  fallback: <SectionLoadingFallback />,
 })
-const BackToTopButton = Loadable({
-  loader: () => import("./backToTopButton2"),
-  loading: () => <SectionLoadingFallback height="0" />,
-  delay: 300,
+const BackToTopButton = loadable(() => import("./backToTopButton2"), {
+  fallback: <SectionLoadingFallback height="0" />,
 })
 
 const Layout = props => {
