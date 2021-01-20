@@ -44,6 +44,7 @@ module.exports = {
         icon: `src/images/logo_icon.png`,
       },
     },
+    `gatsby-plugin-loadable-components-ssr`,
     {
       resolve: "gatsby-plugin-offline",
       options: {
@@ -60,7 +61,6 @@ module.exports = {
         anonymize: true,
       },
     },
-    `gatsby-plugin-loadable-components-ssr`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-react-helmet`,
