@@ -6,10 +6,15 @@ import { theme, useStyles } from "../config/materialUiTheme2"
 import loadable from "@loadable/component"
 import Header from "./header"
 import SectionLoadingFallback from "./sectionLoadingFallback"
-import Banner from "./banner/index"
 import getBanners from "./banner/getBanners"
-import BannerNovoHorarioAtendimento from "../pagesContent/bannerNovoHorarioAtendimento"
 
+const Banner = loadable(() => import("./banner/index"), {
+  fallback: <SectionLoadingFallback height="350px" />,
+})
+const BannerNovoHorarioAtendimento = loadable(
+  () => import("../pagesContent/bannerNovoHorarioAtendimento"),
+  { fallback: <SectionLoadingFallback height="350px" /> }
+)
 const BannerSolicitaCertidao = loadable(
   () => import("../pagesContent/bannerSolicitaCertidao"),
   { fallback: <SectionLoadingFallback height="350px" /> }
@@ -34,6 +39,8 @@ const Layout = props => {
   const classes = useStyles(props)
   const topElementId = "home"
   const [banners, setBanners] = useState(null)
+  Banner.preload()
+  BannerNovoHorarioAtendimento.preload()
 
   useEffect(() => {
     async function _getBanners() {
