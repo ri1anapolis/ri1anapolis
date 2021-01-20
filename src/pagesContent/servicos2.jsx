@@ -31,19 +31,12 @@ const DocumentosPanel = loadable(() => import("./documentosPanel2"), {
   fallback: <SectionLoadingFallback height="0" />,
 })
 
-function preloadCertidaoPanel() {
-  CertidaoPanel.preload()
-}
-function preloadAgendamentoPanel() {
-  AgendamentoPanel.preload()
-}
-function preloadDocumentosPanel() {
-  DocumentosPanel.preload()
-}
-
 const ServicosSectionContent = () => {
   const classes = useStyles()
   const handleDrawer = useDrawerToggler()
+  CertidaoPanel.preload()
+  AgendamentoPanel.preload()
+  DocumentosPanel.preload()
 
   const image = useStaticQuery(graphql`
     query {
@@ -83,7 +76,6 @@ const ServicosSectionContent = () => {
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerAgendamento")}
-          onMouseEnter={preloadAgendamentoPanel}
         >
           Agendar atendimento
         </Button>
@@ -101,7 +93,6 @@ const ServicosSectionContent = () => {
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerCertidoes")}
-          onMouseEnter={preloadCertidaoPanel}
         >
           Solicitar Certidão / Busca
         </Button>
@@ -120,7 +111,6 @@ const ServicosSectionContent = () => {
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerDocumentos2")}
-          onMouseEnter={preloadDocumentosPanel}
         >
           Lista de Documentos
         </Button>
