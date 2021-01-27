@@ -9,7 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText"
 import Link from "@material-ui/core/Link"
 import Button from "@material-ui/core/Button"
 import makeStyles from "@material-ui/styles/makeStyles"
-import loadable from "@loadable/component"
+import loadableVisibility from "react-loadable-visibility/loadable-components"
 import { Article, Section } from "../components/section2"
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
 import InstagramIcon from "@material-ui/icons/Instagram"
@@ -52,9 +52,12 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ContatoMap = loadable(() => import("./contatoMap"), {
-  fallback: <SectionLoadingFallback text="Buscando o mapa pra você..." />,
-})
+const ContatoMap = loadableVisibility(
+  /* #__LOADABLE__ */ () => import("./contatoMap"),
+  {
+    fallback: <SectionLoadingFallback text="Buscando o mapa pra você..." />,
+  }
+)
 
 const ContatoSectionContent = () => {
   const {

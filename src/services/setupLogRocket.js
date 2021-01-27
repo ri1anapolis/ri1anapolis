@@ -1,5 +1,3 @@
-import LogRocket from "logrocket"
-import setupLogRocketReact from "logrocket-react"
 import handleParamsStore from "./handleLogRocketParamsStore"
 
 function setupLogRocket() {
@@ -10,10 +8,14 @@ function setupLogRocket() {
 
   if (allowedClientWindow && record) {
     if (productionEnvironment) {
-      LogRocket.init(process.env.GATSBY_LOGROCKET_APP_ID, {
-        shouldAggregateConsoleErrors: true,
+      import("logrocket").then(LogRocket => {
+        LogRocket.init(process.env.GATSBY_LOGROCKET_APP_ID, {
+          shouldAggregateConsoleErrors: true,
+        })
+        import("logrocket-react").then(setupLogRocketReact => {
+          setupLogRocketReact(LogRocket)
+        })
       })
-      setupLogRocketReact(LogRocket)
     } else {
       console.info("LogRocket could been recording it!")
     }
