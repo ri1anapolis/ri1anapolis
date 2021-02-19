@@ -19,6 +19,7 @@ function SEO({ description, lang, meta, title, pathname }) {
             title
             description
             siteUrl
+            preloadDomains
           }
         }
       }
@@ -26,7 +27,30 @@ function SEO({ description, lang, meta, title, pathname }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+
+  const canonical = pathname
+    ? [
+        {
+          rel: "canonical",
+          href: `${site.siteMetadata.siteUrl}${pathname}`,
+        },
+      ]
+    : []
+
+  const preloadDomains =
+    site.siteMetadata?.preloadDomains?.length > 0
+      ? site.siteMetadata.preloadDomains.flatMap(href => [
+          {
+            rel: "preconnect",
+            href,
+            crossorigin: true,
+          },
+          {
+            rel: "dns-prefetch",
+            href,
+          },
+        ])
+      : []
 
   return (
     <Helmet
@@ -35,16 +59,7 @@ function SEO({ description, lang, meta, title, pathname }) {
       }}
       title={title}
       titleTemplate={`${site.siteMetadata.title} | %s`}
-      link={
-        canonical
-          ? [
-              {
-                rel: "canonical",
-                href: canonical,
-              },
-            ]
-          : []
-      }
+      link={[...canonical, ...preloadDomains]}
       meta={[
         {
           name: `description`,

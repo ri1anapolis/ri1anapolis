@@ -1,6 +1,7 @@
 import React from "react"
-import { Alert, AlertTitle } from "@material-ui/lab"
-import { Fade } from "@material-ui/core"
+import Alert from "@material-ui/lab/Alert"
+import AlertTitle from "@material-ui/lab/AlertTitle"
+import Fade from "@material-ui/core/Fade"
 
 const StyledAlertComponent = props => {
   return (

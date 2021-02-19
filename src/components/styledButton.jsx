@@ -1,5 +1,5 @@
-import React from "react"
-import { Button as MuiButton } from "@material-ui/core"
+import React, { forwardRef } from "react"
+import Button from "@material-ui/core/Button"
 import makeStyles from "@material-ui/styles/makeStyles"
 import useTheme from "@material-ui/styles/useTheme"
 
@@ -20,15 +20,15 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const Button = props => {
+const StyledButton = forwardRef((props, ref) => {
   const { children, ...other } = props
   const theme = useTheme()
   const classes = useStyles(theme)
   return (
-    <MuiButton {...other} className={classes.button}>
+    <Button ref={ref} {...other} className={classes.button}>
       {children}
-    </MuiButton>
+    </Button>
   )
-}
+})
 
-export default Button
+export default StyledButton

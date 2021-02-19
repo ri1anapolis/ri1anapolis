@@ -11,6 +11,12 @@ module.exports = {
     title: `1º Registro de Imóveis de Anápolis/GO`,
     description: `Consulte o andamento do seu protocolo, solicite certidões, agende seu atendimento! Agora você tem todos esses serviços disponíveis online no site! Acompanhe o andamento do seu protocolo online e entenda o processo de registro/averbação! Sua certidão pronta em até 20 minutos*! Solicite sua certidão pelo site ou e-mail! Agende seu atendimento online no site ou por WhatsApp e evite filas e aglomerações! O Cartório de Registro de Imóveis da Primeira Circunscrição fica localizado dentro do Anashopping, em Anápolis - GO.`,
     siteUrl,
+    preloadDomains: [
+      "https://raw.githubusercontent.com/",
+      "https://ri1anapolis.setmore.com/",
+      "https://my.setmore.com/",
+      "https://stitch.mongodb.com/",
+    ],
   },
   plugins: [
     {
