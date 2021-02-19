@@ -1,8 +1,13 @@
 import React from "react"
 import Typography from "@material-ui/core/Typography"
 import makeStyles from "@material-ui/styles/makeStyles"
+import loadable from "@loadable/component"
 import { Article, Section, Aside } from "../components/section2"
-import SearchForm, { SearchReport } from "../components/searchProtocol2"
+import SearchForm from "../components/searchProtocol2/searchForm"
+
+const SearchReport = loadable(() =>
+  import("../components/searchProtocol2/searchReport")
+)
 
 const useStyles = makeStyles({
   hyphenate: {

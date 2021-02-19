@@ -1,15 +1,15 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import Typography from "@material-ui/core/Typography"
 import makeStyles from "@material-ui/styles/makeStyles"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import loadable from "@loadable/component"
 
-import Button from "../components/styledButton"
+import StyledButton from "../components/styledButton"
 import { Article, Section, Aside } from "../components/section2"
 import StyledDrawer from "../components/styledDrawerComponent"
 import { useDrawerToggler } from "../components/styledDrawerComponent"
-import SectionLoadingFallback from "../components/sectionLoadingFallback"
+import createObserver from "../utils/createObserver"
 
 const useStyles = makeStyles({
   hyphenate: {
@@ -21,22 +21,22 @@ const useStyles = makeStyles({
   },
 })
 
-const CertidaoPanel = loadable(() => import("./certidaoPanel"), {
-  fallback: <SectionLoadingFallback height="0" />,
-})
-const AgendamentoPanel = loadable(() => import("./agendamentoPanel"), {
-  fallback: <SectionLoadingFallback height="0" />,
-})
-const DocumentosPanel = loadable(() => import("./documentosPanel2"), {
-  fallback: <SectionLoadingFallback height="0" />,
-})
+const CertidaoPanel = loadable(() => import("./certidaoPanel"))
+const AgendamentoPanel = loadable(() => import("./agendamentoPanel"))
+const DocumentosPanel = loadable(() => import("./documentosPanel2"))
 
 const ServicosSectionContent = () => {
   const classes = useStyles()
   const handleDrawer = useDrawerToggler()
-  CertidaoPanel.preload()
-  AgendamentoPanel.preload()
-  DocumentosPanel.preload()
+  const agendamentoButtonRef = useRef(null)
+  const certidaoButtonRef = useRef(null)
+  const documentosButtonRef = useRef(null)
+
+  useEffect(() => {
+    createObserver(agendamentoButtonRef.current, AgendamentoPanel.preload)
+    createObserver(certidaoButtonRef.current, CertidaoPanel.preload)
+    createObserver(documentosButtonRef.current, DocumentosPanel.preload)
+  }, [])
 
   const image = useStaticQuery(graphql`
     query {
@@ -71,14 +71,15 @@ const ServicosSectionContent = () => {
           Agendamento de atendimento presencial, entrega ou retirada de
           documentos.
         </Typography>
-        <Button
+        <StyledButton
+          ref={agendamentoButtonRef}
           size="small"
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerAgendamento")}
         >
           Agendar atendimento
-        </Button>
+        </StyledButton>
         <Typography paragraph />
 
         <Typography align="left" variant="subtitle2" id="certidoes">
@@ -88,14 +89,15 @@ const ServicosSectionContent = () => {
           Solicite buscas ou emissão de certidões.
         </Typography>
 
-        <Button
+        <StyledButton
+          ref={certidaoButtonRef}
           size="small"
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerCertidoes")}
         >
           Solicitar Certidão / Busca
-        </Button>
+        </StyledButton>
 
         <Typography paragraph />
 
@@ -106,14 +108,15 @@ const ServicosSectionContent = () => {
           Baixe as listas de documentos necessários para registro, modelos,
           requerimentos e manuais.
         </Typography>
-        <Button
+        <StyledButton
+          ref={documentosButtonRef}
           size="small"
           variant="contained"
           color="primary"
           onClick={handleDrawer("drawerDocumentos2")}
         >
           Lista de Documentos
-        </Button>
+        </StyledButton>
       </Section>
 
       <StyledDrawer id="drawerCertidoes" anchor="bottom">

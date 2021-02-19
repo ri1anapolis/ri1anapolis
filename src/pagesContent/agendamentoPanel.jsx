@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react"
-import { Grid, Container, Tooltip } from "@material-ui/core"
-import { Typography, Link } from "@material-ui/core"
-import { makeStyles } from "@material-ui/styles"
+import Grid from "@material-ui/core/Grid"
+import Container from "@material-ui/core/Container"
+import Tooltip from "@material-ui/core/Tooltip"
+import Typography from "@material-ui/core/Typography"
+import Link from "@material-ui/core/Link"
+import makeStyles from "@material-ui/styles/makeStyles"
 
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import WebIcon from "@material-ui/icons/Web"
