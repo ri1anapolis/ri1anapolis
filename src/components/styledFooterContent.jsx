@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
     color: "#fff",
   },
   footerSection: {
-    padding: "30px 20px",
+    padding: "30px 20px 0 20px",
   },
   title: {
     color: "#FFF",
