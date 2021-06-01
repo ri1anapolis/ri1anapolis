@@ -44,7 +44,7 @@ const BannerCoronaVirus = () => {
             offset="104"
             color="primary"
           >
-            Agende seu atendimento no site ou pelo WhatsApp
+            Agende seu atendimento aqui no site
           </Link>{" "}
           e evite aglomerações.
         </Typography>
