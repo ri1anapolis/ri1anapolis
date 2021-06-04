@@ -4,6 +4,8 @@ import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
 import Accordion from "../../components/simpleAccordion"
+import HelpIconButton from "../../components/helpIconButton"
+import HelpIcon from "@material-ui/icons/Help"
 
 import useStyles from "./styles"
 
@@ -29,7 +31,18 @@ const DocumentosPanel = () => {
     <Grid container className={classes.root}>
       <Container style={{ flexShrink: 0 }}>
         <Typography variant="subtitle1" paragraph>
-          Documentos para Registro
+          Documentos para{" "}
+          <Typography variant="subtitle1" component="span" noWrap>
+            Registro
+            <HelpIconButton
+              tooltipTitle="Precisa de ajuda?"
+              Icon={<HelpIcon />}
+              link={{
+                url: "https://ri1anapolis.page.link/ajuda_documentos_site",
+                text: "Assista um vídeo explicativo",
+              }}
+            />
+          </Typography>
         </Typography>
         <Typography paragraph variant="caption">
           Lista de documentos necessários para registro, modelos, manuais e
