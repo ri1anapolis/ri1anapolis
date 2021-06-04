@@ -5,7 +5,9 @@ import Tooltip from "@material-ui/core/Tooltip"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
 import makeStyles from "@material-ui/styles/makeStyles"
+import HelpIconButton from "../components/helpIconButton"
 
+import HelpIcon from "@material-ui/icons/Help"
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import WebIcon from "@material-ui/icons/Web"
 
@@ -87,7 +89,18 @@ const AgendamentoPanel = props => {
       <Grid item>
         <Container>
           <Typography variant="subtitle1" paragraph>
-            Agendamento Online
+            Agendamento{" "}
+            <Typography variant="subtitle1" component="span" noWrap>
+              Online
+              <HelpIconButton
+                tooltipTitle="Precisa de ajuda?"
+                Icon={<HelpIcon />}
+                link={{
+                  url: "https://ri1anapolis.page.link/ajuda_agendamento_site",
+                  text: "Assista um vídeo explicativo",
+                }}
+              />
+            </Typography>
           </Typography>
         </Container>
       </Grid>

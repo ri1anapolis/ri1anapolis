@@ -3,6 +3,8 @@ import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import Link from "@material-ui/core/Link"
+import useTheme from "@material-ui/styles/useTheme"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import makeStyles from "@material-ui/styles/makeStyles"
 import StyledFooterContent from "./styledFooterContent"
 
@@ -26,9 +28,14 @@ const useStyles = makeStyles(theme => ({
   content: {
     display: "flex",
   },
+  contentColumn: {
+    display: "flex",
+    flexDirection: "column",
+  },
   footerCredits: {
     borderTop: "1px solid #909090",
     padding: "10px 0",
+    marginTop: "30px",
     "& > div": {
       height: "100%",
       padding: "20px 0",
@@ -63,6 +70,8 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Footer = props => {
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.down("xs"))
   const classes = useStyles(props)
 
   return (
@@ -75,7 +84,7 @@ const Footer = props => {
         </Container>
       </div>
 
-      <Container xs={12} className={classes.content}>
+      <Container className={matches ? classes.contentColumn : classes.content}>
         <StyledFooterContent
           title="Links Úteis"
           links={[
@@ -99,6 +108,19 @@ const Footer = props => {
               href:
                 "https://www.google.com/maps/d/viewer?mid=10YpQ9_F-hd614vCPtPjKJqiW-ho2c870",
               text: "Mapa da Primeira Circunscrição",
+            },
+          ]}
+        />
+        <StyledFooterContent
+          title="Institucional"
+          links={[
+            {
+              href: "https://ri1anapolis.page.link/ouvidoria",
+              text: "Ouvidoria",
+            },
+            {
+              href: "https://ri1anapolis.page.link/trabalhe_conosco",
+              text: "Trabalhe Conosco",
             },
           ]}
         />

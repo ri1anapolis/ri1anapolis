@@ -36,6 +36,12 @@ let theme = createMuiTheme({
       main: "#252220",
       contrastText: "#fff",
     },
+    info: {
+      main: "#4373C5",
+      light: "#69A9EE",
+      dark: "#2F4C6B",
+      contrastText: "#fff",
+    },
     contrastThreshold: 3,
   },
 

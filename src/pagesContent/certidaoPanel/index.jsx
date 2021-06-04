@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button"
 import CircularProgress from "@material-ui/core/CircularProgress"
 import LinearProgress from "@material-ui/core/LinearProgress"
 import StyledPopover from "./styledPopover"
+import HelpIconButton from "../../components/helpIconButton"
+import HelpIcon from "@material-ui/icons/Help"
 
 import clsx from "clsx"
 import useTheme from "@material-ui/styles/useTheme"
@@ -103,7 +105,20 @@ const CertidaoPanel = props => {
     <>
       <Container id="certidao-form-container">
         <Grid item className={classes.sections} xs={12}>
-          <Typography variant="h5">Solicitação de Certidões</Typography>
+          <Typography variant="h5">
+            Solicitação de{" "}
+            <Typography component="span" variant="h5" noWrap>
+              Certidões
+              <HelpIconButton
+                tooltipTitle="Precisa de ajuda?"
+                Icon={<HelpIcon />}
+                link={{
+                  url: "https://ri1anapolis.page.link/ajuda_certidao_site",
+                  text: "Assista um vídeo explicativo",
+                }}
+              />
+            </Typography>
+          </Typography>
         </Grid>
         <FormProvider {...formMethods}>
           <form autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
@@ -128,7 +143,10 @@ const CertidaoPanel = props => {
                 style={{ order: 3 }}
                 className={classes.sections}
               >
-                <Typography>Informações do solicitante:</Typography>
+                <Typography> Informações do solicitante:</Typography>
+                <Typography variant="caption" color="textSecondary" paragraph>
+                  Identifique-se! Os dados abaixo constarão no recibo.
+                </Typography>
                 <FormTextField
                   required
                   name="requesterName"
@@ -174,6 +192,9 @@ const CertidaoPanel = props => {
                 className={classes.sections}
               >
                 <Typography>Dados da solicitação:</Typography>
+                <Typography variant="caption" color="textSecondary" paragraph>
+                  Informações a constar nas buscas/certidões.
+                </Typography>
                 <FormTextField
                   name="propertyAddress"
                   label="Endereço do imóvel (opcional)"
