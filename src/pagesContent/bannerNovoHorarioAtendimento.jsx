@@ -22,7 +22,7 @@ const BannerNovoHorarioAtendimento = () => {
         <Typography align="justify" paragraph>
           A Corregedoria-Geral da Justiça do Estado de Goiás instituiu no{" "}
           <Link
-            href="http://tjdocs.tjgo.jus.br/documentos/567243"
+            href="http://tjdocs.tjgo.jus.br/documentos/580542"
             color="primary"
             rel="noreferrer noopener"
             target="_blank"
