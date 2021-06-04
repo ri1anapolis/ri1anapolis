@@ -22,12 +22,11 @@ const InfoIconButton = withStyles(theme => ({
   root: {
     marginLeft: "5px",
     transition: "color .1s ease .1s",
-    "&:hover": {
+    "&:hover, :active": {
       color: theme.palette.info.light,
     },
     "&:active": {
-      transition: "color 4s cubic-bezier(0.05,0.05,0.05,0.05)",
-      color: theme.palette.info.light,
+      transition: "color 0s",
     },
   },
 }))(IconButton)
