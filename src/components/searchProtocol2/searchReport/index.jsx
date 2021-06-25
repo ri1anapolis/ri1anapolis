@@ -42,7 +42,7 @@ const SearchReport = () => {
           severity="success"
           title={<strong>Protocolo {data.process.name.split("-")[1]}</strong>}
         >
-          {data.process.nature && (
+          {data.process?.nature && (
             <Typography className={classes.hyphenate}>
               <span style={{ fontWeight: "600" }}>Natureza:</span>{" "}
               {data.process.nature}
@@ -59,20 +59,20 @@ const SearchReport = () => {
           <Typography paragraph align="justify" className={classes.hyphenate}>
             {data.process.step.description}
           </Typography>
-          {data.process.email && (
+          {data.process?.email && (
             <Typography paragraph>
               E-mail cadastrado: "{data.process.email}"
             </Typography>
           )}
-          {data.process.status && (
+          {data.process?.status && (
             <Typography className={classes.hyphenate}>
               <strong>Atenção</strong>: Seu protocolo possui a seguinte
               observação: "{data.process.status}".
             </Typography>
           )}
 
-          {data.process.step.allow_notes_download &&
-            data.requirements_note.encrypted_url && (
+          {data.process.step?.allow_notes_download &&
+            data.requirements_note?.encrypted_url && (
               <NotesDownloadDialog data={data} />
             )}
         </StyledAlertComponent>
