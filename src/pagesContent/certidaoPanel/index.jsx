@@ -256,7 +256,7 @@ const CertidaoPanel = props => {
               <Grid
                 item
                 container
-                justify="flex-end"
+                justifyContent="flex-end"
                 sm={5}
                 md={3}
                 className={clsx(classes.sections, classes.buttonContainer)}

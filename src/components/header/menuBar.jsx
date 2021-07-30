@@ -28,11 +28,15 @@ const MenuBar = props => {
         }}
       >
         <Slide direction="down" in={openMenu} style={{ zIndex: -1 }}>
-          <Grid container justify="center" className={classes.exMenuContainer}>
+          <Grid
+            container
+            justifyContent="center"
+            className={classes.exMenuContainer}
+          >
             <Grid
               item
               container
-              justify="space-evenly"
+              justifyContent="space-evenly"
               style={{ maxWidth: "1260px" }}
             >
               <ExtendedMenus linksGroups={props.linksGroups} />

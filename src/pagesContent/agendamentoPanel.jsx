@@ -138,7 +138,7 @@ const AgendamentoPanel = props => {
         item
         container
         direction="column"
-        justify="center"
+        justifyContent="center"
         align="center"
         className={classes.iframeFallback}
         style={{ display: showFallbackMessage }}
@@ -149,7 +149,7 @@ const AgendamentoPanel = props => {
         <Typography paragraph align="center" variant="caption">
           Tente agendar pelo site do serviço ou pelo nosso WhatsApp!
         </Typography>
-        <Grid item container justify="space-around">
+        <Grid item container justifyContent="space-around">
           <Link
             href={iframeSrc}
             target="_blank"

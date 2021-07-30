@@ -86,13 +86,13 @@ const ContatoSectionContent = () => {
             sexta-feira das 09:00h as 17:00h.
           </Typography>
 
-          <Grid container justify="space-around">
+          <Grid container justifyContent="space-around">
             <Grid
               container
               item
               xs={12}
               sm={6}
-              justify="space-around"
+              justifyContent="space-around"
               alignItems="center"
             >
               <List dense={true} className={classes.list}>
@@ -147,7 +147,7 @@ const ContatoSectionContent = () => {
               item
               xs={12}
               sm={6}
-              justify="space-around"
+              justifyContent="space-around"
               alignItems="center"
             >
               <List dense={true} className={classes.list}>

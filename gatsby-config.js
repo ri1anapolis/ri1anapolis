@@ -51,14 +51,15 @@ module.exports = {
       },
     },
     `gatsby-plugin-loadable-components-ssr`,
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        workboxConfig: {
-          globPatterns: ["**/*"],
-        },
-      },
-    },
+    `gatsby-plugin-remove-serviceworker`,
+    // {
+    //   resolve: "gatsby-plugin-offline",
+    //   options: {
+    //     workboxConfig: {
+    //       globPatterns: ["**/*"],
+    //     },
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-gtag`,
       options: {

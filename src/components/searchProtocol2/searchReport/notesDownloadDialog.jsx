@@ -103,7 +103,7 @@ const NotesDownloadDialog = ({ data }) => {
             O Código Verificador pode ser encontrado no recibo original emitido
             pelo cartório, logo abaixo do número do protocolo.
           </DialogContentText>
-          <Grid container justify="space-between">
+          <Grid container justifyContent="space-between">
             <Grid
               item
               container
