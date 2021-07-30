@@ -49,7 +49,7 @@ const DefaultBanner = ({ data }) => {
   return (
     <Grid
       container
-      justify="center"
+      justifyContent="center"
       alignItems="center"
       className={classes.banner}
     >
@@ -62,7 +62,7 @@ const DefaultBanner = ({ data }) => {
         className={classes.bannerTextWrapper}
         direction="column"
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         <Typography variant="subtitle2" paragraph={!subtitle} align="center">
           <strong>{title}</strong>

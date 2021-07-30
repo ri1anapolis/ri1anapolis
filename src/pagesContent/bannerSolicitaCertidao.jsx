@@ -24,7 +24,7 @@ const BannerSolicitaCertidao = () => {
   return (
     <Grid
       container
-      justify="center"
+      justifyContent="center"
       alignItems="center"
       className={classes.banner}
     >
@@ -39,7 +39,7 @@ const BannerSolicitaCertidao = () => {
         className={classes.bannerTextWrapper}
         direction="column"
         alignItems="center"
-        justify="center"
+        justifyContent="center"
       >
         <Typography variant="subtitle2" paragraph align="center">
           <strong>Solicite certidões e buscas online!</strong>

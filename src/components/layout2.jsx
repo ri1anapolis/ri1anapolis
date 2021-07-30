@@ -66,7 +66,7 @@ const Layout = props => {
       <Grid
         container
         direction="column"
-        justify="flex-start"
+        justifyContent="flex-start"
         alignItems="flex-start"
         className={classes.root}
       >

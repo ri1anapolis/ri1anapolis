@@ -89,7 +89,7 @@ const ArticleWrapper = props => {
     <Grid
       container
       direction="row"
-      justify="center"
+      justifyContent="center"
       className={classes.articleWrapper}
     >
       {props.children}

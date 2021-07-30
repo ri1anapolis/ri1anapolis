@@ -39,14 +39,14 @@ const NotFoundPage = () => {
       <Grid
         className={classes.wrapper}
         container
-        justify="center"
+        justifyContent="center"
         alignItems="center"
       >
         <Grid
           item
           container
           direction="column"
-          justify="center"
+          justifyContent="center"
           alignItems="center"
           style={{
             maxHeight: "500px",

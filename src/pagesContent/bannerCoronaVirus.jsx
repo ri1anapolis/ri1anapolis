@@ -23,7 +23,7 @@ const BannerCoronaVirus = () => {
   return (
     <Grid
       container
-      justify="center"
+      justifyContent="center"
       alignItems="center"
       className={classes.banner}
     >

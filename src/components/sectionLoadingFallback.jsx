@@ -12,10 +12,16 @@ const SectionLoadingFallback = props => {
     <Grid
       container
       alignContent="center"
-      justify="center"
+      justifyContent="center"
       style={{ minHeight: height }}
     >
-      <Grid item xs={12} container alignContent="center" justify="center">
+      <Grid
+        item
+        xs={12}
+        container
+        alignContent="center"
+        justifyContent="center"
+      >
         <CircularProgress
           thickness={1}
           size={progressIndicatorSize}
