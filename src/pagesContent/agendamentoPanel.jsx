@@ -93,6 +93,7 @@ const AgendamentoPanel = props => {
             <Typography variant="subtitle1" component="span" noWrap>
               Online
               <HelpIconButton
+                ariaLabel="Precisa de ajuda?"
                 tooltipTitle="Precisa de ajuda?"
                 Icon={<HelpIcon />}
                 link={{

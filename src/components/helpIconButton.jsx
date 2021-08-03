@@ -37,7 +37,7 @@ const buttonStyle = {
 }
 
 const HelpIconButton = props => {
-  const { tooltipTitle, link, Icon } = props
+  const { tooltipTitle, link, Icon, ariaLabel, ...other } = props
   return (
     <LightTooltip
       title={
@@ -53,6 +53,7 @@ const HelpIconButton = props => {
             href={link?.url ?? "#"}
             target={link?.target ?? "_blank"}
             rel={link?.rel ?? "noreferrer noopener"}
+            {...other}
           >
             {link?.text ?? "Error"}
           </Button>
@@ -64,7 +65,9 @@ const HelpIconButton = props => {
       enterTouchDelay={0}
       leaveTouchDelay={4000}
     >
-      <InfoIconButton size="small">{Icon}</InfoIconButton>
+      <InfoIconButton size="small" aria-label={ariaLabel}>
+        {Icon}
+      </InfoIconButton>
     </LightTooltip>
   )
 }

@@ -43,7 +43,7 @@ const StyledFooterContent = props => {
   ))
   return (
     <Grid className={classes.footerSection} item xs={12} sm={6} md={4}>
-      <Typography variant="subtitle2" className={classes.title}>
+      <Typography component="p" variant="subtitle2" className={classes.title}>
         {title}
       </Typography>
       <ul className={classes.list}>{listLinks}</ul>
