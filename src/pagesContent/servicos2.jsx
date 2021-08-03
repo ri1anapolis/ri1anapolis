@@ -64,7 +64,12 @@ const ServicosSectionContent = () => {
           Serviços
         </Typography>
 
-        <Typography align="left" variant="subtitle2" id="agendamento">
+        <Typography
+          align="left"
+          component="h2"
+          variant="subtitle2"
+          id="agendamento"
+        >
           <strong>Agendamento</strong>
         </Typography>
         <Typography align="left" className={classes.hyphenate}>
@@ -82,7 +87,12 @@ const ServicosSectionContent = () => {
         </StyledButton>
         <Typography paragraph />
 
-        <Typography align="left" variant="subtitle2" id="certidoes">
+        <Typography
+          align="left"
+          component="h2"
+          variant="subtitle2"
+          id="certidoes"
+        >
           <strong>Certidões</strong>
         </Typography>
         <Typography align="left" className={classes.hyphenate}>
@@ -101,7 +111,12 @@ const ServicosSectionContent = () => {
 
         <Typography paragraph />
 
-        <Typography variant="subtitle2" align="left" id="agendamento">
+        <Typography
+          align="left"
+          component="h2"
+          variant="subtitle2"
+          id="documentos"
+        >
           <strong>Documentos para Registro</strong>
         </Typography>
         <Typography align="left" className={classes.hyphenate}>

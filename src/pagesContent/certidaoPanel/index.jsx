@@ -110,6 +110,7 @@ const CertidaoPanel = props => {
             <Typography component="span" variant="h5" noWrap>
               Certidões
               <HelpIconButton
+                ariaLabel="Precisa de ajuda?"
                 tooltipTitle="Precisa de ajuda?"
                 Icon={<HelpIcon />}
                 link={{

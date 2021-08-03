@@ -78,7 +78,11 @@ const Footer = props => {
     <Grid id="footer" className={classes.root}>
       <div className={classes.footerHeader}>
         <Container xs={12}>
-          <Typography variant="subtitle2" style={{ fontSize: "1em" }}>
+          <Typography
+            component="p"
+            variant="subtitle2"
+            style={{ fontSize: "1em" }}
+          >
             1º Registro de Imóveis de Anápolis/GO
           </Typography>
         </Container>

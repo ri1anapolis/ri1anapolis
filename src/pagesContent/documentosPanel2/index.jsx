@@ -35,6 +35,7 @@ const DocumentosPanel = () => {
           <Typography variant="subtitle1" component="span" noWrap>
             Registro
             <HelpIconButton
+              ariaLabel="Precisa de ajuda?"
               tooltipTitle="Precisa de ajuda?"
               Icon={<HelpIcon />}
               link={{

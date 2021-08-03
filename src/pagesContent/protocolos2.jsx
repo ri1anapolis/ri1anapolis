@@ -29,6 +29,7 @@ const ProtocolosSectionContent = () => {
         <Typography component="h1" variant="h4">
           Protocolos
           <HelpIconButton
+            ariaLabel="Precisa de ajuda?"
             tooltipTitle="Precisa de ajuda?"
             Icon={<HelpIcon />}
             link={{
