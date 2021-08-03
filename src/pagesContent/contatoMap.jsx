@@ -60,7 +60,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function ContatoMap() {
   const classes = useStyles()
-  document.addEventListener("touchstart", function () {}, true)
   return (
     <div className={classes.wrapper}>
       <a
