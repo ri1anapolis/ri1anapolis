@@ -8,48 +8,16 @@ import ListItemIcon from "@material-ui/core/ListItemIcon"
 import ListItemText from "@material-ui/core/ListItemText"
 import Link from "@material-ui/core/Link"
 import Button from "@material-ui/core/Button"
-import makeStyles from "@material-ui/styles/makeStyles"
-import { Article, Section } from "../components/section2"
+import { Article, Section } from "../../components/section2"
 import ContatoMap from "./contatoMap"
+import useTheme from "@material-ui/styles/useTheme"
+
 import InstagramIcon from "@material-ui/icons/Instagram"
 import WhatsAppIcon from "@material-ui/icons/WhatsApp"
 import MailOutlineIcon from "@material-ui/icons/MailOutline"
 import PhoneInTalkIcon from "@material-ui/icons/PhoneInTalk"
 
-const useStyles = makeStyles(theme => ({
-  listItem: {
-    paddingTop: 0,
-    paddingBottom: 0,
-  },
-  listItemIcon: {
-    minWidth: "30px",
-    "& > svg": {
-      color: "#FFF",
-    },
-  },
-  locationImg: {
-    width: "30vw",
-    height: "auto",
-    maxWidth: "75px",
-    maxHeight: "75px",
-    margin: "0 5px",
-  },
-  alignTextRight: {
-    textAlign: "right",
-  },
-  contactLink: {
-    textDecoration: "none",
-    color: "#FFF",
-  },
-  routeButton: {
-    width: "max-content",
-    textTransform: "none",
-    fontWeight: "normal",
-    fontSize: "0.75em",
-    padding: "0 10px",
-    margin: "0 auto",
-  },
-}))
+import useStyles from "./styles"
 
 const ContatoSectionContent = () => {
   const {
@@ -62,7 +30,8 @@ const ContatoSectionContent = () => {
     }
   `)
 
-  const classes = useStyles()
+  const theme = useTheme()
+  const classes = useStyles(theme)
 
   return (
     <>
@@ -84,42 +53,43 @@ const ContatoSectionContent = () => {
               item
               xs={12}
               sm={6}
-              justifyContent="space-around"
+              justifyContent="flex-end"
               alignItems="center"
+              className={classes.channelListBlock}
             >
-              <List dense={true} className={classes.list}>
-                <Grid container direction="column">
-                  <ListItem>
-                    <ListItemText
-                      className={classes.alignTextRight}
-                      primary={
-                        <Link
-                          className={classes.contactLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href="https://ri1anapolis.page.link/rota"
-                        >
-                          Av. Universitária, nº 2221
-                          <br /> Anashopping, LUC 100
-                          <br /> Anápolis/GO
-                          <br /> CEP: 75.083-350
-                        </Link>
-                      }
-                    />
-                    <ListItemIcon className={classes.listItemIcon}>
+              <List dense={true}>
+                <ListItem>
+                  <ListItemText
+                    className={classes.alignTextRight}
+                    primary={
                       <Link
+                        className={classes.contactLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://ri1anapolis.page.link/rota"
                       >
-                        <img
-                          src={place}
-                          alt="Endereço: Av. Universitária, nº 2221 - Anashopping - Anápolis/GO"
-                          className={classes.locationImg}
-                        />
+                        Av. Universitária, nº 2221
+                        <br /> Anashopping, LUC 100
+                        <br /> Anápolis/GO
+                        <br /> CEP: 75.083-350
                       </Link>
-                    </ListItemIcon>
-                  </ListItem>
+                    }
+                  />
+                  <ListItemIcon className={classes.listItemIcon}>
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://ri1anapolis.page.link/rota"
+                    >
+                      <img
+                        src={place}
+                        alt="Endereço: Av. Universitária, nº 2221 - Anashopping - Anápolis/GO"
+                        className={classes.locationImg}
+                      />
+                    </Link>
+                  </ListItemIcon>
+                </ListItem>
+                <ListItem>
                   <Button
                     size="small"
                     variant="outlined"
@@ -131,18 +101,19 @@ const ContatoSectionContent = () => {
                   >
                     Clique para traçar rota
                   </Button>
-                </Grid>
+                </ListItem>
               </List>
             </Grid>
+
             <Grid
               container
               item
               xs={12}
               sm={6}
-              justifyContent="space-around"
               alignItems="center"
+              className={classes.channelListBlock}
             >
-              <List dense={true} className={classes.list}>
+              <List dense={true}>
                 <ListItem className={classes.listItem}>
                   <ListItemIcon className={classes.listItemIcon}>
                     <MailOutlineIcon />

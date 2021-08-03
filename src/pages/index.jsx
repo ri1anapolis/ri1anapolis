@@ -11,7 +11,7 @@ const SectionServicos = loadable(() => import("../pagesContent/servicos2"), {
 const SectionCartorio = loadable(() => import("../pagesContent/cartorio2"), {
   fallback: <SectionLoadingFallback height="705px" />,
 })
-const SectionContato = loadable(() => import("../pagesContent/contato2"), {
+const SectionContato = loadable(() => import("../pagesContent/contato"), {
   fallback: <SectionLoadingFallback height="504px" />,
 })
 

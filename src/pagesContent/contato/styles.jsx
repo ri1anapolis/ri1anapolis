@@ -1,8 +1,43 @@
-import React from "react"
 import makeStyles from "@material-ui/styles/makeStyles"
-import map from "../images/map.svg"
 
 const useStyles = makeStyles(theme => ({
+  channelListBlock: {
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "center",
+    },
+  },
+  listItem: {
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
+  listItemIcon: {
+    minWidth: "30px",
+    "& > svg": {
+      color: "#FFF",
+    },
+  },
+  locationImg: {
+    width: "30vw",
+    height: "auto",
+    maxWidth: "75px",
+    maxHeight: "75px",
+    margin: "0 5px",
+  },
+  alignTextRight: {
+    textAlign: "right",
+  },
+  contactLink: {
+    textDecoration: "none",
+    color: "#FFF",
+  },
+  routeButton: {
+    width: "max-content",
+    textTransform: "none",
+    fontWeight: "normal",
+    fontSize: "0.75em",
+    padding: "0 10px",
+    margin: "0 auto",
+  },
   wrapper: {
     position: "relative",
     width: "100%",
@@ -18,8 +53,8 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     maxWidth: "1920px",
     height: "100%",
-    background: `url(${map}) no-repeat center center`,
-    backgroundSize: "cover",
+    margin: "0 auto",
+    objectFit: "cover",
   },
 
   actionDiv: {
@@ -36,7 +71,7 @@ const useStyles = makeStyles(theme => ({
       padding: "0px 20px",
       color: "#fff",
       "&> p": {
-        backgroundColor: "rgba(0,0,0,0.15)",
+        backgroundColor: "rgba(0,0,0,0.25)",
         height: "fit-content",
         padding: "2px 6px",
         borderRadius: "20px",
@@ -58,20 +93,4 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function ContatoMap() {
-  const classes = useStyles()
-  return (
-    <div className={classes.wrapper}>
-      <a
-        href="https://maps.app.goo.gl/AXwRVJ2z5u1v7k2N6"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div className={classes.actionDiv}>
-          <p>Clique para visualizar o mapa ampliado</p>
-        </div>
-      </a>
-      <div className={classes.bgMap}></div>
-    </div>
-  )
-}
+export default useStyles
