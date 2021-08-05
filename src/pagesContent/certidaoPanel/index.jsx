@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { useForm, FormProvider } from "react-hook-form"
-
 import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
@@ -10,6 +9,7 @@ import LinearProgress from "@material-ui/core/LinearProgress"
 import StyledPopover from "./styledPopover"
 import HelpIconButton from "../../components/helpIconButton"
 import HelpIcon from "@material-ui/icons/Help"
+import LogRocketMate from "../../services/LogRocketMate"
 
 import clsx from "clsx"
 import useTheme from "@material-ui/styles/useTheme"
@@ -81,10 +81,14 @@ const CertidaoPanel = props => {
       delete formData.proprietaryId
       delete formData.proprietaryName
       delete formData.requestDescription
+
       window.localStorage.setItem(localStorageId, JSON.stringify(formData))
     } catch (error) {
       console.error(`Error saving form to storage: ${error}`)
     }
+
+    LogRocketMate("identify", data?.requesterEmail)
+    LogRocketMate("track", "certidao", ({ proprietaryId, propertyId } = data))
 
     const response = await mailer(data)
     if (response?.status < 300) {
