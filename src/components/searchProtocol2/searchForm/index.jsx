@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useLazyQuery } from "@apollo/react-hooks"
+import LogRocketMate from "../../../services/LogRocketMate"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
 
@@ -36,8 +37,12 @@ const SearchForm = props => {
   }
 
   const handleButtonClick = () => {
-    if (searchable) runSearch({ variables: { protocol: `RE-${protocol}` } })
+    const protocolObject = { protocol: `RE-${protocol}` }
+
+    if (searchable) runSearch({ variables: protocolObject })
     setProtocol("")
+
+    LogRocketMate("track", "procolo", protocolObject)
   }
 
   useEffect(() => {

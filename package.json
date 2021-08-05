@@ -2,7 +2,7 @@
   "name": "ri1anapolis",
   "private": true,
   "description": "Site oficial do 1º RI de Anápolis/GO",
-  "version": "0.1.0",
+  "version": "3.1.0",
   "author": "André Martins <fmartins.andre@gmail.com>",
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
