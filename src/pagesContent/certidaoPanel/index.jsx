@@ -87,8 +87,18 @@ const CertidaoPanel = props => {
       console.error(`Error saving form to storage: ${error}`)
     }
 
-    LogRocketMate("identify", data?.requesterEmail)
-    LogRocketMate("track", "certidao", ({ proprietaryId, propertyId } = data))
+    try {
+      const trackingData = {}
+      trackingData.requesterID = data?.requesterID
+      trackingData.proprietaryId = data?.proprietaryId
+      trackingData.propertyId = data?.propertyId
+      trackingData.propertyId = data?.propertyAddress
+
+      LogRocketMate("identify", data?.requesterEmail)
+      LogRocketMate("track", "certidao", trackingData)
+    } catch (error) {
+      console.error(`Error trying to trigger monitoring event: ${error}`)
+    }
 
     const response = await mailer(data)
     if (response?.status < 300) {
