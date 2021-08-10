@@ -113,7 +113,6 @@ const AgendamentoPanel = props => {
           src={iframeSrc}
           rel="preload"
           frameBorder="0"
-          scrolling="no"
           loading="eager"
           onLoad={handleOnLoad}
           onError={handleError}
