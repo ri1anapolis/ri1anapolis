@@ -34,7 +34,8 @@ const CertidaoPanel = props => {
   const [askProprietaryName, setAskProprietaryName] = useState(false)
 
   const savedData =
-    window.localStorage?.getItem(localStorageId) || null
+    typeof window !== "undefined" &&
+    window?.localStorage?.getItem(localStorageId)
       ? JSON.parse(window.localStorage.getItem(localStorageId))
       : {}
 

@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Grid from "@material-ui/core/Grid"
+import { Link as GLink } from "gatsby"
+import Link from "@material-ui/core/Link"
 import Typography from "@material-ui/core/Typography"
 import AnchorLink from "react-anchor-link-smooth-scroll"
 
@@ -32,7 +34,11 @@ const HeaderBar = props => {
   return (
     <AppBar position="fixed" className={classes.header}>
       <Toolbar className={classes.content}>
-        <AnchorLink href={`#${props.id}`} className={classes.logoLink}>
+        <Link
+          component={props.id ? AnchorLink : GLink}
+          {...(props.id ? { href: `#${props.id}` } : { to: `/` })}
+          className={classes.logoLink}
+        >
           <Grid
             item
             container
@@ -57,9 +63,9 @@ const HeaderBar = props => {
               de ANÁPOLIS/GO
             </Typography>
           </Grid>
-        </AnchorLink>
+        </Link>
         <DefaultHeaderMenu popoverContainerId={props.id} links={props.links} />
-        <MenuToggler />
+        {props?.links?.length > 0 && <MenuToggler />}
       </Toolbar>
     </AppBar>
   )
