@@ -9,7 +9,7 @@ async function mailer(data) {
         })
       : axios
 
-  const requestUrl = `.netlify/functions/mailer`
+  const requestUrl = `/.netlify/functions/mailer`
 
   try {
     const { status } = await instance.post(requestUrl, formatMailPayload(data))

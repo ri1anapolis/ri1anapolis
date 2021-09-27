@@ -34,7 +34,8 @@ const CertidaoPanel = props => {
   const [askProprietaryName, setAskProprietaryName] = useState(false)
 
   const savedData =
-    window.localStorage?.getItem(localStorageId) || null
+    typeof window !== "undefined" &&
+    window?.localStorage?.getItem(localStorageId)
       ? JSON.parse(window.localStorage.getItem(localStorageId))
       : {}
 
@@ -103,14 +104,13 @@ const CertidaoPanel = props => {
     const response = await mailer(data)
     if (response?.status < 300) {
       setPopoverStatus("success")
-      console.log(`A solicitação foi enviada com sucesso!`)
+      console.log(`The request was sent successfully!`)
       reset()
     } else {
       setPopoverStatus("fail")
       console.error(
-        `Houve um erro ao tentar enviar a solicitação${
-          response.error ? ": " + response.error : "!"
-        }`
+        "An error occurred while trying to send a message to the email service.",
+        response?.error?.message
       )
     }
   }
