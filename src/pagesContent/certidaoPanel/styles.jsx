@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
   inputs: {
     marginBottom: ".35rem",
   },
+  title: {
+    order: "1",
+  },
   captionContainer: {
     width: "100%",
     order: "1",
@@ -18,14 +21,21 @@ const useStyles = makeStyles(theme => ({
   buttonContainer: {
     order: "7",
     flexShrink: 1,
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       order: "2",
     },
   },
   button: {
+    marginRight: theme.spacing(3),
     [theme.breakpoints.down("xs")]: {
       width: "100%",
+      marginRight: 0,
+      marginBottom: theme.spacing(1),
     },
+  },
+  link: {
+    filter: "brightness(0.75)",
+    textTransform: "none",
   },
   notice: {
     color: "#a0a0a0",
