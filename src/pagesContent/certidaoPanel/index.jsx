@@ -47,6 +47,20 @@ const CertidaoPanel = props => {
             89/2019 do Conselho Nacional de Justiça.
           </Typography>
 
+          <Typography paragraph>
+            Para <strong>buscas e informações de bens imóveis</strong> sem a
+            emissão de certidão, favor encaminhar a sua solicitação para o
+            e-mail:{" "}
+            <Link
+              href="mailto:certidaoanapolis@gmail.com"
+              target="_blank"
+              className={classes.link}
+            >
+              certidaoanapolis@gmail.com
+            </Link>
+            .
+          </Typography>
+
           <Typography>
             Clique nos links abaixo para assistir os vídeos explicativos de como
             processar sua demanda no site oficial da categoria.
