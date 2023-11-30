@@ -121,13 +121,13 @@ const ContatoSectionContent = () => {
                   <ListItemText
                     primary={
                       <Typography variant="body2">
-                        email:{" "}
                         <Link
                           className={classes.contactLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           href="mailto:primeirocartorioregistro@gmail.com"
                         >
+                          email: <wbr />
                           primeirocartorioregistro
                           <wbr />
                           @gmail.com
@@ -143,11 +143,11 @@ const ContatoSectionContent = () => {
                   <ListItemText
                     primary={
                       <Typography variant="body2">
-                        telefone: <wbr />
                         <Link
                           className={classes.contactLink}
                           href="tel:+556239374650"
                         >
+                          telefone: <wbr />
                           (62) 3937-4650
                         </Link>
                       </Typography>
@@ -161,13 +161,13 @@ const ContatoSectionContent = () => {
                   <ListItemText
                     primary={
                       <Typography variant="body2">
-                        whatsapp: <wbr />
                         <Link
                           className={classes.contactLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://wa.me/556239374650"
                         >
+                          whatsapp: <wbr />
                           (62) 3937-4650
                         </Link>
                       </Typography>
@@ -181,13 +181,13 @@ const ContatoSectionContent = () => {
                   <ListItemText
                     primary={
                       <Typography variant="body2">
-                        instagram: <wbr />
                         <Link
                           className={classes.contactLink}
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://www.instagram.com/ri1anapolis/"
                         >
+                          instagram: <wbr />
                           @ri1anapolis
                         </Link>
                       </Typography>
