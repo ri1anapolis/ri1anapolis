@@ -30,7 +30,7 @@ const CertidaoPanel = props => {
           <Typography paragraph>
             Em virtude da criação do Serviço de Atendimento Eletrônico
             Compartilhado (SAEC), passaremos a recepcionar solicitações de
-            certidões apenas por meio do portal{" "}
+            certidões eletrônicas por meio do portal{" "}
             <Link
               href="https://registradores.onr.org.br/"
               target="_blank"
@@ -38,13 +38,28 @@ const CertidaoPanel = props => {
             >
               https://registradores.onr.org.br/
             </Link>
-            .
+            . Pedidos de certidões físicas poderão ser solicitados diretamente
+            na sede da serventia.
           </Typography>
 
           <Typography paragraph>
             Não será mais possível a recepção de tais solicitações por site ou
             e-mail devido a vedação expressa contida no art. 33 do Provimento
             89/2019 do Conselho Nacional de Justiça.
+          </Typography>
+
+          <Typography paragraph>
+            Para <strong>buscas e informações de bens imóveis</strong> sem a
+            emissão de certidão, favor encaminhar a sua solicitação para o
+            e-mail:{" "}
+            <Link
+              href="mailto:certidaoanapolis@gmail.com"
+              target="_blank"
+              className={classes.link}
+            >
+              certidaoanapolis@gmail.com
+            </Link>
+            .
           </Typography>
 
           <Typography>
