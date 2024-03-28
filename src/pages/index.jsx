@@ -126,7 +126,7 @@ const IndexPage = () => {
                 Corregedoria-Geral de Justiça e pela Corregedoria Permanente,
                 não houve constatação de qualquer indício de irregularidade, o
                 que demonstra de forma técnica a boa prestação do serviço
-                público por parte da mesma.
+                público por parte desta Serventia.
               </Typography>
               <Typography
                 paragraph
