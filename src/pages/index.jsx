@@ -1,18 +1,18 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout2"
 import SEO from "../components/seo"
 import SectionProtocolos from "../pagesContent/protocolos2"
 import loadable from "@loadable/component"
 import SectionLoadingFallback from "../components/sectionLoadingFallback"
-import {
-  Box,
-  Divider,
-  IconButton,
-  Modal,
-  Paper,
-  Typography,
-} from "@material-ui/core"
-import { CloseOutlined } from "@material-ui/icons"
+// import {
+//   Box,
+//   Divider,
+//   IconButton,
+//   Modal,
+//   Paper,
+//   Typography,
+// } from "@material-ui/core"
+// import { CloseOutlined } from "@material-ui/icons"
 
 const SectionServicos = loadable(() => import("../pagesContent/servicos2"), {
   fallback: <SectionLoadingFallback height="465px" />,
@@ -25,7 +25,7 @@ const SectionContato = loadable(() => import("../pagesContent/contato"), {
 })
 
 const IndexPage = () => {
-  const [openModal, setOpenModal] = useState(true)
+  // const [openModal, setOpenModal] = useState(true)
 
   return (
     <Layout>
@@ -35,7 +35,7 @@ const IndexPage = () => {
       <SectionCartorio />
       <SectionContato />
 
-      <Modal
+      {/* <Modal
         open={openModal}
         style={{
           display: "flex",
@@ -179,7 +179,7 @@ const IndexPage = () => {
             </Box>
           </Box>
         </Paper>
-      </Modal>
+      </Modal> */}
     </Layout>
   )
 }
