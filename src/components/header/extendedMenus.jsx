@@ -10,33 +10,41 @@ import useTheme from "@material-ui/styles/useTheme"
 import useStyles from "./styles"
 
 import store from "./reduxStore"
+import { ButtonBase } from "@material-ui/core"
 
 const ExtendedMenus = ({ linksGroups }) => {
   const theme = useTheme()
   const classes = useStyles(theme)
 
-  const handleClick = () => {
-    store.dispatch({ type: "CLOSE_MENU" })
-  }
-
   const groups = linksGroups.map((group, index) => {
     const linksList = group.links.map((link, index) => {
-      const isAnchor = link?.href.split("")[0] === "#"
+      const isActionButton = "onClick" in link
+      const isAnchor = "href" in link && link.href.split("")[0] === "#"
       const _key = `${group.groupName}-link${index}`
-      const _component = isAnchor ? AnchorLink : "a"
+      const _component = isActionButton
+        ? ButtonBase
+        : isAnchor
+        ? AnchorLink
+        : "a"
+
       const _target = link.target || isAnchor ? null : "_blank"
       const _rel = link.rel || isAnchor ? null : "noopener noreferrer"
       const _offset = isAnchor ? "89" : null
+
+      const handleClick = () => {
+        if (link?.onClick) link.onClick()
+        store.dispatch({ type: "CLOSE_MENU" })
+      }
 
       return (
         <ListItem
           dense
           key={_key}
           component={_component}
-          href={link.href}
-          target={_target}
-          rel={_rel}
-          offset={_offset}
+          href={!isActionButton && link.href && link.href}
+          target={!isActionButton && _target}
+          rel={!isActionButton && _rel}
+          offset={!isActionButton && _offset}
           className={classes.exMenuItem}
           onClick={handleClick}
         >

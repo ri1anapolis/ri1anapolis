@@ -53,6 +53,7 @@ Configuração rápida das variáveis no ambiente com Gatsby:
    GATSBY_LOGROCKET_APP_ID=asdfg/ri1anapolis
    GATSBY_CRYPTO_KEY=KbPlskdfaçsdlkfjsadksdfWnZ
    GATSBY_RECAPTCHA_KEY=6Leylskdfjlsdkhslkdfr7WQW
+   SITE_URL=http://localhost:8000
    ```
 
 ###### Com Netlify

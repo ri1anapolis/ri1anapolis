@@ -7,6 +7,8 @@ import useTheme from "@material-ui/styles/useTheme"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import makeStyles from "@material-ui/styles/makeStyles"
 import StyledFooterContent from "./styledFooterContent"
+import StyledDrawer, { useDrawerToggler } from "./styledDrawerComponent"
+import LgpdPanel from "../pagesContent/lgpdPanel"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -74,6 +76,8 @@ const Footer = props => {
   const matches = useMediaQuery(theme.breakpoints.down("xs"))
   const classes = useStyles(props)
 
+  const handleDrawer = useDrawerToggler()
+
   return (
     <Grid id="footer" className={classes.root}>
       <div className={classes.footerHeader}>
@@ -115,6 +119,7 @@ const Footer = props => {
             },
           ]}
         />
+
         <StyledFooterContent
           title="Institucional"
           links={[
@@ -128,6 +133,20 @@ const Footer = props => {
             },
           ]}
         />
+
+        <StyledFooterContent
+          title="LGPD"
+          links={[
+            {
+              onClick: handleDrawer("drawerLgpd"),
+              text: "Aviso de Privacidade",
+            },
+          ]}
+        />
+
+        <StyledDrawer id="drawerLgpd" anchor="bottom">
+          <LgpdPanel />
+        </StyledDrawer>
       </Container>
 
       <div className={classes.footerCredits}>

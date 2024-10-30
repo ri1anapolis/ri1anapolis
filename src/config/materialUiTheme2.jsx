@@ -25,6 +25,28 @@ let theme = createTheme({
         body: { paddingRight: "0px !important" },
       },
     },
+    MuiList: {
+      root: {
+        display: "flex",
+        flexDirection: "column",
+        gap: "0.25rem",
+      },
+    },
+    MuiListItem: {
+      root: {
+        gap: "1rem",
+        alignItems: "center",
+        paddingTop: "0px",
+        paddingBottom: "0px",
+      },
+    },
+    MuiListItemAvatar: {
+      root: {
+        display: "flex",
+        alignItems: "center",
+        minWidth: "none",
+      },
+    },
   },
 
   palette: {
