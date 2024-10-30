@@ -102,6 +102,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.secondary.light,
     padding: "0 2px !important",
     outline: "none !important",
+    fontSize: "1rem",
   },
   exMenuItemText: {
     fontSize: "1.1em !important",
