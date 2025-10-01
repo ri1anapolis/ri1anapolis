@@ -10,6 +10,7 @@ import StyledAlertComponent from "../../styledAlertComponent"
 import SectionLoadingFallback from "../../sectionLoadingFallback"
 
 import styles from "./styles"
+import { Button, Link } from "@material-ui/core"
 
 const NotesDownloadDialog = loadable(() => import("./notesDownloadDialog"))
 
@@ -25,7 +26,22 @@ const SearchReport = () => {
 
   return (
     <>
-      {!error && !data && <></>}
+      {!error && !data && (
+        <>
+          <StyledAlertComponent severity="warning" title="EM MANUTENÇÃO">
+            <Typography paragraph className={classes.hyphenate}>
+              Para consultar o status do seu processo{" "}
+              <Link
+                color="textPrimary"
+                href="https://api.whatsapp.com/send?phone=556239374650&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20o%20status%20do%20meu%20protocolol"
+                target="_blank"
+              >
+                entre em contato pelo WhatsApp: (62) 3937-4650
+              </Link>
+            </Typography>
+          </StyledAlertComponent>
+        </>
+      )}
 
       {loading && (
         <SectionLoadingFallback
