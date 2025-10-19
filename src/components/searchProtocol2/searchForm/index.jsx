@@ -56,7 +56,6 @@ const SearchForm = props => {
   return (
     <Grid container className={classes.searchContainer}>
       <TextField
-        disabled={true}
         value={protocol}
         autoComplete="off"
         onChange={handleInputChange}
@@ -70,7 +69,7 @@ const SearchForm = props => {
         inputProps={{ inputMode: "numeric" }}
       />
       <SearchButton
-        disabled={true || !searchable}
+        disabled={!searchable}
         variant="contained"
         color="primary"
         size="small"

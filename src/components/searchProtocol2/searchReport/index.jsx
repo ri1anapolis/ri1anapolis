@@ -10,7 +10,6 @@ import StyledAlertComponent from "../../styledAlertComponent"
 import SectionLoadingFallback from "../../sectionLoadingFallback"
 
 import styles from "./styles"
-import { Button, Link } from "@material-ui/core"
 
 const NotesDownloadDialog = loadable(() => import("./notesDownloadDialog"))
 
