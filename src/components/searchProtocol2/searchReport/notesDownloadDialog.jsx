@@ -96,8 +96,8 @@ const NotesDownloadDialog = ({ data }) => {
         </DialogTitle>
         <DialogContent className={classes.dialogContent}>
           <Typography paragraph align="justify">
-            Informe abaixo o Código Verificador do protocolo {data.process.name}{" "}
-            para baixar da Nota Devolutiva.
+            Informe abaixo o Código Verificador do protocolo {data.name} para
+            baixar da Nota Devolutiva.
           </Typography>
           <DialogContentText align="justify" variant="caption">
             O Código Verificador pode ser encontrado no recibo original emitido
