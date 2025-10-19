@@ -46,9 +46,8 @@ const ProtocolosSectionContent = () => {
 
         <SearchForm
           id="protocolo"
-          label="Protocolo (em manutenção)"
-          placeholder="EM MANUTENÇÃO"
-          // placeholder='Ex.: "120123"'
+          label="Protocolo"
+          placeholder='Ex.: "120123"'
           buttonText="Buscar"
         />
         <br />

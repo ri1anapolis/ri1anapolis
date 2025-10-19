@@ -22,8 +22,8 @@ import GetAppIcon from "@material-ui/icons/GetApp"
 import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline"
 
 const NotesDownloadDialog = ({ data }) => {
-  const encrypted_url = data.requirements_note.encrypted_url
-  const hash = data.requirements_note.hash
+  const encrypted_url = data.requirements_note[0].encrypted_url
+  const hash = data.requirements_note[0].hash
   const crypto_key = process.env.GATSBY_CRYPTO_KEY
   const defaultState = {
     disabled: true,

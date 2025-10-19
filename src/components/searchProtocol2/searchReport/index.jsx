@@ -10,7 +10,6 @@ import StyledAlertComponent from "../../styledAlertComponent"
 import SectionLoadingFallback from "../../sectionLoadingFallback"
 
 import styles from "./styles"
-import { Button, Link } from "@material-ui/core"
 
 const NotesDownloadDialog = loadable(() => import("./notesDownloadDialog"))
 
@@ -26,25 +25,6 @@ const SearchReport = () => {
 
   return (
     <>
-      {!error && !data && (
-        <>
-          <StyledAlertComponent severity="warning" title="EM MANUTENÇÃO">
-            <Typography paragraph className={classes.hyphenate}>
-              Para consultar o status do seu processo entre em contato pelo{" "}
-              <Link
-                color="textPrimary"
-                href="https://api.whatsapp.com/send?phone=556239374650&text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20o%20status%20do%20meu%20protocolol"
-                target="_blank"
-              >
-                <Button variant="contained" color="primary">
-                  WhatsApp: (62) 3937-4650
-                </Button>
-              </Link>
-            </Typography>
-          </StyledAlertComponent>
-        </>
-      )}
-
       {loading && (
         <SectionLoadingFallback
           height="200px"
@@ -55,49 +35,46 @@ const SearchReport = () => {
 
       {error && <HandleErrors error={error} />}
 
-      {data?.process && (
+      {!!data?.name?.length && (
         <StyledAlertComponent
           severity="success"
-          title={<strong>Protocolo {data.process.name.split("-")[1]}</strong>}
+          title={<strong>Protocolo {data.name.split("-")[1]}</strong>}
         >
-          {data.process?.nature && (
+          {data?.nature && (
             <Typography className={classes.hyphenate}>
-              <span style={{ fontWeight: "600" }}>Natureza:</span>{" "}
-              {data.process.nature}
+              <span style={{ fontWeight: "600" }}>Natureza:</span> {data.nature}
             </Typography>
           )}
           <Typography paragraph className={classes.hyphenate}>
             <span style={{ fontWeight: "600" }}>Etapa:</span>{" "}
-            {data.process.step.name}
+            {data.step?.at(0)?.name}
           </Typography>
 
           <Divider />
           <Typography paragraph />
 
           <Typography paragraph align="justify" className={classes.hyphenate}>
-            {data.process.step.description}
+            {data.step?.at(0)?.description}
           </Typography>
-          {data.process?.email && (
-            <Typography paragraph>
-              E-mail cadastrado: "{data.process.email}"
-            </Typography>
+          {data?.email && (
+            <Typography paragraph>E-mail cadastrado: "{data.email}"</Typography>
           )}
 
-          {/* {data.process?.status && (
+          {/* {data?.status && (
             <Typography className={classes.hyphenate}>
               <strong>Atenção</strong>: Seu protocolo possui a seguinte
-              observação: "{data.process.status}".
+              observação: "{data.status}".
             </Typography>
           )} */}
 
-          {data.process.step?.allow_notes_download &&
-            data.requirements_note?.encrypted_url && (
+          {data.step?.at(0)?.allow_notes_download &&
+            data.requirements_note?.at(0)?.encrypted_url && (
               <NotesDownloadDialog data={data} />
             )}
         </StyledAlertComponent>
       )}
 
-      {data && !data.process && (
+      {data && !data && (
         <StyledAlertComponent
           severity="info"
           title="O protocolo informado não foi encontrado!"
