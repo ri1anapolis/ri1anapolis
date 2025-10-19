@@ -5,6 +5,10 @@ const MONGODB_DB = process.env.MONGODB_DB
 const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION
 
 async function getData(processId) {
+  console.info("URI: ", MONGODB_URI)
+  console.info("DB: ", MONGODB_DB)
+  console.info("COLLECTION: ", MONGODB_COLLECTION)
+
   const client = new MongoClient(MONGODB_URI)
 
   try {
