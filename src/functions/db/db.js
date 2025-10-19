@@ -1,8 +1,8 @@
 const { MongoClient } = require("mongodb")
 
-const MONGODB_URI = process.env.GOOGLE_TRACKING_ID
-const MONGODB_DB = process.env.GOOGLE_TRACKING_ID
-const MONGODB_COLLECTION = process.env.GOOGLE_TRACKING_ID
+const MONGODB_URI = process.env.MONGODB_URI
+const MONGODB_DB = process.env.MONGODB_DB
+const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION
 
 async function getData(processId) {
   const client = new MongoClient(MONGODB_URI)
