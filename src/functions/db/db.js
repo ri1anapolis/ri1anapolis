@@ -2,7 +2,6 @@ const { MongoClient } = require("mongodb")
 
 const MONGODB_URI = process.env.MONGODB_URI
 const MONGODB_DB = process.env.MONGODB_DB
-const MONGODB_COLLECTION = process.env.MONGODB_COLLECTION
 
 async function getData(processId) {
   console.info("URI: ", MONGODB_URI)
@@ -17,7 +16,7 @@ async function getData(processId) {
 
     const process = await client
       .db(MONGODB_DB)
-      .collection(MONGODB_COLLECTION)
+      .collection("processes")
       .aggregate([
         {
           $match: {
