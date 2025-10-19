@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import LogRocketMate from "../../../services/LogRocketMate"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
@@ -8,14 +8,11 @@ import styles from "./styles"
 
 import store from "../reduxStore"
 import styledSearchButtonFactory from "./styledSearchButtonFactory"
+import findOnDb from "../../../utils/find-on-db"
 
 const SearchForm = props => {
   const [protocol, setProtocol] = useState("")
   const [searchable, setSearchable] = useState(false)
-  const [runSearch, { loading, error, data }] = [
-    () => {},
-    { loading: false, error: undefined, data: undefined },
-  ]
 
   const theme = useTheme()
   const classes = styles(theme)
@@ -37,21 +34,23 @@ const SearchForm = props => {
     if (event.key === "Enter") handleButtonClick()
   }
 
-  const handleButtonClick = () => {
-    const protocolObject = { protocol: `RE-${protocol}` }
+  const handleButtonClick = async () => {
+    const validProtocol = `RE-${protocol}`
 
-    if (searchable) runSearch({ variables: protocolObject })
+    if (searchable) {
+      store.dispatch({
+        type: "UPDATE_STATE",
+        state: { loading: true, error: undefined, data: undefined },
+      })
+      const data = await findOnDb(validProtocol)
+      store.dispatch({
+        type: "UPDATE_STATE",
+        state: { loading: false, error: undefined, data },
+      })
+      LogRocketMate("track", "procolo", data)
+    }
     setProtocol("")
-
-    LogRocketMate("track", "procolo", protocolObject)
   }
-
-  useEffect(() => {
-    store.dispatch({ type: "UPDATE_STATE", state: { loading, error, data } })
-
-    if (error)
-      console.error(`::: Erro ao buscar protocolo: ${JSON.stringify(error)}`)
-  }, [loading, error, data])
 
   return (
     <Grid container className={classes.searchContainer}>
