@@ -6,7 +6,6 @@ const MONGODB_DB = process.env.MONGODB_DB
 async function getData(processId) {
   console.info("URI: ", MONGODB_URI)
   console.info("DB: ", MONGODB_DB)
-  console.info("COLLECTION: ", MONGODB_COLLECTION)
 
   const client = new MongoClient(MONGODB_URI)
 
@@ -40,10 +39,9 @@ async function getData(processId) {
           },
         },
       ])
-    console.log(
-      `::: MongoDB: Result from "${MONGODB_COLLECTION}" collection on "${MONGODB_DB}" database: `,
-      process
-    )
+      .toArray()
+
+    console.log(`::: MongoDB: Result from "${MONGODB_DB}" database: `, process)
 
     return process
   } catch (error) {

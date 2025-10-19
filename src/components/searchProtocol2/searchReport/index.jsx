@@ -18,6 +18,7 @@ const SearchReport = () => {
 
   const [searchResults, setSearchResults] = useState(store.getState())
   const { error, loading, data } = searchResults
+  const protocolData = data?.at(0)
 
   store.subscribe(() => {
     setSearchResults(store.getState())
@@ -35,46 +36,49 @@ const SearchReport = () => {
 
       {error && <HandleErrors error={error} />}
 
-      {!!data?.name?.length && (
+      {!!protocolData?.name?.length && (
         <StyledAlertComponent
           severity="success"
-          title={<strong>Protocolo {data.name.split("-")[1]}</strong>}
+          title={<strong>Protocolo {protocolData.name.split("-")[1]}</strong>}
         >
-          {data?.nature && (
+          {protocolData.nature && (
             <Typography className={classes.hyphenate}>
-              <span style={{ fontWeight: "600" }}>Natureza:</span> {data.nature}
+              <span style={{ fontWeight: "600" }}>Natureza:</span>{" "}
+              {protocolData.nature}
             </Typography>
           )}
           <Typography paragraph className={classes.hyphenate}>
             <span style={{ fontWeight: "600" }}>Etapa:</span>{" "}
-            {data.step?.at(0)?.name}
+            {protocolData.step?.at(0)?.name}
           </Typography>
 
           <Divider />
           <Typography paragraph />
 
           <Typography paragraph align="justify" className={classes.hyphenate}>
-            {data.step?.at(0)?.description}
+            {protocolData.step?.at(0)?.description}
           </Typography>
-          {data?.email && (
-            <Typography paragraph>E-mail cadastrado: "{data.email}"</Typography>
+          {protocolData.email && (
+            <Typography paragraph>
+              E-mail cadastrado: "{protocolData.email}"
+            </Typography>
           )}
 
-          {/* {data?.status && (
+          {/* {protocolData?.status && (
             <Typography className={classes.hyphenate}>
               <strong>Atenção</strong>: Seu protocolo possui a seguinte
               observação: "{data.status}".
             </Typography>
           )} */}
 
-          {data.step?.at(0)?.allow_notes_download &&
-            data.requirements_note?.at(0)?.encrypted_url && (
-              <NotesDownloadDialog data={data} />
+          {protocolData.step?.at(0)?.allow_notes_download &&
+            protocolData.requirements_note?.at(0)?.encrypted_url && (
+              <NotesDownloadDialog data={protocolData} />
             )}
         </StyledAlertComponent>
       )}
 
-      {data && !data && (
+      {protocolData && !protocolData && (
         <StyledAlertComponent
           severity="info"
           title="O protocolo informado não foi encontrado!"
