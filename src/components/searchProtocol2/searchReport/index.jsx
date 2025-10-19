@@ -78,7 +78,7 @@ const SearchReport = () => {
         </StyledAlertComponent>
       )}
 
-      {protocolData && !protocolData && (
+      {!protocolData?.name?.length && (
         <StyledAlertComponent
           severity="info"
           title="O protocolo informado não foi encontrado!"
