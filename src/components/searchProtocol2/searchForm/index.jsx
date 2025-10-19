@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { useLazyQuery } from "@apollo/react-hooks"
 import LogRocketMate from "../../../services/LogRocketMate"
 import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField"
@@ -8,13 +7,15 @@ import useTheme from "@material-ui/styles/useTheme"
 import styles from "./styles"
 
 import store from "../reduxStore"
-import gqlQuery from "./searchFormGraphQl"
 import styledSearchButtonFactory from "./styledSearchButtonFactory"
 
 const SearchForm = props => {
   const [protocol, setProtocol] = useState("")
   const [searchable, setSearchable] = useState(false)
-  const [runSearch, { loading, error, data }] = useLazyQuery(gqlQuery)
+  const [runSearch, { loading, error, data }] = [
+    () => {},
+    { loading: false, error: undefined, data: undefined },
+  ]
 
   const theme = useTheme()
   const classes = styles(theme)
