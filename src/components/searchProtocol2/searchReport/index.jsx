@@ -72,7 +72,7 @@ const SearchReport = () => {
           )} */}
 
           {protocolData.step?.at(0)?.allow_notes_download &&
-            protocolData.requirements_note?.at(0)?.encrypted_url && (
+            protocolData.requirements_notes?.at(0)?.encrypted_url && (
               <NotesDownloadDialog data={protocolData} />
             )}
         </StyledAlertComponent>
