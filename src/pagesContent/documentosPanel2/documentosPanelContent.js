@@ -312,6 +312,11 @@ const documentos = [
         href:
           "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
       },
+      {
+        text: "4. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
+      },
     ],
   },
   {
@@ -341,6 +346,11 @@ const documentos = [
         text: "3. Declaração de Valor de Imóvel PJ",
         href:
           "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
+      },
+      {
+        text: "4. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -377,6 +387,11 @@ const documentos = [
         href:
           "https://drive.google.com/file/d/1iIVPRsaoCUZ0JcSxbZwKqd218cAOlUKs/view",
       },
+      {
+        text: "5. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
+      },
     ],
   },
   {
@@ -411,6 +426,11 @@ const documentos = [
         text: "4. Declaração de Primeira Aquisição",
         href:
           "https://drive.google.com/file/d/18QaYEiMPvEGXxOoWKVKyt2wqV2nGp0i9/view",
+      },
+      {
+        text: "5. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -451,6 +471,11 @@ const documentos = [
         text: "2. Dispensa de Certidões Exigidas PJ",
         href:
           "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
+      },
+      {
+        text: "3. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
