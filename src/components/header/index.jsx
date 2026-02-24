@@ -99,7 +99,8 @@ const HeaderComponent = props => {
           ),
         },
         {
-          href: "https://ri1anapolis.page.link/tabela_custas_simplificada",
+          href:
+            "https://drive.google.com/file/d/1joWomg_Th7y3yKAbDT3M0u5cEt8JlC4V/view",
           text: "Custas",
           description: "Tabela de custas vigente",
         },

@@ -97,7 +97,7 @@ const AgendamentoPanel = props => {
                 tooltipTitle="Precisa de ajuda?"
                 Icon={<HelpIcon />}
                 link={{
-                  url: "https://ri1anapolis.page.link/ajuda_agendamento_site",
+                  url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
                   text: "Assista um vídeo explicativo",
                 }}
               />
