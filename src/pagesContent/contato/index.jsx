@@ -66,7 +66,7 @@ const ContatoSectionContent = () => {
                         className={classes.contactLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        href="https://ri1anapolis.page.link/rota"
+                        href="https://www.google.com/maps/dir//Cart%C3%B3rio+de+Registro+de+Im%C3%B3veis+da+1%C2%AA+Circunscri%C3%A7%C3%A3o+de+An%C3%A1polis%2FGO,+Avenida+Universit%C3%A1ria+2221+Anashopping,+LUC+100,+An%C3%A1polis+-+GO,+75083-350/@-16.3024582,-48.983803,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x935ea478c24e862f:0xb9892c58bf9d6cd9!2m2!1d-48.9487834!2d-16.3024611!3e0?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D"
                       >
                         Av. Universitária, nº 2221
                         <br /> Anashopping, LUC 100
@@ -79,7 +79,7 @@ const ContatoSectionContent = () => {
                     <Link
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="https://ri1anapolis.page.link/rota"
+                      href="https://www.google.com/maps/dir//Cart%C3%B3rio+de+Registro+de+Im%C3%B3veis+da+1%C2%AA+Circunscri%C3%A7%C3%A3o+de+An%C3%A1polis%2FGO,+Avenida+Universit%C3%A1ria+2221+Anashopping,+LUC+100,+An%C3%A1polis+-+GO,+75083-350/@-16.3024582,-48.983803,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x935ea478c24e862f:0xb9892c58bf9d6cd9!2m2!1d-48.9487834!2d-16.3024611!3e0?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D"
                     >
                       <img
                         src={place}
@@ -96,7 +96,7 @@ const ContatoSectionContent = () => {
                     color="inherit"
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://ri1anapolis.page.link/rota"
+                    href="https://www.google.com/maps/dir//Cart%C3%B3rio+de+Registro+de+Im%C3%B3veis+da+1%C2%AA+Circunscri%C3%A7%C3%A3o+de+An%C3%A1polis%2FGO,+Avenida+Universit%C3%A1ria+2221+Anashopping,+LUC+100,+An%C3%A1polis+-+GO,+75083-350/@-16.3024582,-48.983803,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x935ea478c24e862f:0xb9892c58bf9d6cd9!2m2!1d-48.9487834!2d-16.3024611!3e0?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D"
                     classes={{ root: classes.routeButton }}
                   >
                     Clique para traçar rota

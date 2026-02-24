@@ -4,15 +4,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/abertura_matricula__lista",
+        href:
+          "https://drive.google.com/file/d/1KqZ3SNRvPkQ17Je0kDxzab95I4sNp6UB/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -21,15 +24,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/alteracao_nome_empresarial__lista",
+        href:
+          "https://drive.google.com/file/d/14sGkSLkl7HyvhylsoYXM-YWXGA2hV73B/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -38,15 +44,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/arrematacao__lista",
+        href:
+          "https://drive.google.com/file/d/1vT58qG1RRuek6XJRds_zkAHMYQi7qJoH/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -55,15 +64,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/atualizacao_matricula__lista",
+        href:
+          "https://drive.google.com/file/d/1P-zvYSa3_1MFt8wUJjKgpqFKVJmCC9mI/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -72,11 +84,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/av_casamento__lista",
+        href:
+          "https://drive.google.com/file/d/11FuTu_YizGpvHOfHwWur08GPgd1jOJs6/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
     ],
   },
@@ -85,15 +99,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/av_construcao__lista",
+        href:
+          "https://drive.google.com/file/d/10YEXnQg-PuBqdqmemdIuT8kUyOVBoS4W/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -102,15 +119,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/av_demolicao__lista",
+        href:
+          "https://drive.google.com/file/d/1x6iAKyfZz3i2iE2Ph_TD-pmeX-lh6mzU/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -119,11 +139,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/av_divorcio__lista",
+        href:
+          "https://drive.google.com/file/d/13hnkZaUhOKOGpNFIM1p7QMApeeJZqDg_/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
     ],
   },
@@ -132,15 +154,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/av_existencia_acao__lista",
+        href:
+          "https://drive.google.com/file/d/12aboe8TFxSkir74MGN_ouOHUzgMbwt4L/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -149,11 +174,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/av_obito__lista",
+        href:
+          "https://drive.google.com/file/d/1TEjqPhx_TXxUi7YZvMNzj9yuMsFjDF2o/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
     ],
   },
@@ -163,15 +190,17 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/cancela_alienacao_fiduciaria_hipoteca__lista",
+          "https://drive.google.com/file/d/12oasV3b438xtKAgp4rFM2oNQhv9sVfec/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -181,15 +210,17 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/cancela_clausulas_restritivas__lista",
+          "https://drive.google.com/file/d/1nJml3KUdX0vvVxew8hbpmwL91ZMjHIEW/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -198,15 +229,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/cancela_nota_promissoria__lista",
+        href:
+          "https://drive.google.com/file/d/1QRasdCwpCFYypTHqe1Bg3FoFgCBek2TR/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -215,15 +249,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/cancela_penhora__lista",
+        href:
+          "https://drive.google.com/file/d/1XwHy__vmtjxfS5wiXrvEMHlcP1pB0_ZO/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -232,15 +269,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/cancela_usufruto__lista",
+        href:
+          "https://drive.google.com/file/d/1RosjPJkdrHHXy4qzrE0tKUblrl7iXhke/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -250,23 +290,32 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/cessao_compromisso_compra_venda__lista",
+          "https://drive.google.com/file/d/1Pj9U-XJ6mSp6KBOD9fxkMznEyfaq_zep/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PF",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+        href:
+          "https://drive.google.com/file/d/1axKDXL7dFHoelX1H41m7K6upft2SeyYh/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PJ",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+        href:
+          "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
+      },
+      {
+        text: "4. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -275,23 +324,33 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/compromisso_compra_venda__lista",
+        href:
+          "https://drive.google.com/file/d/1Qw1v6ni6Zu0xbAYIpvHmkgAibBI_FCaT/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PF",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+        href:
+          "https://drive.google.com/file/d/1axKDXL7dFHoelX1H41m7K6upft2SeyYh/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PJ",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+        href:
+          "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
+      },
+      {
+        text: "4. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -301,28 +360,37 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/contrato_compra_venda_alienacao_mcmv__lista",
+          "https://drive.google.com/file/d/1MBAOzCwgiEld6ALG1MxokXqkCpMWvDWl/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PF",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+        href:
+          "https://drive.google.com/file/d/1axKDXL7dFHoelX1H41m7K6upft2SeyYh/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PJ",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+        href:
+          "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
       },
       {
         text: "4. Declaração de Primeira Aquisição",
         href:
-          "https://ri1anapolis.page.link/contrato_compra_venda_alienacao_mcmv__declaracao",
+          "https://drive.google.com/file/d/1iIVPRsaoCUZ0JcSxbZwKqd218cAOlUKs/view",
+      },
+      {
+        text: "5. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -332,28 +400,37 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/contrato_compra_venda_alienacao_sfh__lista",
+          "https://drive.google.com/file/d/1hvleidRVkpKjM3IpLjBPbydImorBMWDX/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PF",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+        href:
+          "https://drive.google.com/file/d/1axKDXL7dFHoelX1H41m7K6upft2SeyYh/view",
       },
       {
         text: "3. Declaração de Valor de Imóvel PJ",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+        href:
+          "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
       },
       {
         text: "4. Declaração de Primeira Aquisição",
         href:
-          "https://ri1anapolis.page.link/contrato_compra_venda_alienacao_sfh__declaracao",
+          "https://drive.google.com/file/d/18QaYEiMPvEGXxOoWKVKyt2wqV2nGp0i9/view",
+      },
+      {
+        text: "5. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -362,15 +439,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/contrato_locacao__lista",
+        href:
+          "https://drive.google.com/file/d/1CzmklJxkeDmB577h_oFZorufA2_Yk1sW/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -380,15 +460,22 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/contrato_mutuo_alienacao_hipoteca__lista",
+          "https://drive.google.com/file/d/1gdVbCMRxoVa1PZzrqng8aM4z5v5waFMn/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "2. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
+      },
+      {
+        text: "3. Declaração do COAF",
+        href:
+          "https://drive.google.com/file/d/1QFey8RKwXzoTNCptD0OYLo8ZqI1lr5q8/view",
       },
     ],
   },
@@ -397,15 +484,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/desdobro__lista",
+        href:
+          "https://drive.google.com/file/d/1kztrF4HrTop4TmvwvXlodRbMcniPEztm/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -415,15 +505,17 @@ const documentos = [
       {
         text: "1. Lista de Documentos",
         href:
-          "https://ri1anapolis.page.link/dissolucao_sociedade_empresaria__lista",
+          "https://drive.google.com/file/d/14E0J6BrO2LvK7zryYXmYsqqk7UxSeCaZ/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -432,11 +524,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/doacao_poder_publico__lista",
+        href:
+          "https://drive.google.com/file/d/1px3q9a0RGwdf3CF-uBDLlygyUtMkzv6E/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
     ],
   },
@@ -445,31 +539,38 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/escritura_compra_venda__lista",
+        href:
+          "https://drive.google.com/file/d/1kA7nzOWCkIDeWpyWleAi6ISOshma_tWk/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
       {
         text: "3. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "3. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
       {
         text: "4. Declaração de Valor de Imóvel PF",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pf",
+        href:
+          "https://drive.google.com/file/d/1axKDXL7dFHoelX1H41m7K6upft2SeyYh/view",
       },
       {
         text: "4. Declaração de Valor de Imóvel PJ",
-        href: "https://ri1anapolis.page.link/declaracao_valor_imovel_pj",
+        href:
+          "https://drive.google.com/file/d/1XqZ-XM9adbaMKVoDnXFPoRheQwq83y6W/view",
       },
     ],
   },
@@ -478,23 +579,28 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/escritura_publica_doacao__lista",
+        href:
+          "https://drive.google.com/file/d/1BoYSiW8gykUC8d8bTWEJsxIOMSmRRA7k/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
       {
         text: "3. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "3. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
     ],
   },
@@ -503,23 +609,28 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/escritura_publica_permuta__lista",
+        href:
+          "https://drive.google.com/file/d/1cA-xYt7Y-wNp6K4NpXI92kaEVbuLd2zz/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
       {
         text: "3. Dispensa de Certidões Exigidas PF",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pf",
+        href:
+          "https://drive.google.com/file/d/1z31V8Ab5T07DqX0TDlTl_Eujdo-FbBSF/view",
       },
       {
         text: "3. Dispensa de Certidões Exigidas PJ",
-        href: "https://ri1anapolis.page.link/dispensa_cert_pj",
+        href:
+          "https://drive.google.com/file/d/1phxXboEloV09kgcpLHTob8jqMAAiyGh6/view",
       },
     ],
   },
@@ -528,23 +639,28 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/georreferenciamento__lista",
+        href:
+          "https://drive.google.com/file/d/15eMrIhm954TD0IkNiUAeXYaaCfNUPAdd/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
       {
         text: "3. Declarações Exigidas por Lei",
-        href: "https://ri1anapolis.page.link/georreferenciamento__declaracao",
+        href:
+          "https://drive.google.com/file/d/1mYhvPyZ1JlcOLA9XGBi00vet1ucma2xH/view",
       },
       {
         text: "4. Manual de Trabalho",
-        href: "https://ri1anapolis.page.link/georreferenciamento__manual",
+        href:
+          "https://drive.google.com/file/d/1v3gu2v_vI1uBfqjycEMmjZAYh_cFmkPm/view",
       },
     ],
   },
@@ -553,15 +669,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/hipoteca_judiciaria__lista",
+        href:
+          "https://drive.google.com/file/d/1Ss7Qbq79ltO6bRr5EnpmYSnKwx8iLdkZ/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -579,11 +698,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/instituicao_condominio__lista",
+        href:
+          "https://drive.google.com/file/d/1s0Fjsh97Lhuk8wAun_ZhinXXuQ_8bURt/view",
       },
       {
         text: "2. Manual de Trabalho",
-        href: "https://ri1anapolis.page.link/instituicao_condominio__manual",
+        href:
+          "https://drive.google.com/file/d/1Oe7X2gyEA_pm00ElS5LO4zDECwSVpmLx/view",
       },
     ],
   },
@@ -592,11 +713,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/integralizacao_capital__lista",
+        href:
+          "https://drive.google.com/file/d/1TNjhxm7zaTnDIHb41ZzLSl5kZ2rNu83f/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -605,15 +728,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/intimacao_devedores__lista",
+        href:
+          "https://drive.google.com/file/d/127lAm7UCGOP2LLy3WcXw-P5p3ieBPmFl/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -622,11 +748,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/inventario__lista",
+        href:
+          "https://drive.google.com/file/d/18qSCT4sx8ld0zq_354356dLwUZotz7RM/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
     ],
   },
@@ -635,7 +763,8 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/loteamento__lista",
+        href:
+          "https://drive.google.com/file/d/1rSZVQXLpXI3WJqPZhnFkcuECXS510wfZ/view",
       },
     ],
   },
@@ -644,15 +773,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/membramento__lista",
+        href:
+          "https://drive.google.com/file/d/1Lu0Dp7_pquCQ3i46gReEOscdUduplUMf/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -661,11 +793,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/registro_pacto_antenupcial__lista",
+        href:
+          "https://drive.google.com/file/d/1nP66WkpGSJvl4t_Gm_bbu-oVR3iGv7Fo/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
     ],
   },
@@ -674,15 +808,18 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/reserva_legal__lista",
+        href:
+          "https://drive.google.com/file/d/1Yi9Uyyla_jgshS_MQaSrLOCJfWY3XqdE/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
     ],
   },
@@ -691,23 +828,28 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/retificacao_area__lista",
+        href:
+          "https://drive.google.com/file/d/18dKvSWem3Ln5-N2q7p29j8Lpfv0lf_7o/view",
       },
       {
         text: "2. Requerimento Pessoa Física",
-        href: "https://ri1anapolis.page.link/requerimento_pf",
+        href:
+          "https://drive.google.com/file/d/13aigCcyNqAV_-pAzTuavciFsMw413Pgj/view",
       },
       {
         text: "2. Requerimento Pessoa Jurídica",
-        href: "https://ri1anapolis.page.link/requerimento_pj",
+        href:
+          "https://drive.google.com/file/d/1AfD-kQbnjWCPnNlCsQd_jRm4--n5Q9YM/view",
       },
       {
         text: "3. Declarações Exigidas por Lei",
-        href: "https://ri1anapolis.page.link/retificacao_area__declaracao",
+        href:
+          "https://drive.google.com/file/d/1d5xVQyiSdCz7knY1AHytpruD1Frj7zyI/view",
       },
       {
         text: "4. Manual de Trabalho",
-        href: "https://ri1anapolis.page.link/retificacao_area__manual",
+        href:
+          "https://drive.google.com/file/d/1GOqDjsaMCJ2TDQVJpa96Kbd3GXSAx2kN/view",
       },
     ],
   },
@@ -716,12 +858,13 @@ const documentos = [
     links: [
       {
         text: "1. Lista de Documentos",
-        href: "https://ri1anapolis.page.link/usucapiao_extrajudicial__lista",
+        href:
+          "https://drive.google.com/file/d/15LYMOxsmb7B7dvWZ4Evubje_Y8MjxEkc/view",
       },
       {
         text: "2. Ata Notarial",
         href:
-          "https://ri1anapolis.page.link/usucapiao_extrajudicial__ata_notarial",
+          "https://drive.google.com/file/d/1Ivf4QYPlBDe9aN-Dc7ktKaRqCzDHir1n/view",
       },
     ],
   },

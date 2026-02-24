@@ -4,8 +4,6 @@ import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import Container from "@material-ui/core/Container"
 import Accordion from "../../components/simpleAccordion"
-import HelpIconButton from "../../components/helpIconButton"
-import HelpIcon from "@material-ui/icons/Help"
 
 import useStyles from "./styles"
 
@@ -34,15 +32,6 @@ const DocumentosPanel = () => {
           Documentos para{" "}
           <Typography variant="subtitle1" component="span" noWrap>
             Registro
-            <HelpIconButton
-              ariaLabel="Precisa de ajuda?"
-              tooltipTitle="Precisa de ajuda?"
-              Icon={<HelpIcon />}
-              link={{
-                url: "https://ri1anapolis.page.link/ajuda_documentos_site",
-                text: "Assista um vídeo explicativo",
-              }}
-            />
           </Typography>
         </Typography>
         <Typography paragraph variant="caption">

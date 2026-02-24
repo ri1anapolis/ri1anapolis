@@ -97,7 +97,8 @@ const Footer = props => {
           title="Links Úteis"
           links={[
             {
-              href: "https://ri1anapolis.page.link/tabela_custas_simplificada",
+              href:
+                "https://drive.google.com/file/d/1joWomg_Th7y3yKAbDT3M0u5cEt8JlC4V/view",
               text: "Tabela de Custas Vigente",
             },
             {
@@ -124,11 +125,13 @@ const Footer = props => {
           title="Institucional"
           links={[
             {
-              href: "https://ri1anapolis.page.link/ouvidoria",
+              href:
+                "https://docs.google.com/forms/d/e/1FAIpQLSc4kJFbsaS2AuDzOwSv8DQqjle6eYlml31LZDWflygbe3PwPw/viewform",
               text: "Ouvidoria",
             },
             {
-              href: "https://ri1anapolis.page.link/trabalhe_conosco",
+              href:
+                "https://docs.google.com/forms/d/e/1FAIpQLSfhwcdqgCJ6gjZ083Xy6Bcys4CpiG2-tE5ZiKcxwbweOsNN8Q/viewform?usp=send_form",
               text: "Trabalhe Conosco",
             },
           ]}
