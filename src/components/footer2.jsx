@@ -115,7 +115,7 @@ const Footer = props => {
             },
             {
               href:
-                "https://www.google.com/maps/d/viewer?mid=10YpQ9_F-hd614vCPtPjKJqiW-ho2c870",
+                "https://www.google.com/maps/d/viewer?mid=1ydKuK3BKvPR2IRqAvO0dtQ4vFyUvNjQ&ehbc=2E312F",
               text: "Mapa da Primeira Circunscrição",
             },
           ]}
