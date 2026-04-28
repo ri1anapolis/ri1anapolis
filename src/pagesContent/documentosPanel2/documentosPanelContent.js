@@ -702,7 +702,7 @@ const documentos = [
           "https://drive.google.com/file/d/1s0Fjsh97Lhuk8wAun_ZhinXXuQ_8bURt/view",
       },
       {
-        text: "2. Manual de Trabalho",
+        text: "2. Quadro NBR 12721 para preenchimento",
         href:
           "https://drive.google.com/file/d/1Oe7X2gyEA_pm00ElS5LO4zDECwSVpmLx/view",
       },
