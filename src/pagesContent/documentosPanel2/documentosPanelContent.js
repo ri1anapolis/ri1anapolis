@@ -706,6 +706,31 @@ const documentos = [
         href:
           "https://drive.google.com/file/d/1Oe7X2gyEA_pm00ElS5LO4zDECwSVpmLx/view",
       },
+      {
+        text: "2. Modelo 01 - Garagem como Area Acessoria",
+        href:
+          "https://docs.google.com/document/d/11TXY9c0n8k_Tz4PDF1sYg2MMh9e3O888",
+      },
+      {
+        text: "2. Modelo 01 - Quadro NBR 12721",
+        href:
+          "https://docs.google.com/spreadsheets/d/1CdDAnsWiapMaZsXOrGKPICCXgRoZL6iI",
+      },
+      {
+        text: "3. Modelo 02 - Garagem Intramuros - Area Principal",
+        href:
+          "https://docs.google.com/document/d/1gpZtVLY9q1vkpz7CGE7s-_x1SACBPH3T",
+      },
+      {
+        text: "4. Modelo 03 - Apartamentos - Condominio Edilicio",
+        href:
+          "https://docs.google.com/document/d/15Hmc9rv8Fa21PCrpK69sO0XjoGVHEso9",
+      },
+      {
+        text: "4. Modelo 03 - Quadro NBR 12721",
+        href:
+          "https://docs.google.com/spreadsheets/d/1mqnd21A1oxzrVg0jRT1Va5rWdEdP8RlN",
+      },
     ],
   },
   {
