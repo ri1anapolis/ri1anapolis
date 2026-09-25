@@ -702,34 +702,54 @@ const documentos = [
           "https://drive.google.com/file/d/1s0Fjsh97Lhuk8wAun_ZhinXXuQ_8bURt/view",
       },
       {
-        text: "2. Quadro NBR 12721 para preenchimento",
+        text: "   1.1 Requerimento - modelo comum",
         href:
-          "https://drive.google.com/file/d/1Oe7X2gyEA_pm00ElS5LO4zDECwSVpmLx/view",
+          "https://docs.google.com/document/d/1YavVbYqxaKt6nG4z30M7aPzxBQABCoff/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
       },
       {
-        text: "2. Modelo 01 - Garagem como Area Acessoria",
+        text: "2. Condomínio Edilício comum, 02 pavimentos ou mais",
         href:
-          "https://docs.google.com/document/d/11TXY9c0n8k_Tz4PDF1sYg2MMh9e3O888",
+          "https://docs.google.com/document/d/1ICHhC0KWGvgziT_5d1umP99Ntkh_PocI/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
       },
       {
-        text: "2. Modelo 01 - Quadro NBR 12721",
+        text: "    2.1. Planta modelo (04 unidades Térreo / 1ºPav.)",
         href:
-          "https://docs.google.com/spreadsheets/d/1CdDAnsWiapMaZsXOrGKPICCXgRoZL6iI",
+          "https://drive.google.com/file/d/1-ATV9crxU5T1DntpZUBGlEqaZ7kRsQSy/view?usp=sharing",
       },
       {
-        text: "3. Modelo 02 - Garagem Intramuros - Area Principal",
+        text: "    2.2. Planilha Excel modelo - Quadro NBR",
         href:
-          "https://docs.google.com/document/d/1gpZtVLY9q1vkpz7CGE7s-_x1SACBPH3T",
+          "https://docs.google.com/spreadsheets/d/1-67HpNNqPXe-BVyHnEt40KcQprNeDe9X/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
       },
       {
-        text: "4. Modelo 03 - Apartamentos - Condominio Edilicio",
+        text: "3. Condomínio Simples. 03 casas térreas (germinadas)",
         href:
-          "https://docs.google.com/document/d/15Hmc9rv8Fa21PCrpK69sO0XjoGVHEso9",
+          "https://docs.google.com/document/d/1iH8oGEwjPk78Rx-2vsByCI5SWVPW7cBt/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
       },
       {
-        text: "4. Modelo 03 - Quadro NBR 12721",
+        text: "   3.1. Planta modelo (garagem como área acessória)",
         href:
-          "https://docs.google.com/spreadsheets/d/1mqnd21A1oxzrVg0jRT1Va5rWdEdP8RlN",
+          "https://drive.google.com/file/d/1BP7hPtV5Tp_MCI4v2SJHBFYBEJIVT6sF/view?usp=sharing",
+      },
+      {
+        text: "   3.2. Planilha Excel modelo - Quadro NBR",
+        href:
+          "https://docs.google.com/spreadsheets/d/1c9Ds8svFeAs-38Bv4NVvbbVkyNIPWc-d/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
+      },
+      {
+        text: "4. Condomínio Simples. 04 casas térreas (germinadas)",
+        href:
+          "https://docs.google.com/document/d/1IiUZfoCVtX6jJXgHK0CSM671QFpCPHbC/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
+      },
+      {
+        text: "   4.1. Planta modelo (garagem como área principal)",
+        href:
+          "https://drive.google.com/file/d/1e20mANLFEZFlkOkL5xiHhYwoU2ImxCuI/view?usp=sharing",
+      },
+      {
+        text: "   4.2. Planilha Excel modelo - Quadro NBR",
+        href:
+          "https://docs.google.com/spreadsheets/d/14qjm9fuSsWb87Nh06OMqAJUn4RiNqwcn/edit?usp=sharing&ouid=113912914431921448903&rtpof=true&sd=true",
       },
     ],
   },
