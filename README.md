@@ -105,4 +105,4 @@ Como esse serviço não faz parte do escopo do site, sua arquitetura e funcionam
 
 ## Equipe
 
-- [André Martins](https://github.com/fmartins-andre): Encarregado da TI do cartório / Desenvolvedor
+- [André Martins](https://github.com/fmartins-andre): Desenvolvedor

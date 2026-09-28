@@ -46,20 +46,26 @@ async function getData(processId) {
     return process
   } catch (error) {
     console.error(`::: MongoDB: ERROR => ${error}`)
+    throw error
   } finally {
     await client.close()
     console.log(`::: MongoDB: Disconnected from server!`)
   }
 }
 
-exports.handler = async (event, context, callback) => {
+// Node.js 24+ Lambda runtimes reject callback-style handlers: async handlers
+// must return the response object instead.
+exports.handler = async event => {
   try {
     const { processId } = JSON.parse(event.body)
 
     const process = await getData(processId)
 
-    return callback(null, { statusCode: 200, body: JSON.stringify(process) })
+    return { statusCode: 200, body: JSON.stringify(process) }
   } catch (err) {
-    return callback(JSON.stringify(err))
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: String(err?.message || err) }),
+    }
   }
 }
