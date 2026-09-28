@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer")
 
-exports.handler = async (event, context, callback) => {
+exports.handler = async event => {
   try {
     const { subject, replyTo, plainTextMessage, htmlMessage } = JSON.parse(
       event.body
@@ -25,8 +25,11 @@ exports.handler = async (event, context, callback) => {
       html: htmlMessage,
     })
 
-    return callback(null, { statusCode: 200, body: JSON.stringify(info) })
+    return { statusCode: 200, body: JSON.stringify(info) }
   } catch (err) {
-    return callback(JSON.stringify(err))
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: String(err?.message || err) }),
+    }
   }
 }

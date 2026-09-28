@@ -43,9 +43,14 @@ const SearchForm = props => {
         state: { loading: true, error: undefined, data: undefined },
       })
       const data = await findOnDb(validProtocol)
+      const failed = !Array.isArray(data)
       store.dispatch({
         type: "UPDATE_STATE",
-        state: { loading: false, error: undefined, data },
+        state: {
+          loading: false,
+          error: failed ? data?.error || data || true : undefined,
+          data: failed ? undefined : data,
+        },
       })
       LogRocketMate("track", "procolo", data)
     }
